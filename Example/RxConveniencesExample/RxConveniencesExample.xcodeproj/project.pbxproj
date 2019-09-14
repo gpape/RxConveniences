@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		208BEC70232D185A005F05D6 /* RetainingBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC6F232D185A005F05D6 /* RetainingBinder.swift */; };
+		208BEC73232D2158005F05D6 /* UIActivityIndicatorView+MoreRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC72232D2158005F05D6 /* UIActivityIndicatorView+MoreRx.swift */; };
+		208BEC75232D3A94005F05D6 /* UISwitch+MoreRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC74232D3A94005F05D6 /* UISwitch+MoreRx.swift */; };
+		208BEC77232D402C005F05D6 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC76232D402C005F05D6 /* Operators.swift */; };
+		208BEC79232D62E9005F05D6 /* Driver+Conveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC78232D62E9005F05D6 /* Driver+Conveniences.swift */; };
 		20D831CA23296F04002D6714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831C923296F04002D6714 /* AppDelegate.swift */; };
 		20D831CC23296F04002D6714 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831CB23296F04002D6714 /* MainViewController.swift */; };
 		20D831CF23296F04002D6714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20D831CD23296F04002D6714 /* Main.storyboard */; };
@@ -38,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		208BEC6F232D185A005F05D6 /* RetainingBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetainingBinder.swift; sourceTree = "<group>"; };
+		208BEC72232D2158005F05D6 /* UIActivityIndicatorView+MoreRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+MoreRx.swift"; sourceTree = "<group>"; };
+		208BEC74232D3A94005F05D6 /* UISwitch+MoreRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISwitch+MoreRx.swift"; sourceTree = "<group>"; };
+		208BEC76232D402C005F05D6 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		208BEC78232D62E9005F05D6 /* Driver+Conveniences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Driver+Conveniences.swift"; sourceTree = "<group>"; };
 		20D831C623296F04002D6714 /* RxConveniencesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxConveniencesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D831C923296F04002D6714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20D831CB23296F04002D6714 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +95,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		208BEC71232D2133005F05D6 /* RxCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				208BEC78232D62E9005F05D6 /* Driver+Conveniences.swift */,
+				208BEC72232D2158005F05D6 /* UIActivityIndicatorView+MoreRx.swift */,
+				208BEC74232D3A94005F05D6 /* UISwitch+MoreRx.swift */,
+			);
+			path = RxCocoa;
+			sourceTree = "<group>";
+		};
 		20D831BD23296F04002D6714 = {
 			isa = PBXGroup;
 			children = (
@@ -151,8 +171,11 @@
 		20E6C9B8232AE30300004B69 /* RxConveniences */ = {
 			isa = PBXGroup;
 			children = (
+				208BEC71232D2133005F05D6 /* RxCocoa */,
 				20E6C9B9232AE30300004B69 /* PressEffect.swift */,
 				20E6C9BA232AE30300004B69 /* MapToValue.swift */,
+				208BEC76232D402C005F05D6 /* Operators.swift */,
+				208BEC6F232D185A005F05D6 /* RetainingBinder.swift */,
 				20E6C9BB232AE30300004B69 /* RxConveniences.swift */,
 			);
 			path = RxConveniences;
@@ -332,11 +355,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208BEC75232D3A94005F05D6 /* UISwitch+MoreRx.swift in Sources */,
 				20E6C9BC232AE30300004B69 /* PressEffect.swift in Sources */,
+				208BEC70232D185A005F05D6 /* RetainingBinder.swift in Sources */,
+				208BEC73232D2158005F05D6 /* UIActivityIndicatorView+MoreRx.swift in Sources */,
 				20E6C9BD232AE30300004B69 /* MapToValue.swift in Sources */,
 				20E6C9BE232AE30300004B69 /* RxConveniences.swift in Sources */,
 				20D831CA23296F04002D6714 /* AppDelegate.swift in Sources */,
 				20D831CC23296F04002D6714 /* MainViewController.swift in Sources */,
+				208BEC77232D402C005F05D6 /* Operators.swift in Sources */,
+				208BEC79232D62E9005F05D6 /* Driver+Conveniences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
