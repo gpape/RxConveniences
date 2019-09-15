@@ -1,5 +1,5 @@
 //
-//  MapToValue.swift
+//  Collective+Rx.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,21 +22,8 @@
 //  THE SOFTWARE.
 //
 
-import RxCocoa
+import CollectiveSwift
 import RxSwift
 
-extension ObservableType {
-
-    public func map<T>(to value: T) -> Observable<T> {
-        return map { _ in value }
-    }
-
-}
-
-extension SharedSequenceConvertibleType {
-
-    public func map<T>(to value: T) -> SharedSequence<SharingStrategy, T> {
-        return map { _ in value }
-    }
-
+extension Collective: ReactiveCompatible {
 }
