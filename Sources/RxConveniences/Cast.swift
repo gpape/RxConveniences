@@ -1,5 +1,5 @@
 //
-//  Math.swift
+//  Cast.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,35 +22,30 @@
 //  THE SOFTWARE.
 //
 
-import RxSwift
+import CoreGraphics
 import RxCocoa
+import RxSwift
 
-extension ObservableType where Element: FloatingPoint {
+extension ObservableType where Element: BinaryFloatingPoint {
 
-    public func clamp() -> Observable<Element> {
-        return clamp(min: 0, max: 1)
+    func cgFloat() -> Observable<CGFloat> {
+        return map(CGFloat.init)
     }
 
-    public func clamp(min: Element, max: Element) -> Observable<Element> {
-        return map { n in
-            let v = n < min ? min : n
-            return v > max ? max : v
-        }
+    func void() -> Observable<Void> {
+        return map { _ in () }
     }
 
 }
 
-extension SharedSequence where Element: FloatingPoint {
+extension SharedSequence where Element: BinaryFloatingPoint {
 
-    public func clamp() -> SharedSequence<SharingStrategy, Element> {
-        return clamp(min: 0, max: 1)
+    func cgFloat() -> SharedSequence<SharingStrategy, CGFloat> {
+        return map(CGFloat.init)
     }
 
-    public func clamp(min: Element, max: Element) -> SharedSequence<SharingStrategy, Element> {
-        return map { n in
-            let v = n < min ? min : n
-            return v > max ? max : v
-        }
+    func void() -> SharedSequence<SharingStrategy, Void> {
+        return map { _ in () }
     }
 
 }

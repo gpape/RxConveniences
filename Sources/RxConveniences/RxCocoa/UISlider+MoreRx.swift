@@ -1,5 +1,5 @@
 //
-//  Math.swift
+//  UISlider+MoreRx.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,35 +22,28 @@
 //  THE SOFTWARE.
 //
 
-import RxSwift
 import RxCocoa
+import RxSwift
+import UIKit
 
-extension ObservableType where Element: FloatingPoint {
+extension UISlider {
 
-    public func clamp() -> Observable<Element> {
-        return clamp(min: 0, max: 1)
-    }
-
-    public func clamp(min: Element, max: Element) -> Observable<Element> {
-        return map { n in
-            let v = n < min ? min : n
-            return v > max ? max : v
+    public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element: BinaryFloatingPoint {
+        return rx.value.subscribe { event in
+            switch event {
+            case .next(let oldValue):
+                let newValue = T.Element(oldValue)
+                observers.forEach { $0.onNext(newValue) }
+            case .error(let error):
+                observers.forEach { $0.onError(error) }
+            case .completed:
+                observers.forEach { $0.onCompleted() }
+            }
         }
     }
 
-}
-
-extension SharedSequence where Element: FloatingPoint {
-
-    public func clamp() -> SharedSequence<SharingStrategy, Element> {
-        return clamp(min: 0, max: 1)
-    }
-
-    public func clamp(min: Element, max: Element) -> SharedSequence<SharingStrategy, Element> {
-        return map { n in
-            let v = n < min ? min : n
-            return v > max ? max : v
-        }
+    public func map<T>(_ transform: @escaping (Float) -> T) -> Driver<T> {
+        return rx.value.asDriver().map(transform)
     }
 
 }
