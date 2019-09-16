@@ -14,6 +14,7 @@
 		208BEC79232D62E9005F05D6 /* Driver+Conveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC78232D62E9005F05D6 /* Driver+Conveniences.swift */; };
 		208BEC7B232DB810005F05D6 /* Collective+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC7A232DB810005F05D6 /* Collective+Rx.swift */; };
 		208BEC7D232DB851005F05D6 /* UIView+MoreRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC7C232DB851005F05D6 /* UIView+MoreRx.swift */; };
+		208BEDCB232F0DD700436D9B /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEDCA232F0DD700436D9B /* Math.swift */; };
 		20D831CA23296F04002D6714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831C923296F04002D6714 /* AppDelegate.swift */; };
 		20D831CC23296F04002D6714 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831CB23296F04002D6714 /* MainViewController.swift */; };
 		20D831CF23296F04002D6714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20D831CD23296F04002D6714 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		208BEC78232D62E9005F05D6 /* Driver+Conveniences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Driver+Conveniences.swift"; sourceTree = "<group>"; };
 		208BEC7A232DB810005F05D6 /* Collective+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collective+Rx.swift"; sourceTree = "<group>"; };
 		208BEC7C232DB851005F05D6 /* UIView+MoreRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+MoreRx.swift"; sourceTree = "<group>"; };
+		208BEDCA232F0DD700436D9B /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		20D831C623296F04002D6714 /* RxConveniencesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxConveniencesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D831C923296F04002D6714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20D831CB23296F04002D6714 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				208BEC7A232DB810005F05D6 /* Collective+Rx.swift */,
 				20E6C9B9232AE30300004B69 /* PressEffect.swift */,
 				20E6C9BA232AE30300004B69 /* MapToValue.swift */,
+				208BEDCA232F0DD700436D9B /* Math.swift */,
 				208BEC76232D402C005F05D6 /* Operators.swift */,
 				208BEC6F232D185A005F05D6 /* RetainingBinder.swift */,
 				20E6C9BB232AE30300004B69 /* RxConveniences.swift */,
@@ -362,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				208BEC75232D3A94005F05D6 /* UISwitch+MoreRx.swift in Sources */,
+				208BEDCB232F0DD700436D9B /* Math.swift in Sources */,
 				20E6C9BC232AE30300004B69 /* PressEffect.swift in Sources */,
 				208BEC70232D185A005F05D6 /* RetainingBinder.swift in Sources */,
 				208BEC73232D2158005F05D6 /* UIActivityIndicatorView+MoreRx.swift in Sources */,

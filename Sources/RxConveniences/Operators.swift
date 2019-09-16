@@ -22,11 +22,20 @@
 //  THE SOFTWARE.
 //
 
+import RxCocoa
 import RxSwift
 
 extension ObservableType where Element == Bool {
 
     public static prefix func ! (observable: Self) -> Observable<Bool> {
+        return observable.map { !$0 }
+    }
+
+}
+
+extension SharedSequence where Element == Bool {
+
+    public static prefix func ! (observable: SharedSequence<SharingStrategy, Element>) -> SharedSequence<SharingStrategy, Element> {
         return observable.map { !$0 }
     }
 
