@@ -49,47 +49,57 @@ extension Reactive where Base: UIView {
 
 }
 
-extension Reactive where Base: Collective<UIView> {
+// TODO: ? (fold this into collective if it works)
+public protocol CollectiveType {
+    associatedtype Element
+
+    var base: Array<Element> { get }
+}
+extension Collective: CollectiveType {
+}
+
+// TODO: use this style throughout
+extension Reactive where Base: CollectiveType, Base.Element: UIView {
 
     public var alpha: RetainingBinder<CGFloat> {
         return RetainingBinder(base) { base, value in
-            base.alpha = value
+            base.base.forEach { $0.alpha = value }
         }
     }
 
-    public var backgroundColor: RetainingBinder<UIColor?> {
+    public var backgroundColor: RetainingBinder<UIColor> {
         return RetainingBinder(base) { base, value in
-            base.backgroundColor = value
+            base.base.forEach { $0.backgroundColor = value }
         }
     }
 
-    public var borderColor: RetainingBinder<UIColor?> {
+    public var borderColor: RetainingBinder<UIColor> {
         return RetainingBinder(base) { base, value in
-            base.borderColor = value
+            base.base.forEach { $0.layer.borderColor = value.cgColor }
         }
     }
 
     public var isHidden: RetainingBinder<Bool> {
         return RetainingBinder(base) { base, value in
-            base.isHidden = value
+            base.base.forEach { $0.isHidden = value }
         }
     }
 
     public var isUserInteractionEnabled: RetainingBinder<Bool> {
         return RetainingBinder(base) { base, value in
-            base.isUserInteractionEnabled = value
+            base.base.forEach { $0.isUserInteractionEnabled = value }
         }
     }
 
     public var tintColor: RetainingBinder<UIColor> {
         return RetainingBinder(base) { base, value in
-            base.tintColor = value
+            base.base.forEach { $0.tintColor = value }
         }
     }
 
     public var transform: RetainingBinder<CGAffineTransform> {
         return RetainingBinder(base) { base, value in
-            base.transform = value
+            base.base.forEach { $0.transform = value }
         }
     }
 

@@ -17,6 +17,8 @@
 		208BEDCB232F0DD700436D9B /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEDCA232F0DD700436D9B /* Math.swift */; };
 		208BEDCD232F190B00436D9B /* UISlider+MoreRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEDCC232F190B00436D9B /* UISlider+MoreRx.swift */; };
 		208BEDCF232F1AFA00436D9B /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEDCE232F1AFA00436D9B /* Cast.swift */; };
+		209A390F23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A390E23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift */; };
+		209A391123306C6800232C9D /* DemoCollectiveBindings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209A391023306C6800232C9D /* DemoCollectiveBindings.storyboard */; };
 		20D831CA23296F04002D6714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831C923296F04002D6714 /* AppDelegate.swift */; };
 		20D831CC23296F04002D6714 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831CB23296F04002D6714 /* MainViewController.swift */; };
 		20D831CF23296F04002D6714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20D831CD23296F04002D6714 /* Main.storyboard */; };
@@ -27,6 +29,7 @@
 		20E6C9BC232AE30300004B69 /* PressEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6C9B9232AE30300004B69 /* PressEffect.swift */; };
 		20E6C9BD232AE30300004B69 /* MapToValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6C9BA232AE30300004B69 /* MapToValue.swift */; };
 		20E6C9BE232AE30300004B69 /* RxConveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6C9BB232AE30300004B69 /* RxConveniences.swift */; };
+		20EC16C82332DD62006F7188 /* DemoVerifyDeinitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC16C72332DD62006F7188 /* DemoVerifyDeinitView.swift */; };
 		402644EB79C745172A19AFCB /* libPods-RxConveniencesExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E60675A9ABFDBF9E62C0FE /* libPods-RxConveniencesExample.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +61,8 @@
 		208BEDCA232F0DD700436D9B /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		208BEDCC232F190B00436D9B /* UISlider+MoreRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISlider+MoreRx.swift"; sourceTree = "<group>"; };
 		208BEDCE232F1AFA00436D9B /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
+		209A390E23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCollectiveBindingsViewController.swift; sourceTree = "<group>"; };
+		209A391023306C6800232C9D /* DemoCollectiveBindings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DemoCollectiveBindings.storyboard; sourceTree = "<group>"; };
 		20D831C623296F04002D6714 /* RxConveniencesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxConveniencesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D831C923296F04002D6714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20D831CB23296F04002D6714 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +79,7 @@
 		20E6C9B9232AE30300004B69 /* PressEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressEffect.swift; sourceTree = "<group>"; };
 		20E6C9BA232AE30300004B69 /* MapToValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapToValue.swift; sourceTree = "<group>"; };
 		20E6C9BB232AE30300004B69 /* RxConveniences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxConveniences.swift; sourceTree = "<group>"; };
+		20EC16C72332DD62006F7188 /* DemoVerifyDeinitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoVerifyDeinitView.swift; sourceTree = "<group>"; };
 		3420226E214CDC02708F691D /* Pods-RxConveniencesExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxConveniencesExample.release.xcconfig"; path = "Target Support Files/Pods-RxConveniencesExample/Pods-RxConveniencesExample.release.xcconfig"; sourceTree = "<group>"; };
 		AB821039F7FB7E61633E2741 /* Pods-RxConveniencesExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxConveniencesExample.debug.xcconfig"; path = "Target Support Files/Pods-RxConveniencesExample/Pods-RxConveniencesExample.debug.xcconfig"; sourceTree = "<group>"; };
 		C3E60675A9ABFDBF9E62C0FE /* libPods-RxConveniencesExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RxConveniencesExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +123,16 @@
 			path = RxCocoa;
 			sourceTree = "<group>";
 		};
+		209A390D23306A2200232C9D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				209A391023306C6800232C9D /* DemoCollectiveBindings.storyboard */,
+				209A390E23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift */,
+				20EC16C72332DD62006F7188 /* DemoVerifyDeinitView.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		20D831BD23296F04002D6714 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				20E6C9B7232AE30300004B69 /* Sources */,
+				209A390D23306A2200232C9D /* View Controllers */,
 				20D831C923296F04002D6714 /* AppDelegate.swift */,
 				20D831CD23296F04002D6714 /* Main.storyboard */,
 				20D831CB23296F04002D6714 /* MainViewController.swift */,
@@ -321,6 +338,7 @@
 				20D831CF23296F04002D6714 /* Main.storyboard in Resources */,
 				20D831D123296F05002D6714 /* Assets.xcassets in Resources */,
 				20D831D423296F05002D6714 /* LaunchScreen.storyboard in Resources */,
+				209A391123306C6800232C9D /* DemoCollectiveBindings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +389,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				208BEC75232D3A94005F05D6 /* UISwitch+MoreRx.swift in Sources */,
+				20EC16C82332DD62006F7188 /* DemoVerifyDeinitView.swift in Sources */,
+				209A390F23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift in Sources */,
 				208BEDCB232F0DD700436D9B /* Math.swift in Sources */,
 				20E6C9BC232AE30300004B69 /* PressEffect.swift in Sources */,
 				208BEC70232D185A005F05D6 /* RetainingBinder.swift in Sources */,

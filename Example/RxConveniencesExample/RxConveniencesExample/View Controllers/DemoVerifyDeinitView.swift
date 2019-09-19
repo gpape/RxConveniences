@@ -1,5 +1,5 @@
 //
-//  UIActivityIndicatorView+MoreRx.swift
+//  DemoVerifyDeinitView.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -23,26 +23,11 @@
 //
 
 import UIKit
-import RxCocoa
-import RxSwift
 
-extension Reactive where Base: UIActivityIndicatorView {
+final class DemoVerifyDeinitView: UIView {
 
-    public var color: Binder<UIColor> {
-        return Binder(base) { view, color in
-            view.color = color
-        }
-    }
-
-}
-
-extension Reactive where Base: CollectiveType, Base.Element: UIActivityIndicatorView {
-
-    public var color: RetainingBinder<UIColor> {
-        return RetainingBinder(base) { base, value in
-            // TODO: decide which style to use throughout
-            base.base.forEach { $0.color = value }
-        }
+    deinit {
+        print("deinit DemoVerifyDeinitView")
     }
 
 }
