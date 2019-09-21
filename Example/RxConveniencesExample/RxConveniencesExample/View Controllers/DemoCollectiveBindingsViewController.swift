@@ -33,6 +33,7 @@ final class DemoCollectiveBindingsViewController: UIViewController {
 
     @IBOutlet private weak var `switch`: UISwitch!
     @IBOutlet private var activityIndicators: [UIActivityIndicatorView]!
+    @IBOutlet private var labels: [UILabel]!
     @IBOutlet private var tintableViews: [UIView]!
     @IBOutlet private var verifyDeinitViews: [UIView]!
 
@@ -76,6 +77,7 @@ private extension DemoCollectiveBindingsViewController {
             .map { $0.color }
             .bind(to:
                 activityIndicators.all.rx.color,
+                labels.all.rx.textColor,
                 tintableViews.all.rx.tintColor,
                 verifyDeinitViews.all.rx.borderColor
             )

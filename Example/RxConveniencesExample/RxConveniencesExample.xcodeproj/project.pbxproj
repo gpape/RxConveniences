@@ -19,6 +19,7 @@
 		208BEDCF232F1AFA00436D9B /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEDCE232F1AFA00436D9B /* Cast.swift */; };
 		209A390F23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A390E23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift */; };
 		209A391123306C6800232C9D /* DemoCollectiveBindings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209A391023306C6800232C9D /* DemoCollectiveBindings.storyboard */; };
+		20A570EC2336ABAC00718865 /* UILabel+MoreRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A570EB2336ABAC00718865 /* UILabel+MoreRx.swift */; };
 		20D831CA23296F04002D6714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831C923296F04002D6714 /* AppDelegate.swift */; };
 		20D831CC23296F04002D6714 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831CB23296F04002D6714 /* MainViewController.swift */; };
 		20D831CF23296F04002D6714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20D831CD23296F04002D6714 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		208BEDCE232F1AFA00436D9B /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
 		209A390E23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCollectiveBindingsViewController.swift; sourceTree = "<group>"; };
 		209A391023306C6800232C9D /* DemoCollectiveBindings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DemoCollectiveBindings.storyboard; sourceTree = "<group>"; };
+		20A570EB2336ABAC00718865 /* UILabel+MoreRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+MoreRx.swift"; sourceTree = "<group>"; };
 		20D831C623296F04002D6714 /* RxConveniencesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxConveniencesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D831C923296F04002D6714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20D831CB23296F04002D6714 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				208BEC78232D62E9005F05D6 /* Driver+Conveniences.swift */,
 				208BEC72232D2158005F05D6 /* UIActivityIndicatorView+MoreRx.swift */,
+				20A570EB2336ABAC00718865 /* UILabel+MoreRx.swift */,
 				208BEC74232D3A94005F05D6 /* UISwitch+MoreRx.swift */,
 				208BEDCC232F190B00436D9B /* UISlider+MoreRx.swift */,
 				208BEC7C232DB851005F05D6 /* UIView+MoreRx.swift */,
@@ -395,6 +398,7 @@
 				20E6C9BC232AE30300004B69 /* PressEffect.swift in Sources */,
 				208BEC70232D185A005F05D6 /* RetainingBinder.swift in Sources */,
 				208BEC73232D2158005F05D6 /* UIActivityIndicatorView+MoreRx.swift in Sources */,
+				20A570EC2336ABAC00718865 /* UILabel+MoreRx.swift in Sources */,
 				20E6C9BD232AE30300004B69 /* MapToValue.swift in Sources */,
 				20E6C9BE232AE30300004B69 /* RxConveniences.swift in Sources */,
 				208BEDCF232F1AFA00436D9B /* Cast.swift in Sources */,
