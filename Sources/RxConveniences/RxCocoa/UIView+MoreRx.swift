@@ -49,16 +49,6 @@ extension Reactive where Base: UIView {
 
 }
 
-// TODO: ? (fold this into collective if it works)
-public protocol CollectiveType {
-    associatedtype Element
-
-    var base: Array<Element> { get }
-}
-extension Collective: CollectiveType {
-}
-
-// TODO: use this style throughout
 extension Reactive where Base: CollectiveType, Base.Element: UIView {
 
     public var alpha: RetainingBinder<CGFloat> {
@@ -101,22 +91,6 @@ extension Reactive where Base: CollectiveType, Base.Element: UIView {
         return RetainingBinder(base) { base, value in
             base.base.forEach { $0.transform = value }
         }
-    }
-
-}
-
-// TODO: fold collective support back in
-
-extension Collective where Element: UIView {
-
-    public var borderColor: UIColor? {
-        get { Collective.gettersAreNotSupportedFailure() }
-        set { base.forEach { $0.layer.borderColor = newValue?.cgColor } }
-    }
-
-    public var isUserInteractionEnabled: Bool {
-        get { Collective.gettersAreNotSupportedFailure() }
-        set { base.forEach { $0.isUserInteractionEnabled = newValue } }
     }
 
 }

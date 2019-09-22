@@ -27,8 +27,6 @@
 
 import RxSwift
 
-// TODO: verify memory management
-
 /// Analogous to `RxCocoa.Binder`, but retains its target.
 public struct RetainingBinder<Value>: ObserverType {
 
