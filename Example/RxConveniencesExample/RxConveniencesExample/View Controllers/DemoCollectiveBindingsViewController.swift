@@ -68,6 +68,7 @@ final class DemoCollectiveBindingsViewController: UIViewController {
 
     @IBOutlet private weak var `switch`: UISwitch!
     @IBOutlet private var activityIndicators: [UIActivityIndicatorView]!
+    @IBOutlet private weak var dismissButton: UIButton!
     @IBOutlet private var labels: [UILabel]!
     @IBOutlet private var tintableViews: [UIView]!
     @IBOutlet private var verifyDeinitViews: [UIView]!
@@ -76,6 +77,15 @@ final class DemoCollectiveBindingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectiveBindings()
+        if #available(iOS 13, *) {
+            dismissButton.isHidden = true
+        } else {
+            dismissButton.rx.addPressEffect().disposed(by: bag)
+        }
+    }
+
+    @IBAction private func dismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 
 }

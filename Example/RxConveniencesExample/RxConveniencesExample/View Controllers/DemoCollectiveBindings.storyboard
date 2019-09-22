@@ -25,12 +25,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUQ-UM-wua">
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="dUQ-UM-wua" secondAttribute="height" multiplier="1:1" id="b11-ap-pfN"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="down"/>
+                                        <connections>
+                                            <action selector="dismiss:" destination="mrM-8h-TtB" eventType="touchUpInside" id="N7A-tG-p1m"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="dUQ-UM-wua" firstAttribute="leading" secondItem="5fB-Pn-NyB" secondAttribute="leading" id="NkL-1U-Tcz"/>
                                     <constraint firstItem="3gk-tH-sTA" firstAttribute="centerY" secondItem="5fB-Pn-NyB" secondAttribute="centerY" id="TQQ-h1-gYs"/>
                                     <constraint firstItem="3gk-tH-sTA" firstAttribute="centerX" secondItem="5fB-Pn-NyB" secondAttribute="centerX" id="hwt-yz-p5l"/>
+                                    <constraint firstAttribute="bottom" secondItem="dUQ-UM-wua" secondAttribute="bottom" id="jfD-xy-FUS"/>
                                     <constraint firstAttribute="height" constant="68" id="ned-xB-qpr"/>
+                                    <constraint firstItem="dUQ-UM-wua" firstAttribute="top" secondItem="5fB-Pn-NyB" secondAttribute="top" id="sYM-GG-qiS"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="sKd-th-I8L">
@@ -187,6 +201,7 @@
                         <viewLayoutGuide key="safeArea" id="D9X-9i-kYr"/>
                     </view>
                     <connections>
+                        <outlet property="dismissButton" destination="dUQ-UM-wua" id="3VP-Wl-EIx"/>
                         <outlet property="switch" destination="gcZ-1q-kAo" id="Gk1-N2-XSV"/>
                         <outletCollection property="activityIndicators" destination="C0k-Xk-3Nu" collectionClass="NSMutableArray" id="m69-Kc-z7d"/>
                         <outletCollection property="activityIndicators" destination="feJ-RW-QoN" collectionClass="NSMutableArray" id="XWa-Il-f7Q"/>
@@ -201,6 +216,7 @@
                         <outletCollection property="verifyDeinitViews" destination="eNR-cV-Qoi" collectionClass="NSMutableArray" id="yyR-xq-d3X"/>
                         <outletCollection property="labels" destination="PIg-in-oox" collectionClass="NSMutableArray" id="9YK-66-3Rj"/>
                         <outletCollection property="labels" destination="3gk-tH-sTA" collectionClass="NSMutableArray" id="xsM-0I-Skn"/>
+                        <outletCollection property="tintableViews" destination="dUQ-UM-wua" collectionClass="NSMutableArray" id="o4n-w7-8sI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aa-eI-ON5" userLabel="First Responder" sceneMemberID="firstResponder"/>
