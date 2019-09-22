@@ -39,8 +39,8 @@ private extension MainViewController {
 
 final class MainViewController: UIViewController {
 
-    private let bag = DisposeBag()
     @IBOutlet private weak var button: UIButton!
+    private let bag = DisposeBag()
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

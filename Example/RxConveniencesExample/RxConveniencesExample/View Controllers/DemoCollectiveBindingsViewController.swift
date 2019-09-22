@@ -25,46 +25,11 @@
 import RxSwift
 import UIKit
 
-// TODO: gist to top
-
-final class DemoCollectiveBindingsViewController: UIViewController {
-
-// MARK: - Interface
-
-    @IBOutlet private weak var `switch`: UISwitch!
-    @IBOutlet private var activityIndicators: [UIActivityIndicatorView]!
-    @IBOutlet private var labels: [UILabel]!
-    @IBOutlet private var tintableViews: [UIView]!
-    @IBOutlet private var verifyDeinitViews: [UIView]!
-
-// MARK: -
-
-    private let bag = DisposeBag()
-
-// MARK: -
-
-    deinit {
-        print("deinit DemoCollectiveBindingsViewController")
-    }
-
-}
-
-// MARK: - : UIViewController
-
-extension DemoCollectiveBindingsViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureRx()
-    }
-
-}
-
-// MARK: - Rx
+// MARK: - The gist:
 
 private extension DemoCollectiveBindingsViewController {
 
-    func configureRx() {
+    func configureCollectiveBindings() {
 
         let lightsOn = `switch`.rx.isOn
 
@@ -87,76 +52,30 @@ private extension DemoCollectiveBindingsViewController {
 
 }
 
-// MARK: - Utils
+// MARK: - Lights on/off
 
 private typealias LightsOn = Bool
 
 private extension LightsOn {
-
     var color: UIColor {
         return self ? #colorLiteral(red: 1, green: 0.9882352941, blue: 0.8980392157, alpha: 1) : #colorLiteral(red: 0.05882352941, green: 0.05882352941, blue: 0.05882352941, alpha: 1)
     }
-
 }
 
-/*
-final class MainViewController: UIViewController {
+// MARK: -
 
-    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet private weak var button: UIButton!
+final class DemoCollectiveBindingsViewController: UIViewController {
+
     @IBOutlet private weak var `switch`: UISwitch!
+    @IBOutlet private var activityIndicators: [UIActivityIndicatorView]!
+    @IBOutlet private var labels: [UILabel]!
     @IBOutlet private var tintableViews: [UIView]!
-
+    @IBOutlet private var verifyDeinitViews: [UIView]!
     private let bag = DisposeBag()
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        button.layer.cornerRadius = button.bounds.height / 2
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureRx()
-    }
-
-    private func configureRx() {
-
-        button.rx
-            .addPressEffect()
-            .disposed(by: bag)
-
-        let lightsOn = `switch`.rx.isOn
-
-        lightsOn
-            .map { $0.color }
-            .bind(to: view.rx.backgroundColor)
-            .disposed(by: bag)
-
-        (!lightsOn)
-            .map { $0.color }
-            .bind(to:
-                activityIndicator.rx.color.asObserver(),
-                tintableViews.all.rx.tintColor.asObserver())
-            .disposed(by: bag)
-
-        (!lightsOn)
-            .map { $0.color }
-            .bind(to: button.rx.borderColor)
-            .disposed(by: bag)
-
+        configureCollectiveBindings()
     }
 
 }
-
-// MARK: - Colors
-
-private typealias LightsOn = Bool
-
-private extension LightsOn {
-
-    var color: UIColor {
-        return self ? #colorLiteral(red: 1, green: 0.9882352941, blue: 0.8980392157, alpha: 1) : #colorLiteral(red: 0.05882352941, green: 0.05882352941, blue: 0.05882352941, alpha: 1)
-    }
-
-}
-*/
