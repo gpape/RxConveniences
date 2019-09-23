@@ -42,9 +42,9 @@ private extension DemoCollectiveBindingsViewController {
             .map { $0.color }
             .bind(to:
                 activityIndicators.all.rx.color,
+                borderableViews.all.rx.borderColor,
                 labels.all.rx.textColor,
-                tintableViews.all.rx.tintColor,
-                verifyDeinitViews.all.rx.borderColor
+                tintableViews.all.rx.tintColor
             )
             .disposed(by: bag)
 
@@ -75,10 +75,10 @@ final class DemoCollectiveBindingsViewController: UIViewController {
 
     @IBOutlet private weak var `switch`: UISwitch!
     @IBOutlet private var activityIndicators: [UIActivityIndicatorView]!
+    @IBOutlet private var borderableViews: [DemoVerifyDeinitView]!
     @IBOutlet private weak var dismissButton: UIButton!
     @IBOutlet private var labels: [UILabel]!
     @IBOutlet private var tintableViews: [UIView]!
-    @IBOutlet private var verifyDeinitViews: [UIView]!
     private let bag = DisposeBag()
 
     override var preferredStatusBarStyle: UIStatusBarStyle {

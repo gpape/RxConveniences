@@ -27,7 +27,7 @@ import UIKit
 final class DemoVerifyDeinitView: UIView {
 
     deinit {
-        print("deinit DemoVerifyDeinitView")
+        print("verifying that bound views deinit")
     }
 
 }
