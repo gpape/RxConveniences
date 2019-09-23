@@ -1,5 +1,5 @@
 //
-//  UIView+MoreRx.swift
+//  UIView+Rx+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //

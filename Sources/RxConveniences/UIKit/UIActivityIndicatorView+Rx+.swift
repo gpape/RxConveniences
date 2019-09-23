@@ -1,5 +1,5 @@
 //
-//  UIActivityIndicatorView+MoreRx.swift
+//  UIActivityIndicatorView+Rx+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -40,7 +40,6 @@ extension Reactive where Base: CollectiveType, Base.Element: UIActivityIndicator
 
     public var color: RetainingBinder<UIColor> {
         return RetainingBinder(base) { base, value in
-            // TODO: decide which style to use throughout
             base.base.forEach { $0.color = value }
         }
     }

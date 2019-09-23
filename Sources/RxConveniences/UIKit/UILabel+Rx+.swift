@@ -1,5 +1,5 @@
 //
-//  UISwitch+MoreRx.swift
+//  UILabel+Rx+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -26,16 +26,24 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-extension UISwitch {
+extension Reactive where Base: UILabel {
 
-    public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element == Bool {
-        return rx.value.subscribe { event in
-            observers.forEach { $0.on(event) }
+    public var textColor: Binder<UIColor?> {
+        return Binder(base) { base, value in
+            base.textColor = value
         }
     }
 
-    public func map<T>(_ transform: @escaping (Bool) -> T) -> Driver<T> {
-        return rx.value.asDriver().map(transform)
+}
+
+import CollectiveSwift
+
+extension Reactive where Base: CollectiveType, Base.Element: UILabel {
+
+    public var textColor: RetainingBinder<UIColor> {
+        return RetainingBinder(base) { base, value in
+            base.base.forEach { $0.textColor = value }
+        }
     }
 
 }

@@ -1,5 +1,5 @@
 //
-//  Driver+Conveniences.swift
+//  CollectiveRx.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,15 +22,32 @@
 //  THE SOFTWARE.
 //
 
-import RxCocoa
+import CollectiveSwift
 import RxSwift
 
-extension Driver {
+extension Collective: ReactiveCompatible {
+}
 
-    public func drive<T: ObserverType>(_ observers: T...) -> Disposable where T.Element == Element {
-        return asSharedSequence().asObservable().subscribe { event in
-            observers.forEach { $0.on(event) }
-        }
+// MARK: - TODO: move to CollectiveSwift
+
+public protocol CollectiveType {
+    associatedtype Element
+    var base: Array<Element> { get }
+}
+
+extension Collective: CollectiveType {
+}
+
+extension Collective where Element: UIView {
+
+    public var borderColor: UIColor? {
+        get { Collective.gettersAreNotSupportedFailure() }
+        set { base.forEach { $0.layer.borderColor = newValue?.cgColor } }
+    }
+
+    public var isUserInteractionEnabled: Bool {
+        get { Collective.gettersAreNotSupportedFailure() }
+        set { base.forEach { $0.isUserInteractionEnabled = newValue } }
     }
 
 }

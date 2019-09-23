@@ -1,5 +1,5 @@
 //
-//  UILabel+MoreRx.swift
+//  RxMath.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,27 +22,34 @@
 //  THE SOFTWARE.
 //
 
-import RxCocoa
 import RxSwift
-import UIKit
+import RxCocoa
 
-extension Reactive where Base: UILabel {
+extension ObservableType where Element: FloatingPoint {
 
-    public var textColor: Binder<UIColor?> {
-        return Binder(base) { base, value in
-            base.textColor = value
+    public func clamp() -> Observable<Element> {
+        return clamp(min: 0, max: 1)
+    }
+
+    public func clamp(min: Element, max: Element) -> Observable<Element> {
+        return map { n in
+            let v = n < min ? min : n
+            return v > max ? max : v
         }
     }
 
 }
 
-import CollectiveSwift
+extension SharedSequence where Element: FloatingPoint {
 
-extension Reactive where Base: CollectiveType, Base.Element: UILabel {
+    public func clamp() -> SharedSequence<SharingStrategy, Element> {
+        return clamp(min: 0, max: 1)
+    }
 
-    public var textColor: RetainingBinder<UIColor> {
-        return RetainingBinder(base) { base, value in
-            base.base.forEach { $0.textColor = value }
+    public func clamp(min: Element, max: Element) -> SharedSequence<SharingStrategy, Element> {
+        return map { n in
+            let v = n < min ? min : n
+            return v > max ? max : v
         }
     }
 

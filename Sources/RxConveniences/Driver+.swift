@@ -1,5 +1,5 @@
 //
-//  Cast.swift
+//  Driver+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,30 +22,15 @@
 //  THE SOFTWARE.
 //
 
-import CoreGraphics
 import RxCocoa
 import RxSwift
 
-extension ObservableType where Element: BinaryFloatingPoint {
+extension Driver {
 
-    func cgFloat() -> Observable<CGFloat> {
-        return map(CGFloat.init)
-    }
-
-    func void() -> Observable<Void> {
-        return map { _ in () }
-    }
-
-}
-
-extension SharedSequence where Element: BinaryFloatingPoint {
-
-    func cgFloat() -> SharedSequence<SharingStrategy, CGFloat> {
-        return map(CGFloat.init)
-    }
-
-    func void() -> SharedSequence<SharingStrategy, Void> {
-        return map { _ in () }
+    public func drive<T: ObserverType>(_ observers: T...) -> Disposable where T.Element == Element {
+        return asSharedSequence().asObservable().subscribe { event in
+            observers.forEach { $0.on(event) }
+        }
     }
 
 }

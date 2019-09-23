@@ -1,5 +1,5 @@
 //
-//  UISlider+MoreRx.swift
+//  RxCasts.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,28 +22,30 @@
 //  THE SOFTWARE.
 //
 
+import CoreGraphics
 import RxCocoa
 import RxSwift
-import UIKit
 
-extension UISlider {
+extension ObservableType where Element: BinaryFloatingPoint {
 
-    public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element: BinaryFloatingPoint {
-        return rx.value.subscribe { event in
-            switch event {
-            case .next(let oldValue):
-                let newValue = T.Element(oldValue)
-                observers.forEach { $0.onNext(newValue) }
-            case .error(let error):
-                observers.forEach { $0.onError(error) }
-            case .completed:
-                observers.forEach { $0.onCompleted() }
-            }
-        }
+    func cgFloat() -> Observable<CGFloat> {
+        return map(CGFloat.init)
     }
 
-    public func map<T>(_ transform: @escaping (Float) -> T) -> Driver<T> {
-        return rx.value.asDriver().map(transform)
+    func void() -> Observable<Void> {
+        return map { _ in () }
+    }
+
+}
+
+extension SharedSequence where Element: BinaryFloatingPoint {
+
+    func cgFloat() -> SharedSequence<SharingStrategy, CGFloat> {
+        return map(CGFloat.init)
+    }
+
+    func void() -> SharedSequence<SharingStrategy, Void> {
+        return map { _ in () }
     }
 
 }

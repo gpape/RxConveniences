@@ -1,5 +1,5 @@
 //
-//  Math.swift
+//  RxOperators.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,35 +22,21 @@
 //  THE SOFTWARE.
 //
 
-import RxSwift
 import RxCocoa
+import RxSwift
 
-extension ObservableType where Element: FloatingPoint {
+extension ObservableType where Element == Bool {
 
-    public func clamp() -> Observable<Element> {
-        return clamp(min: 0, max: 1)
-    }
-
-    public func clamp(min: Element, max: Element) -> Observable<Element> {
-        return map { n in
-            let v = n < min ? min : n
-            return v > max ? max : v
-        }
+    public static prefix func ! (observable: Self) -> Observable<Bool> {
+        return observable.map { !$0 }
     }
 
 }
 
-extension SharedSequence where Element: FloatingPoint {
+extension SharedSequence where Element == Bool {
 
-    public func clamp() -> SharedSequence<SharingStrategy, Element> {
-        return clamp(min: 0, max: 1)
-    }
-
-    public func clamp(min: Element, max: Element) -> SharedSequence<SharingStrategy, Element> {
-        return map { n in
-            let v = n < min ? min : n
-            return v > max ? max : v
-        }
+    public static prefix func ! (observable: SharedSequence<SharingStrategy, Element>) -> SharedSequence<SharingStrategy, Element> {
+        return observable.map { !$0 }
     }
 
 }

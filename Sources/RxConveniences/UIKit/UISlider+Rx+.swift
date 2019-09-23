@@ -1,5 +1,5 @@
 //
-//  Collective+Rx.swift
+//  UISlider+Rx+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,32 +22,28 @@
 //  THE SOFTWARE.
 //
 
-import CollectiveSwift
+import RxCocoa
 import RxSwift
+import UIKit
 
-extension Collective: ReactiveCompatible {
-}
+extension UISlider {
 
-// MARK: - TODO: move to CollectiveSwift
-
-public protocol CollectiveType {
-    associatedtype Element
-    var base: Array<Element> { get }
-}
-
-extension Collective: CollectiveType {
-}
-
-extension Collective where Element: UIView {
-
-    public var borderColor: UIColor? {
-        get { Collective.gettersAreNotSupportedFailure() }
-        set { base.forEach { $0.layer.borderColor = newValue?.cgColor } }
+    public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element: BinaryFloatingPoint {
+        return rx.value.subscribe { event in
+            switch event {
+            case .next(let oldValue):
+                let newValue = T.Element(oldValue)
+                observers.forEach { $0.onNext(newValue) }
+            case .error(let error):
+                observers.forEach { $0.onError(error) }
+            case .completed:
+                observers.forEach { $0.onCompleted() }
+            }
+        }
     }
 
-    public var isUserInteractionEnabled: Bool {
-        get { Collective.gettersAreNotSupportedFailure() }
-        set { base.forEach { $0.isUserInteractionEnabled = newValue } }
+    public func map<T>(_ transform: @escaping (Float) -> T) -> Driver<T> {
+        return rx.value.asDriver().map(transform)
     }
 
 }

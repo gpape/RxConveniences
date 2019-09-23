@@ -1,5 +1,5 @@
 //
-//  Operators.swift
+//  UISwitch+Rx+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -24,19 +24,18 @@
 
 import RxCocoa
 import RxSwift
+import UIKit
 
-extension ObservableType where Element == Bool {
+extension UISwitch {
 
-    public static prefix func ! (observable: Self) -> Observable<Bool> {
-        return observable.map { !$0 }
+    public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element == Bool {
+        return rx.value.subscribe { event in
+            observers.forEach { $0.on(event) }
+        }
     }
 
-}
-
-extension SharedSequence where Element == Bool {
-
-    public static prefix func ! (observable: SharedSequence<SharingStrategy, Element>) -> SharedSequence<SharingStrategy, Element> {
-        return observable.map { !$0 }
+    public func map<T>(_ transform: @escaping (Bool) -> T) -> Driver<T> {
+        return rx.value.asDriver().map(transform)
     }
 
 }
