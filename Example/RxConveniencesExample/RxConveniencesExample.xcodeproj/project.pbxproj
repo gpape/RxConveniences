@@ -338,10 +338,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				209A391123306C6800232C9D /* DemoCollectiveBindings.storyboard in Resources */,
 				20D831CF23296F04002D6714 /* Main.storyboard in Resources */,
 				20D831D123296F05002D6714 /* Assets.xcassets in Resources */,
 				20D831D423296F05002D6714 /* LaunchScreen.storyboard in Resources */,
-				209A391123306C6800232C9D /* DemoCollectiveBindings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,24 +391,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20839BAA23384A4800CE25A0 /* UIView+Rx+.swift in Sources */,
-				20839BAD23384A4800CE25A0 /* RetainingBinder.swift in Sources */,
-				20839BAE23384A4800CE25A0 /* PressEffect.swift in Sources */,
-				20839BB323384A4800CE25A0 /* RxConveniences.swift in Sources */,
-				20839BAF23384A4800CE25A0 /* MapToValue.swift in Sources */,
-				20EC16C82332DD62006F7188 /* DemoVerifyDeinitView.swift in Sources */,
-				20839BB023384A4800CE25A0 /* CollectiveRx.swift in Sources */,
-				209A390F23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift in Sources */,
-				20839BB223384A4800CE25A0 /* RxCasts.swift in Sources */,
+				20839BA823384A4800CE25A0 /* UIActivityIndicatorView+Rx+.swift in Sources */,
 				20839BA923384A4800CE25A0 /* UILabel+Rx+.swift in Sources */,
-				20D831CA23296F04002D6714 /* AppDelegate.swift in Sources */,
-				20839BA723384A4800CE25A0 /* RxOperators.swift in Sources */,
-				20839BA623384A4800CE25A0 /* Driver+.swift in Sources */,
-				20839BB123384A4800CE25A0 /* RxMath.swift in Sources */,
-				20D831CC23296F04002D6714 /* MainViewController.swift in Sources */,
+				20839BAA23384A4800CE25A0 /* UIView+Rx+.swift in Sources */,
 				20839BAB23384A4800CE25A0 /* UISlider+Rx+.swift in Sources */,
 				20839BAC23384A4800CE25A0 /* UISwitch+Rx+.swift in Sources */,
-				20839BA823384A4800CE25A0 /* UIActivityIndicatorView+Rx+.swift in Sources */,
+				20839BB023384A4800CE25A0 /* CollectiveRx.swift in Sources */,
+				20839BA623384A4800CE25A0 /* Driver+.swift in Sources */,
+				20839BAF23384A4800CE25A0 /* MapToValue.swift in Sources */,
+				20839BAE23384A4800CE25A0 /* PressEffect.swift in Sources */,
+				20839BAD23384A4800CE25A0 /* RetainingBinder.swift in Sources */,
+				20839BB223384A4800CE25A0 /* RxCasts.swift in Sources */,
+				20839BB323384A4800CE25A0 /* RxConveniences.swift in Sources */,
+				20839BB123384A4800CE25A0 /* RxMath.swift in Sources */,
+				20839BA723384A4800CE25A0 /* RxOperators.swift in Sources */,
+				209A390F23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift in Sources */,
+				20EC16C82332DD62006F7188 /* DemoVerifyDeinitView.swift in Sources */,
+				20D831CA23296F04002D6714 /* AppDelegate.swift in Sources */,
+				20D831CC23296F04002D6714 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
