@@ -48,6 +48,14 @@ private extension DemoCollectiveBindingsViewController {
             )
             .disposed(by: bag)
 
+        if #available(iOS 13, *) {
+        } else {
+            lightsOn
+                .void()
+                .bind(to: rx.setNeedsStatusBarAppearanceUpdate)
+                .disposed(by: bag)
+        }
+
     }
 
 }
@@ -73,6 +81,14 @@ final class DemoCollectiveBindingsViewController: UIViewController {
     @IBOutlet private var tintableViews: [UIView]!
     @IBOutlet private var verifyDeinitViews: [UIView]!
     private let bag = DisposeBag()
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if #available(iOS 13, *) {
+            return .default
+        } else {
+            return `switch`.isOn ? .default : .lightContent
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

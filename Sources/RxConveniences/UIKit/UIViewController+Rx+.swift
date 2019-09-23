@@ -1,5 +1,5 @@
 //
-//  RxCasts.swift
+//  UIViewController+Rx+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,30 +22,16 @@
 //  THE SOFTWARE.
 //
 
-import CoreGraphics
 import RxCocoa
 import RxSwift
+import UIKit
 
-extension ObservableType {
-    func void() -> Observable<Void> {
-        return map { _ in () }
-    }
-}
+extension Reactive where Base: UIViewController {
 
-extension ObservableType where Element: BinaryFloatingPoint {
-    func cgFloat() -> Observable<CGFloat> {
-        return map(CGFloat.init)
+    public var setNeedsStatusBarAppearanceUpdate: Binder<Void> {
+        return Binder(base) { base, _ in
+            base.setNeedsStatusBarAppearanceUpdate()
+        }
     }
-}
 
-extension SharedSequence {
-    func void() -> SharedSequence<SharingStrategy, Void> {
-        return map { _ in () }
-    }
-}
-
-extension SharedSequence where Element: BinaryFloatingPoint {
-    func cgFloat() -> SharedSequence<SharingStrategy, CGFloat> {
-        return map(CGFloat.init)
-    }
 }

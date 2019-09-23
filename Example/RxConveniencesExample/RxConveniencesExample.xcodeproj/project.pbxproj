@@ -21,6 +21,7 @@
 		20839BB123384A4800CE25A0 /* RxMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839BA323384A4800CE25A0 /* RxMath.swift */; };
 		20839BB223384A4800CE25A0 /* RxCasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839BA423384A4800CE25A0 /* RxCasts.swift */; };
 		20839BB323384A4800CE25A0 /* RxConveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839BA523384A4800CE25A0 /* RxConveniences.swift */; };
+		20839BB523384FF700CE25A0 /* UIViewController+Rx+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839BB423384FF700CE25A0 /* UIViewController+Rx+.swift */; };
 		209A390F23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A390E23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift */; };
 		209A391123306C6800232C9D /* DemoCollectiveBindings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209A391023306C6800232C9D /* DemoCollectiveBindings.storyboard */; };
 		20D831CA23296F04002D6714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831C923296F04002D6714 /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 		20839BA323384A4800CE25A0 /* RxMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMath.swift; sourceTree = "<group>"; };
 		20839BA423384A4800CE25A0 /* RxCasts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCasts.swift; sourceTree = "<group>"; };
 		20839BA523384A4800CE25A0 /* RxConveniences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxConveniences.swift; sourceTree = "<group>"; };
+		20839BB423384FF700CE25A0 /* UIViewController+Rx+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx+.swift"; sourceTree = "<group>"; };
 		209A390E23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCollectiveBindingsViewController.swift; sourceTree = "<group>"; };
 		209A391023306C6800232C9D /* DemoCollectiveBindings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DemoCollectiveBindings.storyboard; sourceTree = "<group>"; };
 		20D831C623296F04002D6714 /* RxConveniencesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxConveniencesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 				20839B9A23384A4800CE25A0 /* UIActivityIndicatorView+Rx+.swift */,
 				20839B9B23384A4800CE25A0 /* UILabel+Rx+.swift */,
 				20839B9C23384A4800CE25A0 /* UIView+Rx+.swift */,
+				20839BB423384FF700CE25A0 /* UIViewController+Rx+.swift */,
 				20839B9D23384A4800CE25A0 /* UISlider+Rx+.swift */,
 				20839B9E23384A4800CE25A0 /* UISwitch+Rx+.swift */,
 			);
@@ -394,6 +397,7 @@
 				20839BA823384A4800CE25A0 /* UIActivityIndicatorView+Rx+.swift in Sources */,
 				20839BA923384A4800CE25A0 /* UILabel+Rx+.swift in Sources */,
 				20839BAA23384A4800CE25A0 /* UIView+Rx+.swift in Sources */,
+				20839BB523384FF700CE25A0 /* UIViewController+Rx+.swift in Sources */,
 				20839BAB23384A4800CE25A0 /* UISlider+Rx+.swift in Sources */,
 				20839BAC23384A4800CE25A0 /* UISwitch+Rx+.swift in Sources */,
 				20839BB023384A4800CE25A0 /* CollectiveRx.swift in Sources */,
