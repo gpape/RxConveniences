@@ -32,6 +32,7 @@
 		20D831DF23296F05002D6714 /* RxConveniencesExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831DE23296F05002D6714 /* RxConveniencesExampleTests.swift */; };
 		20D831EA23296F05002D6714 /* RxConveniencesExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831E923296F05002D6714 /* RxConveniencesExampleUITests.swift */; };
 		20EC16C82332DD62006F7188 /* DemoVerifyDeinitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC16C72332DD62006F7188 /* DemoVerifyDeinitView.swift */; };
+		20EF738C2339117500D5DA6F /* Trigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF738B2339117500D5DA6F /* Trigger.swift */; };
 		402644EB79C745172A19AFCB /* libPods-RxConveniencesExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E60675A9ABFDBF9E62C0FE /* libPods-RxConveniencesExample.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		20D831E923296F05002D6714 /* RxConveniencesExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxConveniencesExampleUITests.swift; sourceTree = "<group>"; };
 		20D831EB23296F05002D6714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20EC16C72332DD62006F7188 /* DemoVerifyDeinitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoVerifyDeinitView.swift; sourceTree = "<group>"; };
+		20EF738B2339117500D5DA6F /* Trigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trigger.swift; sourceTree = "<group>"; };
 		3420226E214CDC02708F691D /* Pods-RxConveniencesExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxConveniencesExample.release.xcconfig"; path = "Target Support Files/Pods-RxConveniencesExample/Pods-RxConveniencesExample.release.xcconfig"; sourceTree = "<group>"; };
 		AB821039F7FB7E61633E2741 /* Pods-RxConveniencesExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxConveniencesExample.debug.xcconfig"; path = "Target Support Files/Pods-RxConveniencesExample/Pods-RxConveniencesExample.debug.xcconfig"; sourceTree = "<group>"; };
 		C3E60675A9ABFDBF9E62C0FE /* libPods-RxConveniencesExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RxConveniencesExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,7 @@
 				20839BA523384A4800CE25A0 /* RxConveniences.swift */,
 				20839BA323384A4800CE25A0 /* RxMath.swift */,
 				20839B9823384A4800CE25A0 /* RxOperators.swift */,
+				20EF738B2339117500D5DA6F /* Trigger.swift */,
 			);
 			path = RxConveniences;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				20839BB323384A4800CE25A0 /* RxConveniences.swift in Sources */,
 				20839BB123384A4800CE25A0 /* RxMath.swift in Sources */,
 				20839BA723384A4800CE25A0 /* RxOperators.swift in Sources */,
+				20EF738C2339117500D5DA6F /* Trigger.swift in Sources */,
 				209A390F23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift in Sources */,
 				20EC16C82332DD62006F7188 /* DemoVerifyDeinitView.swift in Sources */,
 				20D831CA23296F04002D6714 /* AppDelegate.swift in Sources */,

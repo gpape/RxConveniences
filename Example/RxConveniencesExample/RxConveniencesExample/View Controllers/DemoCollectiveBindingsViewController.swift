@@ -51,8 +51,7 @@ private extension DemoCollectiveBindingsViewController {
         if #available(iOS 13, *) {
         } else {
             lightsOn
-                .void()
-                .bind(to: rx.setNeedsStatusBarAppearanceUpdate)
+                .trigger(rx.setNeedsStatusBarAppearanceUpdate)
                 .disposed(by: bag)
         }
 
