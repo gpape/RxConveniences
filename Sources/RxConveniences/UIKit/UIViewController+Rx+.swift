@@ -22,12 +22,15 @@
 //  THE SOFTWARE.
 //
 
+// MARK: - Additional reactive extensions
+
 import RxCocoa
 import RxSwift
 import UIKit
 
 extension Reactive where Base: UIViewController {
 
+    /// Bindable sink for the view controller's `setNeedsStatusBarAppearanceUpdate` property.
     public var setNeedsStatusBarAppearanceUpdate: Binder<Void> {
         return Binder(base) { base, _ in
             base.setNeedsStatusBarAppearanceUpdate()

@@ -27,6 +27,7 @@ import RxSwift
 
 extension ObservableType where Element == Bool {
 
+    /// Apply logical negation to a boolean observable.
     public static prefix func ! (observable: Self) -> Observable<Bool> {
         return observable.map { !$0 }
     }
@@ -35,6 +36,7 @@ extension ObservableType where Element == Bool {
 
 extension SharedSequence where Element == Bool {
 
+    /// Apply logical negation to a boolean shared sequence.
     public static prefix func ! (observable: SharedSequence<SharingStrategy, Element>) -> SharedSequence<SharingStrategy, Element> {
         return observable.map { !$0 }
     }

@@ -22,12 +22,15 @@
 //  THE SOFTWARE.
 //
 
+// MARK: - Additional reactive extensions
+
 import UIKit
 import RxCocoa
 import RxSwift
 
 extension Reactive where Base: UIActivityIndicatorView {
 
+    /// Bindable sink for the view's `color` property.
     public var color: Binder<UIColor> {
         return Binder(base) { view, color in
             view.color = color
@@ -36,10 +39,13 @@ extension Reactive where Base: UIActivityIndicatorView {
 
 }
 
+// MARK: - Collective reactive extensions
+
 import CollectiveSwift
 
 extension Reactive where Base: CollectiveType, Base.Element: UIActivityIndicatorView {
 
+    /// Bindable sink for the collected views' `color` property.
     public var color: RetainingBinder<UIColor> {
         return RetainingBinder(base) { base, value in
             base.base.forEach { $0.color = value }

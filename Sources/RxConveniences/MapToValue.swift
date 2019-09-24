@@ -27,6 +27,7 @@ import RxSwift
 
 extension ObservableType {
 
+    /// Maps an observable directly to a value.
     public func map<T>(to value: T) -> Observable<T> {
         return map { _ in value }
     }
@@ -35,6 +36,7 @@ extension ObservableType {
 
 extension SharedSequenceConvertibleType {
 
+    /// Maps a shared sequence directly to a value.
     public func map<T>(to value: T) -> SharedSequence<SharingStrategy, T> {
         return map { _ in value }
     }

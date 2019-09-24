@@ -27,10 +27,12 @@ import RxCocoa
 
 extension ObservableType where Element: FloatingPoint {
 
+    /// Clamps elements to between 0 and 1.
     public func clamp() -> Observable<Element> {
         return clamp(min: 0, max: 1)
     }
 
+    /// Clamps elements to between `min` and `max`.
     public func clamp(min: Element, max: Element) -> Observable<Element> {
         return map { n in
             let v = n < min ? min : n
@@ -42,10 +44,12 @@ extension ObservableType where Element: FloatingPoint {
 
 extension SharedSequence where Element: FloatingPoint {
 
+    /// Clamps elements to between 0 and 1.
     public func clamp() -> SharedSequence<SharingStrategy, Element> {
         return clamp(min: 0, max: 1)
     }
 
+    /// Clamps elements to between `min` and `max`.
     public func clamp(min: Element, max: Element) -> SharedSequence<SharingStrategy, Element> {
         return map { n in
             let v = n < min ? min : n

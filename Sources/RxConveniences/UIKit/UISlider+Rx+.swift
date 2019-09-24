@@ -28,6 +28,8 @@ import UIKit
 
 extension UISlider {
 
+    /// Directly bind the slider's `rx.value` to the given observer(s);
+    /// the meaning being considered clear enough from the context.
     public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element: BinaryFloatingPoint {
         return rx.value.subscribe { event in
             switch event {
@@ -42,6 +44,9 @@ extension UISlider {
         }
     }
 
+    /// Directly output the slider's `rx.value` as a `Driver`, subject to a
+    /// mapping transform; the meaning being considered clear enough from the
+    /// context.
     public func map<T>(_ transform: @escaping (Float) -> T) -> Driver<T> {
         return rx.value.asDriver().map(transform)
     }

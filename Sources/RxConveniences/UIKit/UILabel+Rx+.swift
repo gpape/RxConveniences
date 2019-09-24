@@ -22,12 +22,15 @@
 //  THE SOFTWARE.
 //
 
+// MARK: - Additional reactive extensions
+
 import RxCocoa
 import RxSwift
 import UIKit
 
 extension Reactive where Base: UILabel {
 
+    /// Bindable sink for the view's `textColor` property.
     public var textColor: Binder<UIColor?> {
         return Binder(base) { base, value in
             base.textColor = value
@@ -36,10 +39,13 @@ extension Reactive where Base: UILabel {
 
 }
 
+// MARK: - Collective reactive extensions
+
 import CollectiveSwift
 
 extension Reactive where Base: CollectiveType, Base.Element: UILabel {
 
+    /// Bindable sink for the collected views' `textColor` property.
     public var textColor: RetainingBinder<UIColor> {
         return RetainingBinder(base) { base, value in
             base.base.forEach { $0.textColor = value }

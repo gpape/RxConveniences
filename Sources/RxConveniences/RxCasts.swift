@@ -27,25 +27,37 @@ import RxCocoa
 import RxSwift
 
 extension ObservableType {
+
+    /// Erases the type of an observable.
     func void() -> Observable<Void> {
         return map { _ in () }
     }
+
 }
 
 extension ObservableType where Element: BinaryFloatingPoint {
+
+    /// Casts a floating-point observable to `CGFloat`, useful for UIKit.
     func cgFloat() -> Observable<CGFloat> {
         return map(CGFloat.init)
     }
+
 }
 
 extension SharedSequence {
+
+    /// Erases the type of a shared sequence.
     func void() -> SharedSequence<SharingStrategy, Void> {
         return map { _ in () }
     }
+
 }
 
 extension SharedSequence where Element: BinaryFloatingPoint {
+
+    /// Casts a floating-point shared sequence to `CGFloat`, useful for UIKit.
     func cgFloat() -> SharedSequence<SharingStrategy, CGFloat> {
         return map(CGFloat.init)
     }
+
 }

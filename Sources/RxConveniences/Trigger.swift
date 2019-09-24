@@ -27,10 +27,12 @@ import RxSwift
 
 extension ObservableType {
 
+    /// Subscribe a void observer to all events; equivalent to `void().bind(to:)`.
     public func trigger<Observer: ObserverType>(_ observer: Observer) -> Disposable where Observer.Element == Void {
         return void().bind(to: observer)
     }
 
+    /// Convenience for `trigger`ing multiple observers.
     public func trigger<Observer: ObserverType>(_ observers: Observer...) -> Disposable where Observer.Element == Void {
         return CompositeDisposable(disposables: observers.map { self.trigger($0) })
     }

@@ -28,6 +28,8 @@
 import RxSwift
 
 /// Analogous to `RxCocoa.Binder`, but retains its target.
+///
+/// This helps us do things like `all.rx`.
 public struct RetainingBinder<Value>: ObserverType {
 
     public typealias Element = Value
