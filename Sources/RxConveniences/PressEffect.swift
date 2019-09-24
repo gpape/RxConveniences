@@ -28,6 +28,8 @@ import UIKit
 
 extension Reactive where Base: UIButton {
 
+    /// Adds a visual press effect on button touch events, either to
+    /// self or to another view if specified.
     public func addPressEffect(on view: UIView? = nil) -> Disposable {
 
         let view = view ?? base

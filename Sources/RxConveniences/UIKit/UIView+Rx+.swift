@@ -1,5 +1,5 @@
 //
-//  UIView+MoreRx.swift
+//  UIView+Rx+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,25 +22,29 @@
 //  THE SOFTWARE.
 //
 
-import CollectiveSwift
+// MARK: - Additional reactive extensions
+
 import RxCocoa
 import RxSwift
 import UIKit
 
 extension Reactive where Base: UIView {
 
+    /// Bindable sink for the layer's `borderColor` property.
     public var borderColor: Binder<UIColor?> {
         return Binder(base) { base, value in
             base.layer.borderColor = value?.cgColor
         }
     }
 
+    /// Bindable sink for the view's `tintColor` property.
     public var tintColor: Binder<UIColor> {
         return Binder(base) { base, value in
             base.tintColor = value
         }
     }
 
+    /// Bindable sink for the view's `transform` property.
     public var transform: Binder<CGAffineTransform> {
         return Binder(base) { base, value in
             base.transform = value
@@ -49,64 +53,59 @@ extension Reactive where Base: UIView {
 
 }
 
-extension Reactive where Base: Collective<UIView> {
+// MARK: - Collective reactive extensions
 
+import CollectiveSwift
+
+extension Reactive where Base: CollectiveType, Base.Element: UIView {
+
+    /// Bindable sink for the collected views' `alpha` property.
     public var alpha: RetainingBinder<CGFloat> {
         return RetainingBinder(base) { base, value in
-            base.alpha = value
+            base.base.forEach { $0.alpha = value }
         }
     }
 
-    public var backgroundColor: RetainingBinder<UIColor?> {
+    /// Bindable sink for the collected views' `backgroundColor` property.
+    public var backgroundColor: RetainingBinder<UIColor> {
         return RetainingBinder(base) { base, value in
-            base.backgroundColor = value
+            base.base.forEach { $0.backgroundColor = value }
         }
     }
 
-    public var borderColor: RetainingBinder<UIColor?> {
+    /// Bindable sink for the collected layers' `borderColor` property.
+    public var borderColor: RetainingBinder<UIColor> {
         return RetainingBinder(base) { base, value in
-            base.borderColor = value
+            base.base.forEach { $0.layer.borderColor = value.cgColor }
         }
     }
 
+    /// Bindable sink for the collected views' `isHidden` property.
     public var isHidden: RetainingBinder<Bool> {
         return RetainingBinder(base) { base, value in
-            base.isHidden = value
+            base.base.forEach { $0.isHidden = value }
         }
     }
 
+    /// Bindable sink for the collected views' `isUserInteractionEnabled` property.
     public var isUserInteractionEnabled: RetainingBinder<Bool> {
         return RetainingBinder(base) { base, value in
-            base.isUserInteractionEnabled = value
+            base.base.forEach { $0.isUserInteractionEnabled = value }
         }
     }
 
+    /// Bindable sink for the collected views' `tintColor` property.
     public var tintColor: RetainingBinder<UIColor> {
         return RetainingBinder(base) { base, value in
-            base.tintColor = value
+            base.base.forEach { $0.tintColor = value }
         }
     }
 
+    /// Bindable sink for the collected views' `transform` property.
     public var transform: RetainingBinder<CGAffineTransform> {
         return RetainingBinder(base) { base, value in
-            base.transform = value
+            base.base.forEach { $0.transform = value }
         }
-    }
-
-}
-
-// TODO: fold collective support back in
-
-extension Collective where Element: UIView {
-
-    public var borderColor: UIColor? {
-        get { Collective.gettersAreNotSupportedFailure() }
-        set { base.forEach { $0.layer.borderColor = newValue?.cgColor } }
-    }
-
-    public var isUserInteractionEnabled: Bool {
-        get { Collective.gettersAreNotSupportedFailure() }
-        set { base.forEach { $0.isUserInteractionEnabled = newValue } }
     }
 
 }

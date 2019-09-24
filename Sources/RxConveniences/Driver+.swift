@@ -1,5 +1,5 @@
 //
-//  Operators.swift
+//  Driver+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,12 +22,16 @@
 //  THE SOFTWARE.
 //
 
+import RxCocoa
 import RxSwift
 
-extension ObservableType where Element == Bool {
+extension Driver {
 
-    public static prefix func ! (observable: Self) -> Observable<Bool> {
-        return observable.map { !$0 }
+    /// Convenience function to `drive` multiple observers.
+    public func drive<T: ObserverType>(_ observers: T...) -> Disposable where T.Element == Element {
+        return asSharedSequence().asObservable().subscribe { event in
+            observers.forEach { $0.on(event) }
+        }
     }
 
 }

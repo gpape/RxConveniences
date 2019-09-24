@@ -1,5 +1,5 @@
 PODS:
-  - CollectiveSwift (2.0.1)
+  - CollectiveSwift (2.1.0)
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -8,7 +8,7 @@ PODS:
   - RxSwift (5.0.0)
 
 DEPENDENCIES:
-  - CollectiveSwift (~> 2.0)
+  - CollectiveSwift (~> 2.1)
   - RxCocoa (~> 5.0)
   - RxRelay (~> 5.0)
   - RxSwift (~> 5.0)
@@ -21,11 +21,11 @@ SPEC REPOS:
     - RxSwift
 
 SPEC CHECKSUMS:
-  CollectiveSwift: 13cc52b4aa6867a630e3be43ff6f7812dfb5c3d4
+  CollectiveSwift: 791dca026e041a200d4a4b3d15be55f7f7748bc1
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
 
-PODFILE CHECKSUM: da9c84d3ba3ef7ea7e8c20b34a6376097f554358
+PODFILE CHECKSUM: 3d42e45c23fc28bc1f9a5d0d1239d502b869e346
 
 COCOAPODS: 1.7.5

@@ -27,16 +27,16 @@
 
 import RxSwift
 
-// TODO: verify memory management
-
 /// Analogous to `RxCocoa.Binder`, but retains its target.
+///
+/// This helps us do things like `all.rx`.
 public struct RetainingBinder<Value>: ObserverType {
 
     public typealias Element = Value
 
     private let binding: (Event<Value>) -> Void
 
-    public init<Target: AnyObject>(_ target: Target, scheduler: ImmediateSchedulerType = MainScheduler(), binding: @escaping (Target, Value) -> Void) {
+    public init<Target>(_ target: Target, scheduler: ImmediateSchedulerType = MainScheduler(), binding: @escaping (Target, Value) -> Void) {
         self.binding = { event in
             switch event {
             case .next(let element):

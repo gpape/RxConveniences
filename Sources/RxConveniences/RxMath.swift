@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  RxMath.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -23,38 +23,38 @@
 //
 
 import RxSwift
-import UIKit
+import RxCocoa
 
-// MARK: - The gist:
+extension ObservableType where Element: FloatingPoint {
 
-private extension MainViewController {
+    /// Clamps elements to between 0 and 1.
+    public func clamp() -> Observable<Element> {
+        return clamp(min: 0, max: 1)
+    }
 
-    func configurePressEffect() {
-        button.rx.addPressEffect().disposed(by: bag)
+    /// Clamps elements to between `min` and `max`.
+    public func clamp(min: Element, max: Element) -> Observable<Element> {
+        return map { n in
+            let v = n < min ? min : n
+            return v > max ? max : v
+        }
     }
 
 }
 
-// MARK: -
+extension SharedSequence where Element: FloatingPoint {
 
-final class MainViewController: UIViewController {
-
-    @IBOutlet private weak var button: UIButton!
-    private let bag = DisposeBag()
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        button.layer.cornerRadius = button.bounds.height / 2
+    /// Clamps elements to between 0 and 1.
+    public func clamp() -> SharedSequence<SharingStrategy, Element> {
+        return clamp(min: 0, max: 1)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        button.layer.borderColor = UIColor.black.cgColor
-        configurePressEffect()
-    }
-
-    @IBAction private func press(_ sender: Any) {
-        present(UIStoryboard(name: "DemoCollectiveBindings", bundle: nil).instantiateInitialViewController()!, animated: true, completion: nil)
+    /// Clamps elements to between `min` and `max`.
+    public func clamp(min: Element, max: Element) -> SharedSequence<SharingStrategy, Element> {
+        return map { n in
+            let v = n < min ? min : n
+            return v > max ? max : v
+        }
     }
 
 }

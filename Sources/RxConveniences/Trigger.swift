@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  Trigger.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,39 +22,19 @@
 //  THE SOFTWARE.
 //
 
+import RxCocoa
 import RxSwift
-import UIKit
 
-// MARK: - The gist:
+extension ObservableType {
 
-private extension MainViewController {
-
-    func configurePressEffect() {
-        button.rx.addPressEffect().disposed(by: bag)
+    /// Subscribe a void observer to all events; equivalent to `void().bind(to:)`.
+    public func trigger<Observer: ObserverType>(_ observer: Observer) -> Disposable where Observer.Element == Void {
+        return void().bind(to: observer)
     }
 
-}
-
-// MARK: -
-
-final class MainViewController: UIViewController {
-
-    @IBOutlet private weak var button: UIButton!
-    private let bag = DisposeBag()
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        button.layer.cornerRadius = button.bounds.height / 2
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        button.layer.borderColor = UIColor.black.cgColor
-        configurePressEffect()
-    }
-
-    @IBAction private func press(_ sender: Any) {
-        present(UIStoryboard(name: "DemoCollectiveBindings", bundle: nil).instantiateInitialViewController()!, animated: true, completion: nil)
+    /// Convenience for `trigger`ing multiple observers.
+    public func trigger<Observer: ObserverType>(_ observers: Observer...) -> Disposable where Observer.Element == Void {
+        return CompositeDisposable(disposables: observers.map { self.trigger($0) })
     }
 
 }

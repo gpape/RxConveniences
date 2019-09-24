@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		208BEC70232D185A005F05D6 /* RetainingBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC6F232D185A005F05D6 /* RetainingBinder.swift */; };
-		208BEC73232D2158005F05D6 /* UIActivityIndicatorView+MoreRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC72232D2158005F05D6 /* UIActivityIndicatorView+MoreRx.swift */; };
-		208BEC75232D3A94005F05D6 /* UISwitch+MoreRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC74232D3A94005F05D6 /* UISwitch+MoreRx.swift */; };
-		208BEC77232D402C005F05D6 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC76232D402C005F05D6 /* Operators.swift */; };
-		208BEC79232D62E9005F05D6 /* Driver+Conveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC78232D62E9005F05D6 /* Driver+Conveniences.swift */; };
-		208BEC7B232DB810005F05D6 /* Collective+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC7A232DB810005F05D6 /* Collective+Rx.swift */; };
-		208BEC7D232DB851005F05D6 /* UIView+MoreRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BEC7C232DB851005F05D6 /* UIView+MoreRx.swift */; };
+		20839BA623384A4800CE25A0 /* Driver+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839B9723384A4800CE25A0 /* Driver+.swift */; };
+		20839BA723384A4800CE25A0 /* RxOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839B9823384A4800CE25A0 /* RxOperators.swift */; };
+		20839BA823384A4800CE25A0 /* UIActivityIndicatorView+Rx+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839B9A23384A4800CE25A0 /* UIActivityIndicatorView+Rx+.swift */; };
+		20839BA923384A4800CE25A0 /* UILabel+Rx+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839B9B23384A4800CE25A0 /* UILabel+Rx+.swift */; };
+		20839BAA23384A4800CE25A0 /* UIView+Rx+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839B9C23384A4800CE25A0 /* UIView+Rx+.swift */; };
+		20839BAB23384A4800CE25A0 /* UISlider+Rx+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839B9D23384A4800CE25A0 /* UISlider+Rx+.swift */; };
+		20839BAC23384A4800CE25A0 /* UISwitch+Rx+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839B9E23384A4800CE25A0 /* UISwitch+Rx+.swift */; };
+		20839BAD23384A4800CE25A0 /* RetainingBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839B9F23384A4800CE25A0 /* RetainingBinder.swift */; };
+		20839BAE23384A4800CE25A0 /* PressEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839BA023384A4800CE25A0 /* PressEffect.swift */; };
+		20839BAF23384A4800CE25A0 /* MapToValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839BA123384A4800CE25A0 /* MapToValue.swift */; };
+		20839BB023384A4800CE25A0 /* CollectiveRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839BA223384A4800CE25A0 /* CollectiveRx.swift */; };
+		20839BB123384A4800CE25A0 /* RxMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839BA323384A4800CE25A0 /* RxMath.swift */; };
+		20839BB223384A4800CE25A0 /* RxCasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839BA423384A4800CE25A0 /* RxCasts.swift */; };
+		20839BB323384A4800CE25A0 /* RxConveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839BA523384A4800CE25A0 /* RxConveniences.swift */; };
+		20839BB523384FF700CE25A0 /* UIViewController+Rx+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20839BB423384FF700CE25A0 /* UIViewController+Rx+.swift */; };
+		209A390F23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A390E23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift */; };
+		209A391123306C6800232C9D /* DemoCollectiveBindings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209A391023306C6800232C9D /* DemoCollectiveBindings.storyboard */; };
 		20D831CA23296F04002D6714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831C923296F04002D6714 /* AppDelegate.swift */; };
 		20D831CC23296F04002D6714 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831CB23296F04002D6714 /* MainViewController.swift */; };
 		20D831CF23296F04002D6714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20D831CD23296F04002D6714 /* Main.storyboard */; };
@@ -21,9 +31,8 @@
 		20D831D423296F05002D6714 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20D831D223296F05002D6714 /* LaunchScreen.storyboard */; };
 		20D831DF23296F05002D6714 /* RxConveniencesExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831DE23296F05002D6714 /* RxConveniencesExampleTests.swift */; };
 		20D831EA23296F05002D6714 /* RxConveniencesExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D831E923296F05002D6714 /* RxConveniencesExampleUITests.swift */; };
-		20E6C9BC232AE30300004B69 /* PressEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6C9B9232AE30300004B69 /* PressEffect.swift */; };
-		20E6C9BD232AE30300004B69 /* MapToValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6C9BA232AE30300004B69 /* MapToValue.swift */; };
-		20E6C9BE232AE30300004B69 /* RxConveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6C9BB232AE30300004B69 /* RxConveniences.swift */; };
+		20EC16C82332DD62006F7188 /* DemoVerifyDeinitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC16C72332DD62006F7188 /* DemoVerifyDeinitView.swift */; };
+		20EF738C2339117500D5DA6F /* Trigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF738B2339117500D5DA6F /* Trigger.swift */; };
 		402644EB79C745172A19AFCB /* libPods-RxConveniencesExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E60675A9ABFDBF9E62C0FE /* libPods-RxConveniencesExample.a */; };
 /* End PBXBuildFile section */
 
@@ -45,13 +54,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		208BEC6F232D185A005F05D6 /* RetainingBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetainingBinder.swift; sourceTree = "<group>"; };
-		208BEC72232D2158005F05D6 /* UIActivityIndicatorView+MoreRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+MoreRx.swift"; sourceTree = "<group>"; };
-		208BEC74232D3A94005F05D6 /* UISwitch+MoreRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISwitch+MoreRx.swift"; sourceTree = "<group>"; };
-		208BEC76232D402C005F05D6 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
-		208BEC78232D62E9005F05D6 /* Driver+Conveniences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Driver+Conveniences.swift"; sourceTree = "<group>"; };
-		208BEC7A232DB810005F05D6 /* Collective+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collective+Rx.swift"; sourceTree = "<group>"; };
-		208BEC7C232DB851005F05D6 /* UIView+MoreRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+MoreRx.swift"; sourceTree = "<group>"; };
+		20839B9723384A4800CE25A0 /* Driver+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Driver+.swift"; sourceTree = "<group>"; };
+		20839B9823384A4800CE25A0 /* RxOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxOperators.swift; sourceTree = "<group>"; };
+		20839B9A23384A4800CE25A0 /* UIActivityIndicatorView+Rx+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Rx+.swift"; sourceTree = "<group>"; };
+		20839B9B23384A4800CE25A0 /* UILabel+Rx+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Rx+.swift"; sourceTree = "<group>"; };
+		20839B9C23384A4800CE25A0 /* UIView+Rx+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Rx+.swift"; sourceTree = "<group>"; };
+		20839B9D23384A4800CE25A0 /* UISlider+Rx+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISlider+Rx+.swift"; sourceTree = "<group>"; };
+		20839B9E23384A4800CE25A0 /* UISwitch+Rx+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Rx+.swift"; sourceTree = "<group>"; };
+		20839B9F23384A4800CE25A0 /* RetainingBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetainingBinder.swift; sourceTree = "<group>"; };
+		20839BA023384A4800CE25A0 /* PressEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressEffect.swift; sourceTree = "<group>"; };
+		20839BA123384A4800CE25A0 /* MapToValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapToValue.swift; sourceTree = "<group>"; };
+		20839BA223384A4800CE25A0 /* CollectiveRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectiveRx.swift; sourceTree = "<group>"; };
+		20839BA323384A4800CE25A0 /* RxMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMath.swift; sourceTree = "<group>"; };
+		20839BA423384A4800CE25A0 /* RxCasts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCasts.swift; sourceTree = "<group>"; };
+		20839BA523384A4800CE25A0 /* RxConveniences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxConveniences.swift; sourceTree = "<group>"; };
+		20839BB423384FF700CE25A0 /* UIViewController+Rx+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx+.swift"; sourceTree = "<group>"; };
+		209A390E23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCollectiveBindingsViewController.swift; sourceTree = "<group>"; };
+		209A391023306C6800232C9D /* DemoCollectiveBindings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DemoCollectiveBindings.storyboard; sourceTree = "<group>"; };
 		20D831C623296F04002D6714 /* RxConveniencesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxConveniencesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D831C923296F04002D6714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20D831CB23296F04002D6714 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -65,9 +84,8 @@
 		20D831E523296F05002D6714 /* RxConveniencesExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxConveniencesExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D831E923296F05002D6714 /* RxConveniencesExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxConveniencesExampleUITests.swift; sourceTree = "<group>"; };
 		20D831EB23296F05002D6714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20E6C9B9232AE30300004B69 /* PressEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressEffect.swift; sourceTree = "<group>"; };
-		20E6C9BA232AE30300004B69 /* MapToValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapToValue.swift; sourceTree = "<group>"; };
-		20E6C9BB232AE30300004B69 /* RxConveniences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxConveniences.swift; sourceTree = "<group>"; };
+		20EC16C72332DD62006F7188 /* DemoVerifyDeinitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoVerifyDeinitView.swift; sourceTree = "<group>"; };
+		20EF738B2339117500D5DA6F /* Trigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trigger.swift; sourceTree = "<group>"; };
 		3420226E214CDC02708F691D /* Pods-RxConveniencesExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxConveniencesExample.release.xcconfig"; path = "Target Support Files/Pods-RxConveniencesExample/Pods-RxConveniencesExample.release.xcconfig"; sourceTree = "<group>"; };
 		AB821039F7FB7E61633E2741 /* Pods-RxConveniencesExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxConveniencesExample.debug.xcconfig"; path = "Target Support Files/Pods-RxConveniencesExample/Pods-RxConveniencesExample.debug.xcconfig"; sourceTree = "<group>"; };
 		C3E60675A9ABFDBF9E62C0FE /* libPods-RxConveniencesExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RxConveniencesExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,15 +117,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		208BEC71232D2133005F05D6 /* RxCocoa */ = {
+		20839B9523384A4800CE25A0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				208BEC78232D62E9005F05D6 /* Driver+Conveniences.swift */,
-				208BEC72232D2158005F05D6 /* UIActivityIndicatorView+MoreRx.swift */,
-				208BEC74232D3A94005F05D6 /* UISwitch+MoreRx.swift */,
-				208BEC7C232DB851005F05D6 /* UIView+MoreRx.swift */,
+				20839B9623384A4800CE25A0 /* RxConveniences */,
 			);
-			path = RxCocoa;
+			name = Sources;
+			path = ../../../Sources;
+			sourceTree = "<group>";
+		};
+		20839B9623384A4800CE25A0 /* RxConveniences */ = {
+			isa = PBXGroup;
+			children = (
+				20839B9923384A4800CE25A0 /* UIKit */,
+				20839BA223384A4800CE25A0 /* CollectiveRx.swift */,
+				20839B9723384A4800CE25A0 /* Driver+.swift */,
+				20839BA123384A4800CE25A0 /* MapToValue.swift */,
+				20839BA023384A4800CE25A0 /* PressEffect.swift */,
+				20839B9F23384A4800CE25A0 /* RetainingBinder.swift */,
+				20839BA423384A4800CE25A0 /* RxCasts.swift */,
+				20839BA523384A4800CE25A0 /* RxConveniences.swift */,
+				20839BA323384A4800CE25A0 /* RxMath.swift */,
+				20839B9823384A4800CE25A0 /* RxOperators.swift */,
+				20EF738B2339117500D5DA6F /* Trigger.swift */,
+			);
+			path = RxConveniences;
+			sourceTree = "<group>";
+		};
+		20839B9923384A4800CE25A0 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				20839B9A23384A4800CE25A0 /* UIActivityIndicatorView+Rx+.swift */,
+				20839B9B23384A4800CE25A0 /* UILabel+Rx+.swift */,
+				20839B9C23384A4800CE25A0 /* UIView+Rx+.swift */,
+				20839BB423384FF700CE25A0 /* UIViewController+Rx+.swift */,
+				20839B9D23384A4800CE25A0 /* UISlider+Rx+.swift */,
+				20839B9E23384A4800CE25A0 /* UISwitch+Rx+.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		209A390D23306A2200232C9D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				209A391023306C6800232C9D /* DemoCollectiveBindings.storyboard */,
+				209A390E23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift */,
+				20EC16C72332DD62006F7188 /* DemoVerifyDeinitView.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		20D831BD23296F04002D6714 = {
@@ -135,7 +192,8 @@
 		20D831C823296F04002D6714 /* RxConveniencesExample */ = {
 			isa = PBXGroup;
 			children = (
-				20E6C9B7232AE30300004B69 /* Sources */,
+				20839B9523384A4800CE25A0 /* Sources */,
+				209A390D23306A2200232C9D /* View Controllers */,
 				20D831C923296F04002D6714 /* AppDelegate.swift */,
 				20D831CD23296F04002D6714 /* Main.storyboard */,
 				20D831CB23296F04002D6714 /* MainViewController.swift */,
@@ -162,29 +220,6 @@
 				20D831EB23296F05002D6714 /* Info.plist */,
 			);
 			path = RxConveniencesExampleUITests;
-			sourceTree = "<group>";
-		};
-		20E6C9B7232AE30300004B69 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				20E6C9B8232AE30300004B69 /* RxConveniences */,
-			);
-			name = Sources;
-			path = ../../../Sources;
-			sourceTree = "<group>";
-		};
-		20E6C9B8232AE30300004B69 /* RxConveniences */ = {
-			isa = PBXGroup;
-			children = (
-				208BEC71232D2133005F05D6 /* RxCocoa */,
-				208BEC7A232DB810005F05D6 /* Collective+Rx.swift */,
-				20E6C9B9232AE30300004B69 /* PressEffect.swift */,
-				20E6C9BA232AE30300004B69 /* MapToValue.swift */,
-				208BEC76232D402C005F05D6 /* Operators.swift */,
-				208BEC6F232D185A005F05D6 /* RetainingBinder.swift */,
-				20E6C9BB232AE30300004B69 /* RxConveniences.swift */,
-			);
-			path = RxConveniences;
 			sourceTree = "<group>";
 		};
 		8B55FDF1951C076D0F0842DD /* Pods */ = {
@@ -309,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				209A391123306C6800232C9D /* DemoCollectiveBindings.storyboard in Resources */,
 				20D831CF23296F04002D6714 /* Main.storyboard in Resources */,
 				20D831D123296F05002D6714 /* Assets.xcassets in Resources */,
 				20D831D423296F05002D6714 /* LaunchScreen.storyboard in Resources */,
@@ -361,18 +397,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				208BEC75232D3A94005F05D6 /* UISwitch+MoreRx.swift in Sources */,
-				20E6C9BC232AE30300004B69 /* PressEffect.swift in Sources */,
-				208BEC70232D185A005F05D6 /* RetainingBinder.swift in Sources */,
-				208BEC73232D2158005F05D6 /* UIActivityIndicatorView+MoreRx.swift in Sources */,
-				20E6C9BD232AE30300004B69 /* MapToValue.swift in Sources */,
-				20E6C9BE232AE30300004B69 /* RxConveniences.swift in Sources */,
-				208BEC7B232DB810005F05D6 /* Collective+Rx.swift in Sources */,
+				20839BA823384A4800CE25A0 /* UIActivityIndicatorView+Rx+.swift in Sources */,
+				20839BA923384A4800CE25A0 /* UILabel+Rx+.swift in Sources */,
+				20839BAA23384A4800CE25A0 /* UIView+Rx+.swift in Sources */,
+				20839BB523384FF700CE25A0 /* UIViewController+Rx+.swift in Sources */,
+				20839BAB23384A4800CE25A0 /* UISlider+Rx+.swift in Sources */,
+				20839BAC23384A4800CE25A0 /* UISwitch+Rx+.swift in Sources */,
+				20839BB023384A4800CE25A0 /* CollectiveRx.swift in Sources */,
+				20839BA623384A4800CE25A0 /* Driver+.swift in Sources */,
+				20839BAF23384A4800CE25A0 /* MapToValue.swift in Sources */,
+				20839BAE23384A4800CE25A0 /* PressEffect.swift in Sources */,
+				20839BAD23384A4800CE25A0 /* RetainingBinder.swift in Sources */,
+				20839BB223384A4800CE25A0 /* RxCasts.swift in Sources */,
+				20839BB323384A4800CE25A0 /* RxConveniences.swift in Sources */,
+				20839BB123384A4800CE25A0 /* RxMath.swift in Sources */,
+				20839BA723384A4800CE25A0 /* RxOperators.swift in Sources */,
+				20EF738C2339117500D5DA6F /* Trigger.swift in Sources */,
+				209A390F23306BAB00232C9D /* DemoCollectiveBindingsViewController.swift in Sources */,
+				20EC16C82332DD62006F7188 /* DemoVerifyDeinitView.swift in Sources */,
 				20D831CA23296F04002D6714 /* AppDelegate.swift in Sources */,
 				20D831CC23296F04002D6714 /* MainViewController.swift in Sources */,
-				208BEC77232D402C005F05D6 /* Operators.swift in Sources */,
-				208BEC79232D62E9005F05D6 /* Driver+Conveniences.swift in Sources */,
-				208BEC7D232DB851005F05D6 /* UIView+MoreRx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,7 +594,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RxConveniencesExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -569,7 +613,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RxConveniencesExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,66 +16,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="9k3-mB-aE7">
-                                <rect key="frame" x="17" y="37" width="341" height="253"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0X-ic-4d5" userLabel="Header">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPa-l8-oTe">
-                                        <rect key="frame" x="0.0" y="0.0" width="341" height="37"/>
-                                        <state key="normal" title="Button (Press me!)"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o94-dQ-XyE">
-                                        <rect key="frame" x="0.0" y="54" width="341" height="38"/>
-                                        <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="f1y-vZ-I4s">
-                                        <rect key="frame" x="-2" y="108" width="345" height="38"/>
-                                    </slider>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7mv-zt-yTf">
-                                        <rect key="frame" x="0.0" y="162" width="341" height="37"/>
-                                    </activityIndicatorView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_phone_iphone_black_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="Adt-D9-cRv">
-                                        <rect key="frame" x="0.0" y="216" width="341" height="37"/>
-                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Effect Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mS3-0x-0ec">
+                                        <rect key="frame" x="121.5" y="25" width="132.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                            </stackView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1H5-k8-thG">
-                                <rect key="frame" x="163" y="619" width="51" height="31"/>
-                            </switch>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="mS3-0x-0ec" firstAttribute="centerX" secondItem="B0X-ic-4d5" secondAttribute="centerX" id="DKy-Fk-zqe"/>
+                                    <constraint firstItem="mS3-0x-0ec" firstAttribute="centerY" secondItem="B0X-ic-4d5" secondAttribute="centerY" id="GMs-k7-xnF"/>
+                                    <constraint firstAttribute="height" constant="68" id="Th7-E9-qQV"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PV-Bj-Gn4">
+                                <rect key="frame" x="105.5" y="581" width="164" height="52"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <inset key="contentEdgeInsets" minX="39" minY="15" maxX="39" maxY="15"/>
+                                <state key="normal" title="Press me!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="press:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bbm-2b-zPT"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.9882352941176471" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1H5-k8-thG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-17" id="01b-iJ-Xaa"/>
-                            <constraint firstItem="1H5-k8-thG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Isf-xU-VmQ"/>
-                            <constraint firstItem="9k3-mB-aE7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-17" id="PH6-6H-GxP"/>
-                            <constraint firstItem="9k3-mB-aE7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="kS6-Ig-H4J"/>
-                            <constraint firstItem="9k3-mB-aE7" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="1H5-k8-thG" secondAttribute="top" constant="-34" id="kky-nc-x9K"/>
-                            <constraint firstItem="9k3-mB-aE7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="wwR-bK-Daw"/>
+                            <constraint firstItem="B0X-ic-4d5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="0bS-nJ-3J9"/>
+                            <constraint firstItem="1PV-Bj-Gn4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3Bk-DV-31A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1PV-Bj-Gn4" secondAttribute="bottom" constant="34" id="5Xe-B4-Cna"/>
+                            <constraint firstItem="B0X-ic-4d5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9wv-9m-OJT"/>
+                            <constraint firstItem="B0X-ic-4d5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ceL-Mm-h4y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="7mv-zt-yTf" id="9Y2-Sp-rnw"/>
-                        <outlet property="button" destination="RPa-l8-oTe" id="tqL-hB-Cqa"/>
-                        <outlet property="switch" destination="1H5-k8-thG" id="C9s-7r-bAJ"/>
-                        <outletCollection property="tintableViews" destination="RPa-l8-oTe" collectionClass="NSMutableArray" id="yzA-4O-PXh"/>
-                        <outletCollection property="tintableViews" destination="o94-dQ-XyE" collectionClass="NSMutableArray" id="rbg-W4-AKn"/>
-                        <outletCollection property="tintableViews" destination="f1y-vZ-I4s" collectionClass="NSMutableArray" id="9OM-Jt-6fA"/>
-                        <outletCollection property="tintableViews" destination="Adt-D9-cRv" collectionClass="NSMutableArray" id="xdb-SG-QWJ"/>
+                        <outlet property="button" destination="1PV-Bj-Gn4" id="KTi-7x-ukl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="134"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="baseline_phone_iphone_black_48pt" width="48" height="48"/>
-    </resources>
 </document>

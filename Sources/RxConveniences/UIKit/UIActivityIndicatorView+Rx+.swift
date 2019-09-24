@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  UIActivityIndicatorView+Rx+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,39 +22,34 @@
 //  THE SOFTWARE.
 //
 
-import RxSwift
+// MARK: - Additional reactive extensions
+
 import UIKit
+import RxCocoa
+import RxSwift
 
-// MARK: - The gist:
+extension Reactive where Base: UIActivityIndicatorView {
 
-private extension MainViewController {
-
-    func configurePressEffect() {
-        button.rx.addPressEffect().disposed(by: bag)
+    /// Bindable sink for the view's `color` property.
+    public var color: Binder<UIColor> {
+        return Binder(base) { view, color in
+            view.color = color
+        }
     }
 
 }
 
-// MARK: -
+// MARK: - Collective reactive extensions
 
-final class MainViewController: UIViewController {
+import CollectiveSwift
 
-    @IBOutlet private weak var button: UIButton!
-    private let bag = DisposeBag()
+extension Reactive where Base: CollectiveType, Base.Element: UIActivityIndicatorView {
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        button.layer.cornerRadius = button.bounds.height / 2
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        button.layer.borderColor = UIColor.black.cgColor
-        configurePressEffect()
-    }
-
-    @IBAction private func press(_ sender: Any) {
-        present(UIStoryboard(name: "DemoCollectiveBindings", bundle: nil).instantiateInitialViewController()!, animated: true, completion: nil)
+    /// Bindable sink for the collected views' `color` property.
+    public var color: RetainingBinder<UIColor> {
+        return RetainingBinder(base) { base, value in
+            base.base.forEach { $0.color = value }
+        }
     }
 
 }

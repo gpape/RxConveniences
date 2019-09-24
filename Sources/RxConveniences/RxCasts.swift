@@ -1,5 +1,5 @@
 //
-//  Driver+Conveniences.swift
+//  RxCasts.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,15 +22,42 @@
 //  THE SOFTWARE.
 //
 
+import CoreGraphics
 import RxCocoa
 import RxSwift
 
-extension Driver {
+extension ObservableType {
 
-    public func drive<T: ObserverType>(_ observers: T...) -> Disposable where T.Element == Element {
-        return asSharedSequence().asObservable().subscribe { event in
-            observers.forEach { $0.on(event) }
-        }
+    /// Erases the type of an observable.
+    func void() -> Observable<Void> {
+        return map { _ in () }
+    }
+
+}
+
+extension ObservableType where Element: BinaryFloatingPoint {
+
+    /// Casts a floating-point observable to `CGFloat`, useful for UIKit.
+    func cgFloat() -> Observable<CGFloat> {
+        return map(CGFloat.init)
+    }
+
+}
+
+extension SharedSequence {
+
+    /// Erases the type of a shared sequence.
+    func void() -> SharedSequence<SharingStrategy, Void> {
+        return map { _ in () }
+    }
+
+}
+
+extension SharedSequence where Element: BinaryFloatingPoint {
+
+    /// Casts a floating-point shared sequence to `CGFloat`, useful for UIKit.
+    func cgFloat() -> SharedSequence<SharingStrategy, CGFloat> {
+        return map(CGFloat.init)
     }
 
 }

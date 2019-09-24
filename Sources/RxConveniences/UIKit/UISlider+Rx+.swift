@@ -1,5 +1,5 @@
 //
-//  UIActivityIndicatorView+MoreRx.swift
+//  UISlider+Rx+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,16 +22,33 @@
 //  THE SOFTWARE.
 //
 
-import UIKit
 import RxCocoa
 import RxSwift
+import UIKit
 
-extension Reactive where Base: UIActivityIndicatorView {
+extension UISlider {
 
-    public var color: Binder<UIColor> {
-        return Binder(base) { view, color in
-            view.color = color
+    /// Directly bind the slider's `rx.value` to the given observer(s);
+    /// the meaning being considered clear enough from the context.
+    public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element: BinaryFloatingPoint {
+        return rx.value.subscribe { event in
+            switch event {
+            case .next(let oldValue):
+                let newValue = T.Element(oldValue)
+                observers.forEach { $0.onNext(newValue) }
+            case .error(let error):
+                observers.forEach { $0.onError(error) }
+            case .completed:
+                observers.forEach { $0.onCompleted() }
+            }
         }
+    }
+
+    /// Directly output the slider's `rx.value` as a `Driver`, subject to a
+    /// mapping transform; the meaning being considered clear enough from the
+    /// context.
+    public func map<T>(_ transform: @escaping (Float) -> T) -> Driver<T> {
+        return rx.value.asDriver().map(transform)
     }
 
 }

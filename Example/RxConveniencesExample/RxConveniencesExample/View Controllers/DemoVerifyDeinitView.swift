@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  DemoVerifyDeinitView.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -22,39 +22,12 @@
 //  THE SOFTWARE.
 //
 
-import RxSwift
 import UIKit
 
-// MARK: - The gist:
+final class DemoVerifyDeinitView: UIView {
 
-private extension MainViewController {
-
-    func configurePressEffect() {
-        button.rx.addPressEffect().disposed(by: bag)
-    }
-
-}
-
-// MARK: -
-
-final class MainViewController: UIViewController {
-
-    @IBOutlet private weak var button: UIButton!
-    private let bag = DisposeBag()
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        button.layer.cornerRadius = button.bounds.height / 2
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        button.layer.borderColor = UIColor.black.cgColor
-        configurePressEffect()
-    }
-
-    @IBAction private func press(_ sender: Any) {
-        present(UIStoryboard(name: "DemoCollectiveBindings", bundle: nil).instantiateInitialViewController()!, animated: true, completion: nil)
+    deinit {
+        print("verifying that bound views deinit")
     }
 
 }

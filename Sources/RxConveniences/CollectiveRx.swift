@@ -1,5 +1,5 @@
 //
-//  UISwitch+MoreRx.swift
+//  CollectiveRx.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -21,20 +21,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //
-import RxCocoa
+
+import CollectiveSwift
 import RxSwift
-import UIKit
 
-extension UISwitch {
-
-    public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element == Bool {
-        return rx.value.subscribe { event in
-            observers.forEach { $0.on(event) }
-        }
-    }
-
-    public func map<T>(_ transform: @escaping (Bool) -> T) -> Driver<T> {
-        return rx.value.asDriver().map(transform)
-    }
-
+extension Collective: ReactiveCompatible {
 }
