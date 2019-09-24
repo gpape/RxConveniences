@@ -15,4 +15,8 @@ practical RxSwift/RxCocoa code a bit more concise and expressive.
   spec.source = { :git => "https://github.com/gpape/RxConveniences.git", :tag => "#{spec.version}" }
   spec.source_files  = "Sources/**/*.swift"
 
+  spec.dependency 'CollectiveSwift', '~> 2.1'
+  spec.dependency 'RxCocoa', '~> 5.0'
+  spec.dependency 'RxSwift', '~> 5.0'
+
 end
