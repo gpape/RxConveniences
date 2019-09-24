@@ -36,6 +36,8 @@ extension Reactive where Base: UIActivityIndicatorView {
 
 }
 
+import CollectiveSwift
+
 extension Reactive where Base: CollectiveType, Base.Element: UIActivityIndicatorView {
 
     public var color: RetainingBinder<UIColor> {

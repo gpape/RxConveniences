@@ -27,27 +27,3 @@ import RxSwift
 
 extension Collective: ReactiveCompatible {
 }
-
-// MARK: - TODO: move to CollectiveSwift
-
-public protocol CollectiveType {
-    associatedtype Element
-    var base: Array<Element> { get }
-}
-
-extension Collective: CollectiveType {
-}
-
-extension Collective where Element: UIView {
-
-    public var borderColor: UIColor? {
-        get { Collective.gettersAreNotSupportedFailure() }
-        set { base.forEach { $0.layer.borderColor = newValue?.cgColor } }
-    }
-
-    public var isUserInteractionEnabled: Bool {
-        get { Collective.gettersAreNotSupportedFailure() }
-        set { base.forEach { $0.isUserInteractionEnabled = newValue } }
-    }
-
-}

@@ -22,7 +22,6 @@
 //  THE SOFTWARE.
 //
 
-import CollectiveSwift
 import RxCocoa
 import RxSwift
 import UIKit
@@ -48,6 +47,8 @@ extension Reactive where Base: UIView {
     }
 
 }
+
+import CollectiveSwift
 
 extension Reactive where Base: CollectiveType, Base.Element: UIView {
 
