@@ -37,7 +37,7 @@ But I think we can make these both simpler and clearer:
 typedSource.trigger(voidObserver)
 ```
 
-In the case of controls that have obviously typed outputs, like switches and sliders,
+In the case of controls that have obvious typed outputs, like switches and sliders,
 we can bind them directly.  For example, `slider.bind(to:)` is arguably just as
 clear as `slider.rx.value.bind(to:)`.
 
