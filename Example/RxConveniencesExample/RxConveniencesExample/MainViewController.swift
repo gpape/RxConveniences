@@ -30,7 +30,7 @@ import UIKit
 private extension MainViewController {
 
     func configurePressEffect() {
-        button.rx.addPressEffect().disposed(by: bag)
+        button.addPressEffect().disposed(by: bag)
     }
 
 }
