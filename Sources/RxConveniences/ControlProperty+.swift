@@ -1,5 +1,5 @@
 //
-//  UISwitch+Rx+.swift
+//  ControlProperty+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -24,36 +24,24 @@
 
 import RxCocoa
 import RxSwift
-import UIKit
 
-extension Reactive where Base: UISwitch {
+extension ControlProperty {
 
-    /// Equivalent to `value.bind(to:)`, the meaning being considered clear
-    /// enough from the context.
-    public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element == Bool {
-        return value.bind(to: observers)
+    /// Convenience function for binding a `ControlProperty`.
+    public func bind<Observer: ObserverType>(to observers: Observer...) -> Disposable where Observer.Element == Element {
+        return bind(to: observers)
     }
 
-    /// Equivalent to `value.map()`, the meaning being considered clear enough
-    /// from the context.
-    public func map<T>(_ transform: @escaping (Bool) -> T) -> Driver<T> {
-        return value.map(transform)
+    /// Convenience function for binding a `ControlProperty`.
+    public func bind<Observer: ObserverType>(to observers: [Observer]) -> Disposable where Observer.Element == Element {
+        return subscribe { event in
+            observers.forEach { $0.on(event) }
+        }
     }
 
-}
-
-extension UISwitch {
-
-    /// Equivalent to `rx.value.bind(to:)`, the meaning being considered clear
-    /// enough from the context.
-    public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element == Bool {
-        return rx.value.bind(to: observers)
-    }
-
-    /// Equivalent to `rx.value.map()`, the meaning being considered clear enough
-    /// from the context.
-    public func map<T>(_ transform: @escaping (Bool) -> T) -> Driver<T> {
-        return rx.value.map(transform)
+    /// Convenience function for mapping a `ControlProperty`.
+    public func map<T>(_ transform: @escaping (Element) -> T) -> Driver<T> {
+        return asDriver().map(transform)
     }
 
 }
