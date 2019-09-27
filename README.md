@@ -37,16 +37,19 @@ But I think we can make these both simpler and clearer:
 typedSource.trigger(voidObserver)
 ```
 
-In the case of controls that have obvious typed outputs, like switches and sliders,
-we can bind them directly.  For example, `slider.bind(to:)` is arguably just as
-clear as `slider.rx.value.bind(to:)`.
+In the case of controls that have unambiguously typed outputs, like buttons (`Void`),
+switches (`Bool`), and sliders (`Float`), we can bind and map them directly.  For example,
+`slider.bind(to:)` is arguably just as clear as `slider.rx.value.bind(to:)`.
+
+You may prefer, for example, `slider.rx.bind(to:)`, and this is also available.
+If you have a strong preference for one over the other, tell me about it!
 
 ### One-liner button press effect
 
 A nice thing to add to buttons:
 
 ```swift
-button.rx.addPressEffect().disposed(by: ...)
+button.addPressEffect().disposed(by: ...)
 ```
 
 ...and more!

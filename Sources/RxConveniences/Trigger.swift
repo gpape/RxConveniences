@@ -34,6 +34,11 @@ extension ObservableType {
 
     /// Convenience for `trigger`ing multiple observers.
     public func trigger<Observer: ObserverType>(_ observers: Observer...) -> Disposable where Observer.Element == Void {
+        return trigger(observers)
+    }
+
+    /// Convenience for `trigger`ing multiple observers.
+    public func trigger<Observer: ObserverType>(_ observers: [Observer]) -> Disposable where Observer.Element == Void {
         return CompositeDisposable(disposables: observers.map { self.trigger($0) })
     }
 

@@ -1,5 +1,5 @@
 //
-//  PressEffect.swift
+//  ControlProperty+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -24,39 +24,29 @@
 
 import RxCocoa
 import RxSwift
-import UIKit
 
-extension Reactive where Base: UIButton {
+extension ControlProperty {
 
-    /// Adds a visual press effect on button touch events, either to
-    /// self or to another view if specified.
-    public func addPressEffect(on view: UIView? = nil) -> Disposable {
-
-        let view = view ?? base
-
-        let down = base.rx.controlEvent(.touchDown)
-            .map(to: true)
-
-        let up = base.rx.controlEvent([.touchCancel, .touchDragExit, .touchUpInside])
-            .map(to: false)
-
-        return Observable.merge(up, down)
-            .subscribe(onNext: { isPressed in
-                UIView.animate(withDuration: 0.13, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: { [weak view] in
-                    view?.transform = isPressed ? CGAffineTransform(scaleX: 0.9, y: 0.9) : .identity
-                }, completion: nil)
-            })
-
+    /// Convenience function for binding a `ControlProperty`.
+    public func bind<Observer: ObserverType>(to observers: Observer...) -> Disposable where Observer.Element == Element {
+        return bind(to: observers)
     }
 
-}
+    /// Convenience function for binding a `ControlProperty`.
+    public func bind<Observer: ObserverType>(to observers: [Observer]) -> Disposable where Observer.Element == Element {
+        return subscribe { event in
+            observers.forEach { $0.on(event) }
+        }
+    }
 
-extension UIButton {
+    /// Convenience function for mapping a `ControlProperty`.
+    public func map<T>(_ transform: @escaping (Element) -> T) -> Driver<T> {
+        return asDriver().map(transform)
+    }
 
-    /// Equivalent to `rx.addPressEffect()`, the meaning being considered
-    /// clear enough from the context.
-    public func addPressEffect(on view: UIView? = nil) -> Disposable {
-        return rx.addPressEffect(on: view)
+    /// Convenience function for triggers from a `ControlProperty`.
+    public func trigger<Observer: ObserverType>(_ observers: Observer...) -> Disposable where Observer.Element == Void {
+        return asObservable().trigger(observers)
     }
 
 }

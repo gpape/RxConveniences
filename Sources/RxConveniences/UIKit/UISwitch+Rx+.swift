@@ -26,21 +26,34 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-extension UISwitch {
+extension Reactive where Base: UISwitch {
 
-    /// Directly bind the switch's `rx.value` to the given observer(s);
-    /// the meaning being considered clear enough from the context.
+    /// Equivalent to `value.bind(to:)`, the meaning being considered clear
+    /// enough from the context.
     public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element == Bool {
-        return rx.value.subscribe { event in
-            observers.forEach { $0.on(event) }
-        }
+        return value.bind(to: observers)
     }
 
-    /// Directly output the switch's `rx.value` as a `Driver`, subject to a
-    /// mapping transform; the meaning being considered clear enough from the
-    /// context.
+    /// Equivalent to `value.map()`, the meaning being considered clear enough
+    /// from the context.
     public func map<T>(_ transform: @escaping (Bool) -> T) -> Driver<T> {
-        return rx.value.asDriver().map(transform)
+        return value.map(transform)
+    }
+
+}
+
+extension UISwitch {
+
+    /// Equivalent to `rx.value.bind(to:)`, the meaning being considered clear
+    /// enough from the context.
+    public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element == Bool {
+        return rx.value.bind(to: observers)
+    }
+
+    /// Equivalent to `rx.value.map()`, the meaning being considered clear enough
+    /// from the context.
+    public func map<T>(_ transform: @escaping (Bool) -> T) -> Driver<T> {
+        return rx.value.map(transform)
     }
 
 }

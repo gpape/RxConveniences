@@ -30,7 +30,7 @@ import UIKit
 private extension MainViewController {
 
     func configurePressEffect() {
-        button.rx.addPressEffect().disposed(by: bag)
+        button.addPressEffect().disposed(by: bag)
     }
 
 }
@@ -41,6 +41,14 @@ final class MainViewController: UIViewController {
 
     @IBOutlet private weak var button: UIButton!
     private let bag = DisposeBag()
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if #available(iOS 13, *) {
+            return .darkContent
+        } else {
+            return .default
+        }
+    }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

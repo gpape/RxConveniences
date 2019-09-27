@@ -1,5 +1,5 @@
 //
-//  PressEffect.swift
+//  UIButton+Rx+.swift
 //
 //  Copyright (c) 2019 Greg Pape (http://www.gpape.com/)
 //
@@ -28,35 +28,20 @@ import UIKit
 
 extension Reactive where Base: UIButton {
 
-    /// Adds a visual press effect on button touch events, either to
-    /// self or to another view if specified.
-    public func addPressEffect(on view: UIView? = nil) -> Disposable {
-
-        let view = view ?? base
-
-        let down = base.rx.controlEvent(.touchDown)
-            .map(to: true)
-
-        let up = base.rx.controlEvent([.touchCancel, .touchDragExit, .touchUpInside])
-            .map(to: false)
-
-        return Observable.merge(up, down)
-            .subscribe(onNext: { isPressed in
-                UIView.animate(withDuration: 0.13, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: { [weak view] in
-                    view?.transform = isPressed ? CGAffineTransform(scaleX: 0.9, y: 0.9) : .identity
-                }, completion: nil)
-            })
-
+    /// Equivalent to `tap.trigger()`, the meaning being considered clear
+    /// enough from the context.
+    public func trigger<Observer: ObserverType>(_ observers: Observer...) -> Disposable where Observer.Element == Void {
+        return tap.trigger(observers)
     }
 
 }
 
 extension UIButton {
 
-    /// Equivalent to `rx.addPressEffect()`, the meaning being considered
-    /// clear enough from the context.
-    public func addPressEffect(on view: UIView? = nil) -> Disposable {
-        return rx.addPressEffect(on: view)
+    /// Equivalent to `rx.tap.trigger`, the meaning being considered clear
+    /// enough from the context.
+    public func trigger<Observer: ObserverType>(_ observers: Observer...) -> Disposable where Observer.Element == Void {
+        return rx.tap.trigger(observers)
     }
 
 }
