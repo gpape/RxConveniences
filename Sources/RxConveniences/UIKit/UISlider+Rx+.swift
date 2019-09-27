@@ -26,29 +26,34 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-extension UISlider {
+extension Reactive where Base: UISlider {
 
-    /// Directly bind the slider's `rx.value` to the given observer(s);
-    /// the meaning being considered clear enough from the context.
-    public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element: BinaryFloatingPoint {
-        return rx.value.subscribe { event in
-            switch event {
-            case .next(let oldValue):
-                let newValue = T.Element(oldValue)
-                observers.forEach { $0.onNext(newValue) }
-            case .error(let error):
-                observers.forEach { $0.onError(error) }
-            case .completed:
-                observers.forEach { $0.onCompleted() }
-            }
-        }
+    /// Equivalent to `value.bind(to:)`, the meaning being considered clear
+    /// enough from the context.
+    public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element == Float {
+        return value.bind(to: observers)
     }
 
-    /// Directly output the slider's `rx.value` as a `Driver`, subject to a
-    /// mapping transform; the meaning being considered clear enough from the
-    /// context.
+    /// Equivalent to `value.map()`, the meaning being considered clear enough
+    /// from the context.
     public func map<T>(_ transform: @escaping (Float) -> T) -> Driver<T> {
-        return rx.value.asDriver().map(transform)
+        return value.map(transform)
+    }
+
+}
+
+extension UISlider {
+
+    /// Equivalent to `rx.value.bind(to:)`, the meaning being considered clear
+    /// enough from the context.
+    public func bind<T: ObserverType>(to observers: T...) -> Disposable where T.Element == Float {
+        return rx.value.bind(to: observers)
+    }
+
+    /// Equivalent to `rx.value.map()`, the meaning being considered clear enough
+    /// from the context.
+    public func map<T>(_ transform: @escaping (Float) -> T) -> Driver<T> {
+        return rx.value.map(transform)
     }
 
 }
