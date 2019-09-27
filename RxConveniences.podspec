@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name = "RxConveniences"
-  spec.version = "1.0.1"
+  spec.version = "2.0.0"
   spec.summary = "Small conveniences for writing concise, expressive RxSwift."
   spec.description = <<-DESC
 RxConveniences provides a set of conveniences and utilities for making
