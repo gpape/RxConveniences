@@ -44,4 +44,9 @@ extension ControlProperty {
         return asDriver().map(transform)
     }
 
+    /// Convenience function for triggers from a `ControlProperty`.
+    public func trigger<Observer: ObserverType>(_ observers: Observer...) -> Disposable where Observer.Element == Void {
+        return asObservable().trigger(observers)
+    }
+
 }
