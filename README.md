@@ -7,11 +7,11 @@ See the example project for some demos.
 
 ### Additional bindings
 
-Adds more reactive bindings for common properties, like `UIView.tintColor`.
+Adds more reactive bindings for common properties, e.g., `UIView.tintColor`.
 
 ### Collective bindings
 
-Adds, by extending [CollectiveSwift](https://github.com/gpape/CollectiveSwift), simple reactive
+Extends [CollectiveSwift](https://github.com/gpape/CollectiveSwift) to provide reactive
 bindings for *collections* of common objects.  Paired with outlet collections from storyboards,
 you can do a lot with a little code.  For example:
 
@@ -21,18 +21,22 @@ you can do a lot with a little code.  For example:
 
 ### Operators and utilities
 
-I often find myself making small observable mappings that feel like clutter.  For example:
+I often make small observable mappings that feel like clutter.  For example:
 
 ```swift
 booleanSource.map { !$0 }
 
+Observable.combineLatest(left, right).map { $0.0 || $0.1 }
+
 typedSource.map { _ in () }.bind(to: voidObserver)
 ```
 
-But I think we can make these both simpler and clearer:
+But we can make these clearer:
 
 ```swift
 (!booleanSource)
+
+(left || right)
 
 typedSource.trigger(voidObserver)
 ```
