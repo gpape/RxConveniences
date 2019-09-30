@@ -24,6 +24,6 @@ let package = Package(
             dependencies: ["CollectiveSwift", "RxCocoa", "RxSwift"]),
         .testTarget(
             name: "RxConveniencesTests",
-            dependencies: ["RxConveniences"]),
+            dependencies: ["RxConveniences", "RxTest"]),
     ]
 )
