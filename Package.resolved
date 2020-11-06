@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CollectiveSwift",
+        "repositoryURL": "https://github.com/gpape/CollectiveSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "3b3da238b06c5fa00c0fb53a2b670299987fe125",
+          "version": "2.1.0"
+        }
+      },
+      {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "002d325b0bdee94e7882e1114af5ff4fe1e96afa",
+          "version": "5.1.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

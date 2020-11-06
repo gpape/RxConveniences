@@ -12,17 +12,24 @@ let package = Package(
             targets: ["RxConveniences"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/gpape/CollectiveSwift.git", from: "2.1.0"),
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "5.1.1")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "RxConveniences",
-            dependencies: []),
+            dependencies: [
+                .product(name: "CollectiveSwift", package: "CollectiveSwift"),
+                .product(name: "RxCocoa", package: "RxSwift"),
+                .product(name: "RxSwift", package: "RxSwift")
+            ]),
         .testTarget(
             name: "RxConveniencesTests",
-            dependencies: ["RxConveniences"]),
+            dependencies: [
+                "RxConveniences",
+                .product(name: "RxTest", package: "RxSwift")
+            ]),
     ]
 )
