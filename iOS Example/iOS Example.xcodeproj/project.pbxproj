@@ -3,18 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		20B283272557803200AA4E93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B283262557803200AA4E93 /* AppDelegate.swift */; };
 		20B283292557803200AA4E93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B283282557803200AA4E93 /* SceneDelegate.swift */; };
-		20B2832B2557803200AA4E93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2832A2557803200AA4E93 /* ViewController.swift */; };
-		20B2832E2557803200AA4E93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B2832C2557803200AA4E93 /* Main.storyboard */; };
 		20B283302557803300AA4E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B2832F2557803300AA4E93 /* Assets.xcassets */; };
 		20B283332557803300AA4E93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B283312557803300AA4E93 /* LaunchScreen.storyboard */; };
 		20B2833E2557803300AA4E93 /* iOS_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2833D2557803300AA4E93 /* iOS_ExampleTests.swift */; };
 		20B283492557803300AA4E93 /* iOS_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B283482557803300AA4E93 /* iOS_ExampleUITests.swift */; };
+		20B28360255787AD00AA4E93 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2835E255787AD00AA4E93 /* MainViewController.swift */; };
+		20B28361255787AD00AA4E93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B2835F255787AD00AA4E93 /* Main.storyboard */; };
+		20B28368255787B800AA4E93 /* RxConveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B28367255787B800AA4E93 /* RxConveniences.swift */; };
+		20B28370255787FE00AA4E93 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2836F255787FE00AA4E93 /* MainViewModel.swift */; };
+		20B28379255788B300AA4E93 /* CollectiveSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 20B28378255788B300AA4E93 /* CollectiveSwift */; };
+		20B2837F2557893100AA4E93 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 20B2837E2557893100AA4E93 /* RxSwift */; };
+		20B283832557893100AA4E93 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 20B283822557893100AA4E93 /* RxRelay */; };
+		20B283852557893100AA4E93 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 20B283842557893100AA4E93 /* RxCocoa */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +44,6 @@
 		20B283232557803200AA4E93 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B283262557803200AA4E93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B283282557803200AA4E93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		20B2832A2557803200AA4E93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		20B2832D2557803200AA4E93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20B2832F2557803300AA4E93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20B283322557803300AA4E93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20B283342557803300AA4E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		20B283442557803300AA4E93 /* iOS ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B283482557803300AA4E93 /* iOS_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ExampleUITests.swift; sourceTree = "<group>"; };
 		20B2834A2557803300AA4E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20B2835E255787AD00AA4E93 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		20B2835F255787AD00AA4E93 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		20B28367255787B800AA4E93 /* RxConveniences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxConveniences.swift; sourceTree = "<group>"; };
+		20B2836F255787FE00AA4E93 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20B2837F2557893100AA4E93 /* RxSwift in Frameworks */,
+				20B283852557893100AA4E93 /* RxCocoa in Frameworks */,
+				20B283832557893100AA4E93 /* RxRelay in Frameworks */,
+				20B28379255788B300AA4E93 /* CollectiveSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,10 +111,10 @@
 		20B283252557803200AA4E93 /* iOS Example */ = {
 			isa = PBXGroup;
 			children = (
+				20B28365255787B800AA4E93 /* Sources */,
+				20B2835C255787AD00AA4E93 /* View Controllers */,
 				20B283262557803200AA4E93 /* AppDelegate.swift */,
 				20B283282557803200AA4E93 /* SceneDelegate.swift */,
-				20B2832A2557803200AA4E93 /* ViewController.swift */,
-				20B2832C2557803200AA4E93 /* Main.storyboard */,
 				20B2832F2557803300AA4E93 /* Assets.xcassets */,
 				20B283312557803300AA4E93 /* LaunchScreen.storyboard */,
 				20B283342557803300AA4E93 /* Info.plist */,
@@ -128,6 +140,41 @@
 			path = "iOS ExampleUITests";
 			sourceTree = "<group>";
 		};
+		20B2835C255787AD00AA4E93 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				20B2835D255787AD00AA4E93 /* Main */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		20B2835D255787AD00AA4E93 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				20B2835F255787AD00AA4E93 /* Main.storyboard */,
+				20B2835E255787AD00AA4E93 /* MainViewController.swift */,
+				20B2836F255787FE00AA4E93 /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		20B28365255787B800AA4E93 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				20B28366255787B800AA4E93 /* RxConveniences */,
+			);
+			name = Sources;
+			path = ../../Sources;
+			sourceTree = "<group>";
+		};
+		20B28366255787B800AA4E93 /* RxConveniences */ = {
+			isa = PBXGroup;
+			children = (
+				20B28367255787B800AA4E93 /* RxConveniences.swift */,
+			);
+			path = RxConveniences;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +191,12 @@
 			dependencies = (
 			);
 			name = "iOS Example";
+			packageProductDependencies = (
+				20B28378255788B300AA4E93 /* CollectiveSwift */,
+				20B2837E2557893100AA4E93 /* RxSwift */,
+				20B283822557893100AA4E93 /* RxRelay */,
+				20B283842557893100AA4E93 /* RxCocoa */,
+			);
 			productName = "iOS Example";
 			productReference = 20B283232557803200AA4E93 /* iOS Example.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +268,10 @@
 				Base,
 			);
 			mainGroup = 20B2831A2557803200AA4E93;
+			packageReferences = (
+				20B28377255788B300AA4E93 /* XCRemoteSwiftPackageReference "CollectiveSwift" */,
+				20B2837D2557893100AA4E93 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 20B283242557803200AA4E93 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,9 +288,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20B283332557803300AA4E93 /* LaunchScreen.storyboard in Resources */,
+				20B28361255787AD00AA4E93 /* Main.storyboard in Resources */,
 				20B283302557803300AA4E93 /* Assets.xcassets in Resources */,
-				20B2832E2557803200AA4E93 /* Main.storyboard in Resources */,
+				20B283332557803300AA4E93 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20B2832B2557803200AA4E93 /* ViewController.swift in Sources */,
+				20B28368255787B800AA4E93 /* RxConveniences.swift in Sources */,
+				20B28360255787AD00AA4E93 /* MainViewController.swift in Sources */,
+				20B28370255787FE00AA4E93 /* MainViewModel.swift in Sources */,
 				20B283272557803200AA4E93 /* AppDelegate.swift in Sources */,
 				20B283292557803200AA4E93 /* SceneDelegate.swift in Sources */,
 			);
@@ -296,14 +355,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		20B2832C2557803200AA4E93 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				20B2832D2557803200AA4E93 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		20B283312557803300AA4E93 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -587,6 +638,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		20B28377255788B300AA4E93 /* XCRemoteSwiftPackageReference "CollectiveSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gpape/CollectiveSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+		20B2837D2557893100AA4E93 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		20B28378255788B300AA4E93 /* CollectiveSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20B28377255788B300AA4E93 /* XCRemoteSwiftPackageReference "CollectiveSwift" */;
+			productName = CollectiveSwift;
+		};
+		20B2837E2557893100AA4E93 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20B2837D2557893100AA4E93 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		20B283822557893100AA4E93 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20B2837D2557893100AA4E93 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		20B283842557893100AA4E93 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20B2837D2557893100AA4E93 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 20B2831B2557803200AA4E93 /* Project object */;
 }
