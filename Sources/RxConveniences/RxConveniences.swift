@@ -5,6 +5,14 @@ struct RxConveniences {
 import RxCocoa
 import RxSwift
 
+extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
+
+    public func drive(onNext: ((Element) -> Void)?) -> Disposable {
+        drive(onNext: onNext, onCompleted: nil, onDisposed: nil)
+    }
+
+}
+
 @propertyWrapper
 final public class RxSignal {
 

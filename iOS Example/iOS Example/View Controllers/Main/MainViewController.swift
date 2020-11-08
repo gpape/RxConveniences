@@ -11,25 +11,15 @@ import UIKit
 
 final class MainViewController: UIViewController {
 
+// MARK: - Interface
+
+    @IBOutlet private weak var collectionView: UICollectionView!
+
 // MARK: -
 
     private let bag = DisposeBag()
-    private var vm = MainViewModel()
-
-}
-
-// MARK: - Rx
-
-private extension MainViewController {
-
-    func configureRx() {
-
-        vm.$demos
-            .debug()
-            .drive()
-            .disposed(by: bag)
-
-    }
+    private var dataSource: MainDataSource!
+    private let vm = MainViewModel()
 
 }
 
@@ -39,7 +29,7 @@ extension MainViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureRx()
+        dataSource = .init(collectionView, vm: vm)
     }
 
 }
