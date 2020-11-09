@@ -14,39 +14,18 @@ extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingSt
 }
 
 @propertyWrapper
-final public class RxSignal {
-
-    private let relay: PublishRelay<Void>
-
-    public init() {
-        relay = .init()
-    }
-
-    public var projectedValue: Signal<Void> {
-        relay.asSignal()
-    }
-
-    public var wrappedValue: Void {
-        ()
-    }
-
-    public func trigger() {
-        relay.accept(())
-    }
-
-}
-
-@propertyWrapper
-final public class RxValue<T> {
+public struct RxValue<T> {
 
     private let relay: BehaviorRelay<T>
+    private let driver: Driver<T>
 
-    public init(value: T) {
-        relay = .init(value: value)
+    public init(wrappedValue: @autoclosure @escaping () -> T) {
+        relay = .init(value: wrappedValue())
+        driver = relay.asDriver()
     }
 
     public var projectedValue: Driver<T> {
-        relay.asDriver()
+        driver
     }
 
     public var wrappedValue: T {

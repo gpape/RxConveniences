@@ -15,8 +15,7 @@ final class MainViewModel {
         case showreel
     }
 
-    @RxValue(value: [])
-    private(set) var demos: [Demo]
+    @RxValue private(set) var demos: [Demo] = []
 
     private let bag = DisposeBag()
 
