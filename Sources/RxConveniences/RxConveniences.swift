@@ -7,8 +7,16 @@ import RxSwift
 
 extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
 
-    public func drive(onNext: ((Element) -> Void)?) -> Disposable {
+    public func drive(onNext: @escaping (Element) -> Void) -> Disposable {
         drive(onNext: onNext, onCompleted: nil, onDisposed: nil)
+    }
+
+}
+
+extension SharedSequenceConvertibleType where SharingStrategy == SignalSharingStrategy {
+
+    public func emit(onNext: @escaping (Element) -> Void) -> Disposable {
+        emit(onNext: onNext, onCompleted: nil, onDisposed: nil)
     }
 
 }

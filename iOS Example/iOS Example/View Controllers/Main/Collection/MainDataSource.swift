@@ -13,6 +13,7 @@ final class MainDataSource: NSObject {
 
     private let bag = DisposeBag()
     private var diffable: Diffable!
+    fileprivate let selection = PublishRelay<MainViewModel.Demo>()
 
     init(_ collectionView: UICollectionView, vm: MainViewModel) {
         super.init()
@@ -62,6 +63,14 @@ private extension MainDataSource {
 
 // MARK: - Rx
 
+extension Reactive where Base: MainDataSource {
+
+    var selection: Signal<MainViewModel.Demo> {
+        base.selection.asSignal()
+    }
+
+}
+
 private extension MainDataSource {
 
     func configureRx(for vm: MainViewModel) {
@@ -79,4 +88,12 @@ private extension MainDataSource {
 // MARK: - <UICollectionViewDelegate>
 
 extension MainDataSource: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let item = diffable.itemIdentifier(for: indexPath) else {
+            preconditionFailure()
+        }
+        selection.accept(item)
+    }
+
 }

@@ -23,6 +23,22 @@ final class MainViewController: UIViewController {
 
 }
 
+// MARK: - Rx
+
+private extension MainViewController {
+
+    func configureRx() {
+
+        dataSource.rx.selection
+            .emit { [weak self] demo in
+                print(demo) // TODO:
+            }
+            .disposed(by: bag)
+
+    }
+
+}
+
 // MARK: - : UIViewController
 
 extension MainViewController {
@@ -30,6 +46,7 @@ extension MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = .init(collectionView, vm: vm)
+        configureRx()
     }
 
 }
