@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bWd-o9-Zs6">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Collective Bindings View Controller-->
+        <scene sceneID="mnj-FQ-emM">
+            <objects>
+                <viewController id="bWd-o9-Zs6" customClass="CollectiveBindingsViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nHe-eN-6Zt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3LN-Vl-OgP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="57"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BvL-GP-Gd1">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyboard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4mp-wF-7MD">
+                                                <rect key="frame" x="0.0" y="2" width="138" height="15.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="printer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8Vc-57-Kdm">
+                                                <rect key="frame" x="138" y="0.0" width="138" height="20"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apps.iphone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="U4b-pW-7Ha">
+                                                <rect key="frame" x="276" y="0.0" width="138" height="20"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EJW-dh-am3">
+                                        <rect key="frame" x="0.0" y="20" width="414" height="37"/>
+                                        <subviews>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RSA-RG-sN5">
+                                                <rect key="frame" x="-2" y="0.0" width="211" height="38"/>
+                                            </slider>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="jC7-85-Otc">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="37"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="faY-Ra-P6o">
+                                <rect key="frame" x="182.5" y="816" width="51" height="31"/>
+                            </switch>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ato-aP-QtZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3LN-Vl-OgP" firstAttribute="top" secondItem="ato-aP-QtZ" secondAttribute="top" id="62O-Fc-3u2"/>
+                            <constraint firstItem="faY-Ra-P6o" firstAttribute="centerX" secondItem="ato-aP-QtZ" secondAttribute="centerX" id="7i9-7p-QlF"/>
+                            <constraint firstItem="3LN-Vl-OgP" firstAttribute="leading" secondItem="ato-aP-QtZ" secondAttribute="leading" id="W1A-2U-tFU"/>
+                            <constraint firstItem="faY-Ra-P6o" firstAttribute="bottom" secondItem="ato-aP-QtZ" secondAttribute="bottom" constant="-15" id="lN2-df-nlK"/>
+                            <constraint firstItem="3LN-Vl-OgP" firstAttribute="trailing" secondItem="ato-aP-QtZ" secondAttribute="trailing" id="oJr-v4-Gx4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="jC7-85-Otc" id="lOn-c0-8bs"/>
+                        <outlet property="switch" destination="faY-Ra-P6o" id="Cns-JV-cfK"/>
+                        <outletCollection property="tintable" destination="4mp-wF-7MD" collectionClass="NSMutableArray" id="Jlq-RB-QGY"/>
+                        <outletCollection property="tintable" destination="8Vc-57-Kdm" collectionClass="NSMutableArray" id="zv2-8f-v32"/>
+                        <outletCollection property="tintable" destination="U4b-pW-7Ha" collectionClass="NSMutableArray" id="7Nf-Ir-MC9"/>
+                        <outletCollection property="tintable" destination="RSA-RG-sN5" collectionClass="NSMutableArray" id="HEU-SF-hBk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3cp-uK-5Kp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-327" y="194"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="apps.iphone" catalog="system" width="108" height="128"/>
+        <image name="keyboard" catalog="system" width="128" height="79"/>
+        <image name="printer" catalog="system" width="128" height="111"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

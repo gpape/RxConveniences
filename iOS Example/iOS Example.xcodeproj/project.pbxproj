@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20112EE5255E2FB6004992F3 /* CollectiveBindingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20112EE4255E2FB6004992F3 /* CollectiveBindingsViewController.swift */; };
+		20112EEA255E301D004992F3 /* CollectiveBindings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20112EE9255E301D004992F3 /* CollectiveBindings.storyboard */; };
+		208EADFA25602CF9000A28D4 /* SimpleSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208EADF925602CF9000A28D4 /* SimpleSubscription.swift */; };
+		208EADFF25602D4C000A28D4 /* Collective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208EADFE25602D4C000A28D4 /* Collective.swift */; };
 		20B283272557803200AA4E93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B283262557803200AA4E93 /* AppDelegate.swift */; };
 		20B283292557803200AA4E93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B283282557803200AA4E93 /* SceneDelegate.swift */; };
 		20B283302557803300AA4E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B2832F2557803300AA4E93 /* Assets.xcassets */; };
@@ -44,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20112EE4255E2FB6004992F3 /* CollectiveBindingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectiveBindingsViewController.swift; sourceTree = "<group>"; };
+		20112EE9255E301D004992F3 /* CollectiveBindings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectiveBindings.storyboard; sourceTree = "<group>"; };
+		208EADF925602CF9000A28D4 /* SimpleSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSubscription.swift; sourceTree = "<group>"; };
+		208EADFE25602D4C000A28D4 /* Collective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collective.swift; sourceTree = "<group>"; };
 		20B283232557803200AA4E93 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B283262557803200AA4E93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B283282557803200AA4E93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20112EE3255E2F9C004992F3 /* Collective Bindings */ = {
+			isa = PBXGroup;
+			children = (
+				20112EE9255E301D004992F3 /* CollectiveBindings.storyboard */,
+				20112EE4255E2FB6004992F3 /* CollectiveBindingsViewController.swift */,
+			);
+			path = "Collective Bindings";
+			sourceTree = "<group>";
+		};
 		20B2831A2557803200AA4E93 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +166,7 @@
 		20B2835C255787AD00AA4E93 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				20112EE3255E2F9C004992F3 /* Collective Bindings */,
 				20B2835D255787AD00AA4E93 /* Main */,
 			);
 			path = "View Controllers";
@@ -177,7 +195,9 @@
 		20B28366255787B800AA4E93 /* RxConveniences */ = {
 			isa = PBXGroup;
 			children = (
+				208EADFE25602D4C000A28D4 /* Collective.swift */,
 				20B28367255787B800AA4E93 /* RxConveniences.swift */,
+				208EADF925602CF9000A28D4 /* SimpleSubscription.swift */,
 			);
 			path = RxConveniences;
 			sourceTree = "<group>";
@@ -305,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20112EEA255E301D004992F3 /* CollectiveBindings.storyboard in Resources */,
 				20B283A52558280D00AA4E93 /* MainDemoCell.xib in Resources */,
 				20B28361255787AD00AA4E93 /* Main.storyboard in Resources */,
 				20B283302557803300AA4E93 /* Assets.xcassets in Resources */,
@@ -333,7 +354,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208EADFF25602D4C000A28D4 /* Collective.swift in Sources */,
 				20B28368255787B800AA4E93 /* RxConveniences.swift in Sources */,
+				208EADFA25602CF9000A28D4 /* SimpleSubscription.swift in Sources */,
+				20112EE5255E2FB6004992F3 /* CollectiveBindingsViewController.swift in Sources */,
 				20B2839B2558202000AA4E93 /* MainDataSource.swift in Sources */,
 				20B283A42558280D00AA4E93 /* MainDemoCell.swift in Sources */,
 				20B28360255787AD00AA4E93 /* MainViewController.swift in Sources */,

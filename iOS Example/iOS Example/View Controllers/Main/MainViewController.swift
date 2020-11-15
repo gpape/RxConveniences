@@ -31,10 +31,27 @@ private extension MainViewController {
 
         dataSource.rx.selection
             .emit { [weak self] demo in
-                print(demo) // TODO:
+                self?.show(demo)
             }
             .disposed(by: bag)
 
+    }
+
+}
+
+// MARK: - Flow
+
+private extension UIViewController {
+
+    func show(_ demo: MainViewModel.Demo) {
+        let vc: UIViewController
+        switch demo {
+        case .collectiveBindings:
+            vc = UIStoryboard(name: "CollectiveBindings", bundle: nil).instantiateInitialViewController()!
+        case .showreel:
+            print("TODO:"); return
+        }
+        present(vc, animated: true, completion: nil)
     }
 
 }
