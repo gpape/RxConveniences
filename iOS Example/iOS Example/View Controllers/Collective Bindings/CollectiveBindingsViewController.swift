@@ -15,9 +15,17 @@ private extension CollectiveBindingsViewController {
 
     func configureRx() {
 
-        `switch`.rx.isOn
+        let light = `switch`.rx.isOn
+
+        light
             .map { $0.color }
-            .bind(to: view.rx.backgroundColor) // TODO:
+            .bind(to: view.rx.backgroundColor)
+            .disposed(by: bag)
+
+        (!light)
+            .map { $0.color }
+            .bind(to: [activityIndicator].all.rx.color,
+                      tintable.all.rx.tintColor)
             .disposed(by: bag)
 
     }
@@ -27,7 +35,7 @@ private extension CollectiveBindingsViewController {
 private typealias LightsOn = Bool
 
 private extension LightsOn {
-    var color: UIColor { self ? .red : .blue }
+    var color: UIColor { self ? #colorLiteral(red: 1, green: 0.9882352941, blue: 0.8980392157, alpha: 1) : #colorLiteral(red: 0.05882352941, green: 0.05882352941, blue: 0.05882352941, alpha: 1) }
 }
 
 // MARK: -

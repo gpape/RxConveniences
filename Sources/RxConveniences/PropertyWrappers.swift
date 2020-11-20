@@ -1,5 +1,5 @@
 //
-//  RxConveniences.swift
+//  PropertyWrappers.swift
 //
 //  Copyright (c) 2020 Greg Pape (http://www.gpape.com/)
 //
@@ -22,10 +22,26 @@
 //  THE SOFTWARE.
 //
 
-struct RxConveniences {
-    var text = "Hello, World!"
-}
+import RxCocoa
 
-func rxConveniencesFatalError(_ lastMessage: @autoclosure () -> String, file: StaticString = #file, line: UInt = #line) -> Never  {
-    fatalError(lastMessage(), file: file, line: line)
+@propertyWrapper
+public struct RxValue<T> {
+
+    private let relay: BehaviorRelay<T>
+    private let driver: Driver<T>
+
+    public init(wrappedValue: @autoclosure @escaping () -> T) {
+        relay = .init(value: wrappedValue())
+        driver = relay.asDriver()
+    }
+
+    public var projectedValue: Driver<T> {
+        driver
+    }
+
+    public var wrappedValue: T {
+        get { relay.value }
+        set { relay.accept(newValue) }
+    }
+
 }

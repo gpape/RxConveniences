@@ -1,5 +1,5 @@
 //
-//  RxConveniences.swift
+//  UIActivityIndicatorView+RxConveniences.swift
 //
 //  Copyright (c) 2020 Greg Pape (http://www.gpape.com/)
 //
@@ -22,10 +22,45 @@
 //  THE SOFTWARE.
 //
 
-struct RxConveniences {
-    var text = "Hello, World!"
+#if os(iOS) || os(tvOS)
+
+import CollectiveSwift
+import UIKit
+import RxCocoa
+import RxSwift
+
+// MARK: - Additional
+
+extension Reactive where Base: UIActivityIndicatorView {
+
+    /// Bindable sink for the `color` property.
+    public var color: Binder<UIColor> {
+        return Binder(base) { view, color in
+            view.color = color
+        }
+    }
+
 }
 
-func rxConveniencesFatalError(_ lastMessage: @autoclosure () -> String, file: StaticString = #file, line: UInt = #line) -> Never  {
-    fatalError(lastMessage(), file: file, line: line)
+// MARK: - Collective
+
+extension Reactive where Base: CollectiveType, Base.Element: UIActivityIndicatorView {
+
+    /// Bindable sink for each view's `color` property.
+    public var color: RetainingBinder<UIColor> {
+        return RetainingBinder(base) { base, value in
+            base.base.forEach { $0.color = value }
+        }
+    }
+
+    /// Bindable sink for each view's `startAnimating()` and `stopAnimating()`
+    /// methods, with the behavior of the corresponding sink in RxCocoa.
+    public var isAnimating: RetainingBinder<Bool> {
+        return RetainingBinder(base) { base, value in
+            base.base.forEach { value ? $0.startAnimating() : $0.stopAnimating() }
+        }
+    }
+
 }
+
+#endif

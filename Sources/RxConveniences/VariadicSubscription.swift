@@ -1,5 +1,5 @@
 //
-//  RxConveniences.swift
+//  VariadicSubscription.swift
 //
 //  Copyright (c) 2020 Greg Pape (http://www.gpape.com/)
 //
@@ -22,10 +22,27 @@
 //  THE SOFTWARE.
 //
 
-struct RxConveniences {
-    var text = "Hello, World!"
+import RxCocoa
+import RxSwift
+
+extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
+
+    /// Convenience function to `drive` multiple observers.
+    public func drive<T: ObserverType>(_ observers: T...) -> Disposable where T.Element == Element {
+        return asSharedSequence().asObservable().subscribe { event in
+            observers.forEach { $0.on(event) }
+        }
+    }
+
 }
 
-func rxConveniencesFatalError(_ lastMessage: @autoclosure () -> String, file: StaticString = #file, line: UInt = #line) -> Never  {
-    fatalError(lastMessage(), file: file, line: line)
+extension SharedSequenceConvertibleType where SharingStrategy == SignalSharingStrategy {
+
+    /// Convenience function to `emit` to multiple observers.
+    public func emit<T: ObserverType>(to observers: T...) -> Disposable where T.Element == Element {
+        return asSharedSequence().asObservable().subscribe { event in
+            observers.forEach { $0.on(event) }
+        }
+    }
+
 }
