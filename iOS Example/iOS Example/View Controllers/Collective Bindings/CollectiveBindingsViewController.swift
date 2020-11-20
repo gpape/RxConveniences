@@ -24,8 +24,9 @@ private extension CollectiveBindingsViewController {
 
         (!light)
             .map { $0.color }
-            .bind(to: [activityIndicator].all.rx.color,
-                      tintable.all.rx.tintColor)
+            .bind(to: backgrounded.all.rx.backgroundColor,
+                      borderable.all.rx.borderColor,
+                      colorable.all.rx.displayColor)
             .disposed(by: bag)
 
     }
@@ -44,9 +45,10 @@ final class CollectiveBindingsViewController: UIViewController {
 
 // MARK: - Interface
 
-    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private var backgrounded: [UIView]!
+    @IBOutlet private var borderable: [UIView]!
+    @IBOutlet private var colorable: [UIView]!
     @IBOutlet private weak var `switch`: UISwitch!
-    @IBOutlet private var tintable: [UIView]!
 
 // MARK: -
 

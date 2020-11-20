@@ -33,6 +33,7 @@
 		20D0D1162567651F0001BE5E /* VariadicSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0D1152567651F0001BE5E /* VariadicSubscription.swift */; };
 		20D0D121256767450001BE5E /* UIActivityIndicatorView+RxConveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0D120256767450001BE5E /* UIActivityIndicatorView+RxConveniences.swift */; };
 		20D0D12C256770270001BE5E /* BooleanOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0D12B256770270001BE5E /* BooleanOperators.swift */; };
+		20EE67962567F36000D54468 /* DisplayColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE67952567F36000D54468 /* DisplayColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		20D0D1152567651F0001BE5E /* VariadicSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariadicSubscription.swift; sourceTree = "<group>"; };
 		20D0D120256767450001BE5E /* UIActivityIndicatorView+RxConveniences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+RxConveniences.swift"; sourceTree = "<group>"; };
 		20D0D12B256770270001BE5E /* BooleanOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooleanOperators.swift; sourceTree = "<group>"; };
+		20EE67952567F36000D54468 /* DisplayColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 		20D0D10C256761030001BE5E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				20EE67952567F36000D54468 /* DisplayColor.swift */,
 				20D0D120256767450001BE5E /* UIActivityIndicatorView+RxConveniences.swift */,
 				20D0D10D256761450001BE5E /* UIView+RxConveniences.swift */,
 			);
@@ -379,6 +382,7 @@
 			files = (
 				20D0D121256767450001BE5E /* UIActivityIndicatorView+RxConveniences.swift in Sources */,
 				20D0D10E256761450001BE5E /* UIView+RxConveniences.swift in Sources */,
+				20EE67962567F36000D54468 /* DisplayColor.swift in Sources */,
 				208EADFF25602D4C000A28D4 /* Collective.swift in Sources */,
 				20D0D105256746FF0001BE5E /* PropertyWrappers.swift in Sources */,
 				20B28368255787B800AA4E93 /* RxConveniences.swift in Sources */,

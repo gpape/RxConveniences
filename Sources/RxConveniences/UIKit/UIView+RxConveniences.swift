@@ -75,7 +75,7 @@ extension Reactive where Base: CollectiveType, Base.Element: UIView {
     }
 
     /// Bindable sink for each view's `backgroundColor` property.
-    public var backgroundColor: RetainingBinder<UIColor?> {
+    public var backgroundColor: RetainingBinder<UIColor> {
         return RetainingBinder(base) { base, value in
             base.base.forEach { $0.backgroundColor = value }
         }

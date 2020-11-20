@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3LN-Vl-OgP">
-                                <rect key="frame" x="0.0" y="44" width="414" height="57"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="107"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BvL-GP-Gd1">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
@@ -33,14 +33,96 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EJW-dh-am3">
-                                        <rect key="frame" x="0.0" y="20" width="414" height="37"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="CsH-u4-wIN">
+                                        <rect key="frame" x="0.0" y="20" width="414" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnU-Xy-gKY">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="X6j-eO-3KP"/>
+                                                    <constraint firstAttribute="height" constant="50" id="hiX-Vq-THL"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BO1-Th-Kr8">
+                                                <rect key="frame" x="182" y="0.0" width="50" height="50"/>
+                                                <subviews>
+                                                    <view alpha="0.33300000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Swg-JE-ydG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Swg-JE-ydG" firstAttribute="trailing" secondItem="BO1-Th-Kr8" secondAttribute="trailing" id="DL9-NV-dKe"/>
+                                                    <constraint firstItem="Swg-JE-ydG" firstAttribute="top" secondItem="BO1-Th-Kr8" secondAttribute="top" id="LkE-YE-4mN"/>
+                                                    <constraint firstAttribute="height" constant="50" id="b9k-sD-NI0"/>
+                                                    <constraint firstAttribute="width" constant="50" id="d18-cx-Vqo"/>
+                                                    <constraint firstItem="Swg-JE-ydG" firstAttribute="bottom" secondItem="BO1-Th-Kr8" secondAttribute="bottom" id="d7B-b3-FE2"/>
+                                                    <constraint firstItem="Swg-JE-ydG" firstAttribute="leading" secondItem="BO1-Th-Kr8" secondAttribute="leading" id="f3x-Eb-3Gf"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXs-bF-I5X">
+                                                <rect key="frame" x="364" y="0.0" width="50" height="50"/>
+                                                <subviews>
+                                                    <view alpha="0.66700000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOS-OY-O86">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="EEU-WU-33O"/>
+                                                    <constraint firstAttribute="width" constant="50" id="EFD-YN-Dwh"/>
+                                                    <constraint firstItem="hOS-OY-O86" firstAttribute="leading" secondItem="eXs-bF-I5X" secondAttribute="leading" id="EUd-8X-43u"/>
+                                                    <constraint firstItem="hOS-OY-O86" firstAttribute="bottom" secondItem="eXs-bF-I5X" secondAttribute="bottom" id="GLg-0k-xaD"/>
+                                                    <constraint firstItem="hOS-OY-O86" firstAttribute="trailing" secondItem="eXs-bF-I5X" secondAttribute="trailing" id="RaQ-1r-p2a"/>
+                                                    <constraint firstItem="hOS-OY-O86" firstAttribute="top" secondItem="eXs-bF-I5X" secondAttribute="top" id="kNT-Y9-eEq"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="EJW-dh-am3">
+                                        <rect key="frame" x="0.0" y="70" width="414" height="37"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RSA-RG-sN5">
-                                                <rect key="frame" x="-2" y="0.0" width="211" height="38"/>
+                                                <rect key="frame" x="-2" y="0.0" width="381.5" height="38"/>
                                             </slider>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="jC7-85-Otc">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="37"/>
+                                                <rect key="frame" x="377.5" y="0.0" width="36.5" height="37"/>
                                             </activityIndicatorView>
                                         </subviews>
                                     </stackView>
@@ -61,12 +143,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="jC7-85-Otc" id="lOn-c0-8bs"/>
                         <outlet property="switch" destination="faY-Ra-P6o" id="Cns-JV-cfK"/>
-                        <outletCollection property="tintable" destination="4mp-wF-7MD" collectionClass="NSMutableArray" id="Jlq-RB-QGY"/>
-                        <outletCollection property="tintable" destination="8Vc-57-Kdm" collectionClass="NSMutableArray" id="zv2-8f-v32"/>
-                        <outletCollection property="tintable" destination="U4b-pW-7Ha" collectionClass="NSMutableArray" id="7Nf-Ir-MC9"/>
-                        <outletCollection property="tintable" destination="RSA-RG-sN5" collectionClass="NSMutableArray" id="HEU-SF-hBk"/>
+                        <outletCollection property="colorable" destination="4mp-wF-7MD" collectionClass="NSMutableArray" id="q4n-I3-V2s"/>
+                        <outletCollection property="colorable" destination="8Vc-57-Kdm" collectionClass="NSMutableArray" id="rFk-eP-P5G"/>
+                        <outletCollection property="colorable" destination="U4b-pW-7Ha" collectionClass="NSMutableArray" id="cyo-tC-hKy"/>
+                        <outletCollection property="colorable" destination="RSA-RG-sN5" collectionClass="NSMutableArray" id="Iek-bA-oJc"/>
+                        <outletCollection property="colorable" destination="jC7-85-Otc" collectionClass="NSMutableArray" id="d33-LA-0vs"/>
+                        <outletCollection property="borderable" destination="fnU-Xy-gKY" collectionClass="NSMutableArray" id="kfc-Yn-RUd"/>
+                        <outletCollection property="borderable" destination="BO1-Th-Kr8" collectionClass="NSMutableArray" id="UJm-Qb-j1b"/>
+                        <outletCollection property="borderable" destination="eXs-bF-I5X" collectionClass="NSMutableArray" id="eRL-pV-Wko"/>
+                        <outletCollection property="backgrounded" destination="Swg-JE-ydG" collectionClass="NSMutableArray" id="71S-lS-uPh"/>
+                        <outletCollection property="backgrounded" destination="hOS-OY-O86" collectionClass="NSMutableArray" id="UCV-bH-VMQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cp-uK-5Kp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
