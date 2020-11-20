@@ -380,15 +380,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20EE67962567F36000D54468 /* DisplayColor.swift in Sources */,
 				20D0D121256767450001BE5E /* UIActivityIndicatorView+RxConveniences.swift in Sources */,
 				20D0D10E256761450001BE5E /* UIView+RxConveniences.swift in Sources */,
-				20EE67962567F36000D54468 /* DisplayColor.swift in Sources */,
+				20D0D12C256770270001BE5E /* BooleanOperators.swift in Sources */,
 				208EADFF25602D4C000A28D4 /* Collective.swift in Sources */,
 				20D0D105256746FF0001BE5E /* PropertyWrappers.swift in Sources */,
 				20B28368255787B800AA4E93 /* RxConveniences.swift in Sources */,
 				208EADFA25602CF9000A28D4 /* SimpleSubscription.swift in Sources */,
 				20D0D1162567651F0001BE5E /* VariadicSubscription.swift in Sources */,
-				20D0D12C256770270001BE5E /* BooleanOperators.swift in Sources */,
 				20112EE5255E2FB6004992F3 /* CollectiveBindingsViewController.swift in Sources */,
 				20B2839B2558202000AA4E93 /* MainDataSource.swift in Sources */,
 				20B283A42558280D00AA4E93 /* MainDemoCell.swift in Sources */,
