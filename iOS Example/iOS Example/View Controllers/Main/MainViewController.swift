@@ -49,7 +49,7 @@ private extension UIViewController {
         case .collectiveBindings:
             vc = UIStoryboard(name: "CollectiveBindings", bundle: nil).instantiateInitialViewController()!
         case .showreel:
-            print("TODO:"); return
+            vc = UIStoryboard(name: "Showreel", bundle: nil).instantiateInitialViewController()!
         }
         present(vc, animated: true, completion: nil)
     }

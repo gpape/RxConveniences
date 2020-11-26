@@ -11,6 +11,10 @@
 		20112EEA255E301D004992F3 /* CollectiveBindings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20112EE9255E301D004992F3 /* CollectiveBindings.storyboard */; };
 		208EADFA25602CF9000A28D4 /* SimpleSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208EADF925602CF9000A28D4 /* SimpleSubscription.swift */; };
 		208EADFF25602D4C000A28D4 /* Collective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208EADFE25602D4C000A28D4 /* Collective.swift */; };
+		20A5730C2570000F00B047AC /* ShowreelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A5730B2570000F00B047AC /* ShowreelViewController.swift */; };
+		20A573142570001800B047AC /* Showreel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A573132570001800B047AC /* Showreel.storyboard */; };
+		20A5731C2570018800B047AC /* ShowreelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A5731B2570018800B047AC /* ShowreelViewModel.swift */; };
+		20A573212570021700B047AC /* Showreel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A573202570021700B047AC /* Showreel.swift */; };
 		20B283272557803200AA4E93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B283262557803200AA4E93 /* AppDelegate.swift */; };
 		20B283292557803200AA4E93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B283282557803200AA4E93 /* SceneDelegate.swift */; };
 		20B283302557803300AA4E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B2832F2557803300AA4E93 /* Assets.xcassets */; };
@@ -58,6 +62,10 @@
 		20112EE9255E301D004992F3 /* CollectiveBindings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectiveBindings.storyboard; sourceTree = "<group>"; };
 		208EADF925602CF9000A28D4 /* SimpleSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSubscription.swift; sourceTree = "<group>"; };
 		208EADFE25602D4C000A28D4 /* Collective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collective.swift; sourceTree = "<group>"; };
+		20A5730B2570000F00B047AC /* ShowreelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowreelViewController.swift; sourceTree = "<group>"; };
+		20A573132570001800B047AC /* Showreel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Showreel.storyboard; sourceTree = "<group>"; };
+		20A5731B2570018800B047AC /* ShowreelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowreelViewModel.swift; sourceTree = "<group>"; };
+		20A573202570021700B047AC /* Showreel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Showreel.swift; sourceTree = "<group>"; };
 		20B283232557803200AA4E93 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B283262557803200AA4E93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B283282557803200AA4E93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +131,17 @@
 			path = "Collective Bindings";
 			sourceTree = "<group>";
 		};
+		20A5730A256FFF9100B047AC /* Showreel */ = {
+			isa = PBXGroup;
+			children = (
+				20A573202570021700B047AC /* Showreel.swift */,
+				20A573132570001800B047AC /* Showreel.storyboard */,
+				20A5730B2570000F00B047AC /* ShowreelViewController.swift */,
+				20A5731B2570018800B047AC /* ShowreelViewModel.swift */,
+			);
+			path = Showreel;
+			sourceTree = "<group>";
+		};
 		20B2831A2557803200AA4E93 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				20112EE3255E2F9C004992F3 /* Collective Bindings */,
+				20A5730A256FFF9100B047AC /* Showreel */,
 				20B2835D255787AD00AA4E93 /* Main */,
 			);
 			path = "View Controllers";
@@ -356,6 +376,7 @@
 				20B28361255787AD00AA4E93 /* Main.storyboard in Resources */,
 				20B283302557803300AA4E93 /* Assets.xcassets in Resources */,
 				20B283332557803300AA4E93 /* LaunchScreen.storyboard in Resources */,
+				20A573142570001800B047AC /* Showreel.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +411,9 @@
 				208EADFA25602CF9000A28D4 /* SimpleSubscription.swift in Sources */,
 				20D0D1162567651F0001BE5E /* VariadicSubscription.swift in Sources */,
 				20112EE5255E2FB6004992F3 /* CollectiveBindingsViewController.swift in Sources */,
+				20A573212570021700B047AC /* Showreel.swift in Sources */,
+				20A5730C2570000F00B047AC /* ShowreelViewController.swift in Sources */,
+				20A5731C2570018800B047AC /* ShowreelViewModel.swift in Sources */,
 				20B2839B2558202000AA4E93 /* MainDataSource.swift in Sources */,
 				20B283A42558280D00AA4E93 /* MainDemoCell.swift in Sources */,
 				20B28360255787AD00AA4E93 /* MainViewController.swift in Sources */,
