@@ -15,35 +15,9 @@
                     <view key="view" contentMode="scaleToFill" id="MxC-d3-Isl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1z-EC-9bC">
-                                <rect key="frame" x="206.5" y="447.5" width="1" height="1"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="UeI-wc-9Ot"/>
-                                    <constraint firstAttribute="width" constant="1" id="XDm-L1-r5g"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brI-SN-6ob">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ac7-Qb-3rq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="C1z-EC-9bC" firstAttribute="centerX" secondItem="MxC-d3-Isl" secondAttribute="centerX" id="0JK-7q-Lb9"/>
-                            <constraint firstItem="brI-SN-6ob" firstAttribute="top" secondItem="MxC-d3-Isl" secondAttribute="top" id="14q-xz-SqQ"/>
-                            <constraint firstItem="brI-SN-6ob" firstAttribute="bottom" secondItem="MxC-d3-Isl" secondAttribute="bottom" id="2AT-Lb-1an"/>
-                            <constraint firstItem="brI-SN-6ob" firstAttribute="right" secondItem="MxC-d3-Isl" secondAttribute="right" id="TKN-J9-tpv"/>
-                            <constraint firstItem="brI-SN-6ob" firstAttribute="left" secondItem="MxC-d3-Isl" secondAttribute="left" id="eHU-er-Y0z"/>
-                            <constraint firstItem="C1z-EC-9bC" firstAttribute="centerY" secondItem="MxC-d3-Isl" secondAttribute="centerY" id="eig-bZ-EQs"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="anchorsContainer" destination="C1z-EC-9bC" id="q35-GK-bYo"/>
-                        <outlet property="canvas" destination="brI-SN-6ob" id="qA4-xE-5ft"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C6p-Hp-Qki" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
