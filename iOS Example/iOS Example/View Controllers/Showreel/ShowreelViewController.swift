@@ -25,11 +25,13 @@ private extension ShowreelViewController {
 
     private func create(at position: Showreel.Position) {
 
+        let control = UISwitch(frame: .init(x: 0, y: 0, width: 44, height: 44))
+        control.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(control)
+
         let anchor = UIView()
-        anchor.clipsToBounds = false // TODO: this is it. control in front?
-        anchor.backgroundColor = .red
         anchor.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(anchor)
+        control.addSubview(anchor)
 
         let y = anchor.centerYAnchor.constraint(equalTo: view.topAnchor, constant: position.y)
 
@@ -37,38 +39,22 @@ private extension ShowreelViewController {
             anchor.widthAnchor.constraint(equalToConstant: 1),
             anchor.heightAnchor.constraint(equalToConstant: 1),
             anchor.centerXAnchor.constraint(equalTo: view.leftAnchor, constant: position.x),
-            y
-        ])
-
-        // transform?
-        anchor.layer.zPosition = position.z
-        var transform = CATransform3DIdentity
-        transform.m34 = -1.0 / 250
-        transform = CATransform3DTranslate(transform, 0, 0, position.z)
-        anchor.layer.transform = transform
-
-        let control = UISwitch(frame: .init(x: 0, y: 0, width: 44, height: 44))
-        control.isEnabled = true
-        control.isUserInteractionEnabled = true
-        control.layer.borderColor = UIColor.red.cgColor
-        control.layer.borderWidth = 1
-        control.translatesAutoresizingMaskIntoConstraints = false
-        anchor.addSubview(control)
-
-        NSLayoutConstraint.activate([
+            y,
             control.centerXAnchor.constraint(equalTo: anchor.centerXAnchor),
             control.centerYAnchor.constraint(equalTo: anchor.centerYAnchor)
         ])
 
-        view.layoutIfNeeded()
+        control.layer.zPosition = position.z
+        var transform = CATransform3DIdentity
+        transform.m34 = -1.0 / 250
+        transform = CATransform3DTranslate(transform, 0, 0, position.z)
+        control.layer.transform = transform
 
-//        NSLayoutConstraint.deactivate([y])
-//        y.constant -= UIScreen.main.bounds.height
-//        NSLayoutConstraint.activate([y])
-//        view.setNeedsUpdateConstraints()
-
+//        control.layoutIfNeeded()
+//
+//        y.constant -= 10//UIScreen.main.bounds.height
 //        UIView.animate(withDuration: 10) {
-//            self.view.layoutIfNeeded()
+//            control.layoutIfNeeded()
 //        }
 
     }
