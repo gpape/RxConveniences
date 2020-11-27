@@ -29,17 +29,44 @@ import UIKit
 
 extension UIView {
 
-    internal func setDisplayColor(_ value: UIColor) {
-        switch self {
-        case let view as UIActivityIndicatorView:
-            view.color = value
-        case let view as UILabel:
-            view.textColor = value
-        case let view as UITextView:
-            view.textColor = value
-        default:
-            tintColor = value
+    public var displayColor: UIColor {
+        get {
+            switch self {
+            case let view as UIActivityIndicatorView:
+                return view.color
+            case let view as UILabel:
+                return view.textColor
+            case let view as UISwitch:
+                return view.onTintColor ?? .clear
+            case let view as UITextView:
+                return view.textColor ?? .clear
+            default:
+                return tintColor
+            }
         }
+        set {
+            switch self {
+            case let view as UIActivityIndicatorView:
+                view.color = newValue
+            case let view as UILabel:
+                view.textColor = newValue
+            case let view as UISwitch:
+                view.onTintColor = newValue
+            case let view as UITextView:
+                view.textColor = newValue
+            default:
+                tintColor = newValue
+            }
+        }
+    }
+
+}
+
+extension Collective where Element: UIView {
+
+    public var displayColor: UIColor {
+        get { Collective.gettersAreNotSupportedFailure() }
+        set { base.forEach { $0.displayColor = newValue } }
     }
 
 }
@@ -48,7 +75,7 @@ extension Reactive where Base: UIView {
 
     public var displayColor: RetainingBinder<UIColor> {
         return RetainingBinder(base) { base, value in
-            base.setDisplayColor(value)
+            base.displayColor = value
         }
     }
 
@@ -58,7 +85,7 @@ extension Reactive where Base: CollectiveType, Base.Element: UIView {
 
     public var displayColor: RetainingBinder<UIColor> {
         return RetainingBinder(base) { base, value in
-            base.base.forEach { $0.setDisplayColor(value) }
+            base.base.forEach { $0.displayColor = value }
         }
     }
 

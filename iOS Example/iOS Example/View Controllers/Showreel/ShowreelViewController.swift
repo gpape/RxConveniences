@@ -15,6 +15,12 @@ private extension ShowreelViewController {
 
     func configureRx() {
 
+        vm.rx.color
+            .drive { [weak self] color in
+                self?.view.subviews.all.displayColor = color
+            }
+            .disposed(by: bag)
+
         vm.rx.spawn
             .emit { [weak self] position in
                 self?.create(at: position)
@@ -27,6 +33,7 @@ private extension ShowreelViewController {
 
         let newView = ShowreelViewFactory.makeView()
         newView.alpha = 0
+        newView.displayColor = vm.color
         newView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(newView)
 
