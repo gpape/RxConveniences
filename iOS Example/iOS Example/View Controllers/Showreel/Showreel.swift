@@ -14,9 +14,9 @@ enum Showreel {
         let x, y, z: CGFloat
 
         static func random() -> Self {
-            .init(x: .random(in: (0..<UIScreen.main.bounds.width)),
-                  y: .random(in: (0..<UIScreen.main.bounds.height)),
-                  z: .random(in: (-200..<0)))
+            .init(x: .random(in: (-UIScreen.width_2...UIScreen.width_2)),
+                  y: .random(in: (-UIScreen.height_2...UIScreen.height_2)),
+                  z: .random(in: (-250..<0)))
         }
 
     }

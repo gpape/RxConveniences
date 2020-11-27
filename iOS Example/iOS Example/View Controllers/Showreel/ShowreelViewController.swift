@@ -25,24 +25,23 @@ private extension ShowreelViewController {
 
     private func create(at position: Showreel.Position) {
 
-        let control = UISwitch(frame: .init(x: 0, y: 0, width: 44, height: 44))
-        control.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(control)
-
         let anchor = UIView()
         anchor.translatesAutoresizingMaskIntoConstraints = false
-        control.addSubview(anchor)
+        anchorsContainer.addSubview(anchor)
 
-        let y = anchor.centerYAnchor.constraint(equalTo: view.topAnchor, constant: position.y)
+        let y = anchor.centerYAnchor.constraint(equalTo: anchorsContainer.centerYAnchor, constant: position.y)
 
         NSLayoutConstraint.activate([
             anchor.widthAnchor.constraint(equalToConstant: 1),
             anchor.heightAnchor.constraint(equalToConstant: 1),
-            anchor.centerXAnchor.constraint(equalTo: view.leftAnchor, constant: position.x),
-            y,
-            control.centerXAnchor.constraint(equalTo: anchor.centerXAnchor),
-            control.centerYAnchor.constraint(equalTo: anchor.centerYAnchor)
+            anchor.centerXAnchor.constraint(equalTo: anchorsContainer.centerXAnchor, constant: position.x),
+            y
         ])
+
+        let control = UISwitch()
+        control.isOn = true
+        control.translatesAutoresizingMaskIntoConstraints = false
+        canvas.addSubview(control)
 
         control.layer.zPosition = position.z
         var transform = CATransform3DIdentity
@@ -50,12 +49,17 @@ private extension ShowreelViewController {
         transform = CATransform3DTranslate(transform, 0, 0, position.z)
         control.layer.transform = transform
 
-//        control.layoutIfNeeded()
-//
-//        y.constant -= 10//UIScreen.main.bounds.height
-//        UIView.animate(withDuration: 10) {
-//            control.layoutIfNeeded()
-//        }
+        NSLayoutConstraint.activate([
+            control.centerXAnchor.constraint(equalTo: anchor.centerXAnchor),
+            control.centerYAnchor.constraint(equalTo: anchor.centerYAnchor)
+        ])
+
+        DispatchQueue.main.async {
+            y.constant -= UIScreen.height
+            UIView.animate(withDuration: 10, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
 
     }
 
@@ -64,6 +68,13 @@ private extension ShowreelViewController {
 // MARK: -
 
 final class ShowreelViewController: UIViewController {
+
+// MARK: - Interface
+
+    @IBOutlet private weak var anchorsContainer: UIView!
+    @IBOutlet private weak var canvas: UIView!
+
+// MARK: -
 
     private let bag = DisposeBag()
     private let vm = ShowreelViewModel()
