@@ -17,7 +17,7 @@ private extension ShowreelViewController {
 
         vm.rx.color
             .drive { [weak self] color in
-                self?.view.subviews.all.displayColor = color
+                self?.canvas.subviews.all.displayColor = color
             }
             .disposed(by: bag)
 
@@ -35,7 +35,7 @@ private extension ShowreelViewController {
         newView.alpha = 0
         newView.displayColor = vm.color
         newView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(newView)
+        canvas.addSubview(newView)
 
         var transform = CATransform3DIdentity
         transform.m34 = -1.0 / 250
@@ -43,10 +43,10 @@ private extension ShowreelViewController {
         newView.layer.transform = transform
         newView.layer.zPosition = position.z
 
-        let y = newView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: position.y)
+        let y = newView.centerYAnchor.constraint(equalTo: canvas.centerYAnchor, constant: position.y)
 
         NSLayoutConstraint.activate([
-            newView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: position.x),
+            newView.centerXAnchor.constraint(equalTo: canvas.centerXAnchor, constant: position.x),
             y
         ])
 
@@ -55,11 +55,11 @@ private extension ShowreelViewController {
             y.constant -= UIScreen.height
 
             UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
-                newView.alpha = 1
+                newView.alpha = 1 - (abs(position.z) / 500).clamped
             }, completion: nil)
 
             UIView.animate(withDuration: 10, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
-                self.view.layoutIfNeeded()
+                self.canvas.layoutIfNeeded()
             }, completion: nil)
 
 //            UIView.animate(withDuration: 0.3, delay: 9.7, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
@@ -78,6 +78,14 @@ private extension ShowreelViewController {
 
 final class ShowreelViewController: UIViewController {
 
+// MARK: - Interface
+
+    @IBOutlet private weak var canvas: UIView!
+    @IBOutlet private weak var contents: UIView!
+    @IBOutlet private weak var gradientView: GradientView!
+    
+// MARK: -
+
     private let bag = DisposeBag()
     private let vm = ShowreelViewModel()
 
@@ -90,10 +98,11 @@ extension ShowreelViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureRx()
-//        var transform = CATransform3DIdentity
-//        transform.m34 = -1.0 / 500
-//        transform = CATransform3DRotate(transform, -.pi / 32, 0, 1, 0)
-//        view.layer.transform = transform
+        var transform = CATransform3DIdentity
+        transform.m34 = -1.0 / 1000
+        transform = CATransform3DRotate(transform, -.pi / 32, 0, 1, 0)
+        contents.layer.transform = transform
+        gradientView.gradientLayer.colors = [UIColor.darkGray.cgColor, UIColor.lightGray.cgColor]
     }
 
 }

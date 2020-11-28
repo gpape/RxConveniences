@@ -18,6 +18,8 @@
 		20A5732C2570717300B047AC /* MapDirectly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A5732B2570717300B047AC /* MapDirectly.swift */; };
 		20A5733825713B5D00B047AC /* UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A5733725713B5D00B047AC /* UIKit.swift */; };
 		20A57343257161AF00B047AC /* ShowreelViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A57342257161AF00B047AC /* ShowreelViewFactory.swift */; };
+		20A5734B2571DB4000B047AC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A5734A2571DB4000B047AC /* GradientView.swift */; };
+		20A573532571E00800B047AC /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A573522571E00800B047AC /* Math.swift */; };
 		20B283272557803200AA4E93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B283262557803200AA4E93 /* AppDelegate.swift */; };
 		20B283292557803200AA4E93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B283282557803200AA4E93 /* SceneDelegate.swift */; };
 		20B283302557803300AA4E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B2832F2557803300AA4E93 /* Assets.xcassets */; };
@@ -72,6 +74,8 @@
 		20A5732B2570717300B047AC /* MapDirectly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDirectly.swift; sourceTree = "<group>"; };
 		20A5733725713B5D00B047AC /* UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit.swift; sourceTree = "<group>"; };
 		20A57342257161AF00B047AC /* ShowreelViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowreelViewFactory.swift; sourceTree = "<group>"; };
+		20A5734A2571DB4000B047AC /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		20A573522571E00800B047AC /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		20B283232557803200AA4E93 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B283262557803200AA4E93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B283282557803200AA4E93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 		20A5733625713B4B00B047AC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				20A5734A2571DB4000B047AC /* GradientView.swift */,
+				20A573522571E00800B047AC /* Math.swift */,
 				20A5733725713B5D00B047AC /* UIKit.swift */,
 			);
 			path = Utils;
@@ -429,6 +435,8 @@
 				20B28368255787B800AA4E93 /* RxConveniences.swift in Sources */,
 				208EADFA25602CF9000A28D4 /* SimpleSubscription.swift in Sources */,
 				20D0D1162567651F0001BE5E /* VariadicSubscription.swift in Sources */,
+				20A5734B2571DB4000B047AC /* GradientView.swift in Sources */,
+				20A573532571E00800B047AC /* Math.swift in Sources */,
 				20A5733825713B5D00B047AC /* UIKit.swift in Sources */,
 				20112EE5255E2FB6004992F3 /* CollectiveBindingsViewController.swift in Sources */,
 				20A573212570021700B047AC /* Showreel.swift in Sources */,
