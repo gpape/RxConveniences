@@ -37,7 +37,7 @@ private enum ViewType: CaseIterable {
 
             let view = UISlider()
             view.value = .random(in: 0.333..<0.667)
-            NSLayoutConstraint.activate([view.widthAnchor.constraint(equalToConstant: 44)])
+            NSLayoutConstraint.activate([view.widthAnchor.constraint(equalToConstant: 100)])
             return view
 
         case .switch:
@@ -48,13 +48,15 @@ private enum ViewType: CaseIterable {
 
         case .symbol:
 
-            return UIImageView(image: UIImage(named: names.randomElement()!))
+            return UIImageView(image: UIImage(systemName: names.randomElement()!, withConfiguration: config))
 
         }
 
     }
 
 }
+
+private let config = UIImage.SymbolConfiguration(pointSize: 60, weight: .regular, scale: .default)
 
 private let names = [
     "folder.badge.plus",
