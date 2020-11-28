@@ -10,12 +10,12 @@ import CoreGraphics
 extension CGFloat {
 
     var clamped: CGFloat {
-        clamped(between: 0, and: 1)
+        clamped(to: 0...1)
     }
 
-    func clamped(between min: CGFloat, and max: CGFloat) -> CGFloat {
-        let v = self < min ? min : self
-        return v > max ? max : v
+    func clamped(to range: ClosedRange<CGFloat>) -> CGFloat {
+        let v = self < range.lowerBound ? range.lowerBound : self
+        return v > range.upperBound ? range.upperBound : v
     }
 
 }

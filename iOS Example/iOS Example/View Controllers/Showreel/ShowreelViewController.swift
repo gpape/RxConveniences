@@ -102,7 +102,7 @@ extension ShowreelViewController {
         transform.m34 = -1.0 / 1000
         transform = CATransform3DRotate(transform, -.pi / 32, 0, 1, 0)
         contents.layer.transform = transform
-        gradientView.gradientLayer.colors = [UIColor.darkGray.cgColor, UIColor.lightGray.cgColor]
+        gradientView.gradientLayer.colors = [UIColor.lightGray.cgColor, UIColor.darkGray.cgColor]
     }
 
 }
