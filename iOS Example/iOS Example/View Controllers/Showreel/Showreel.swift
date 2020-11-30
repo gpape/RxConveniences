@@ -19,6 +19,14 @@ enum Showreel {
                   z: .random(in: (-250..<0)))
         }
 
+        func distance(to other: Position) -> CGFloat {
+            sqrt(pow(x - other.x, 2) + pow(y - other.y, 2) + pow(z - other.z, 2))
+        }
+
     }
+
+    static let origin = Position(x: 0, y: 0, z: -250)
+
+    static let waveSpeed: CGFloat = 100
 
 }

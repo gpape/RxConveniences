@@ -15,15 +15,19 @@ private extension ShowreelViewController {
 
     func configureRx() {
 
-        vm.rx.color
-            .drive { [weak self] color in
-                self?.canvas.subviews.all.displayColor = color
-            }
-            .disposed(by: bag)
-
         vm.rx.spawn
             .emit { [weak self] position in
                 self?.create(at: position)
+            }
+            .disposed(by: bag)
+
+        vm.rx.wave
+            .map { [weak self] radius -> [UIView]? in
+                print("radius", radius)
+                return self?.views(in: radius)
+            }
+            .emit { [vm] views in
+                views?.all.displayColor = vm.color
             }
             .disposed(by: bag)
 
@@ -88,6 +92,34 @@ final class ShowreelViewController: UIViewController {
 
     private let bag = DisposeBag()
     private let vm = ShowreelViewModel()
+
+}
+
+// MARK: - UI
+
+private extension ShowreelViewController {
+
+    func views(in radius: CGFloat) -> [UIView] {
+        canvas.subviews.filter { view in
+            guard let position = view.position else {
+                return false
+            }
+            print("distance", position.distance(to: Showreel.origin))
+            return position.distance(to: Showreel.origin) < radius
+                && view.displayColor != self.vm.color
+        }
+    }
+
+}
+
+private extension UIView {
+
+    var position: Showreel.Position? {
+        guard let layer = layer.presentation() else {
+            return nil
+        }
+        return .init(x: layer.position.x, y: layer.position.y, z: layer.zPosition)
+    }
 
 }
 

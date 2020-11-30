@@ -12,9 +12,11 @@ import UIKit
 final class ShowreelViewModel {
 
     private let bag = DisposeBag()
+    private var waveDisposable: Disposable?
 
     fileprivate let _color: BehaviorRelay<UIColor>
     fileprivate let spawn = PublishRelay<Showreel.Position>()
+    fileprivate let wave = PublishRelay<CGFloat>()
 
     init() {
 
@@ -30,14 +32,35 @@ final class ShowreelViewModel {
 
         Driver<Int>.interval(.seconds(4))
             .map { colors[$0 % colors.count] }
-            .drive(_color)
+            .drive(onNext: { [weak self] color in
+                self?._color.accept(color)
+                self?.emitWave()
+            })
             .disposed(by: bag)
 
-        Driver.displayLink() // TODO:
-            .drive { link in
-                print(link.timestamp)
+//        Driver.displayLink()
+//            .drive { link in
+//                print(link.timestamp)
+//            }
+//            .disposed(by: bag)
+
+    }
+
+    deinit {
+        waveDisposable?.dispose()
+    }
+
+    private func emitWave() {
+
+        var t0: CFTimeInterval?
+
+        waveDisposable = Signal.displayLink()
+            .emit { [wave] link in
+                t0 = t0 ?? link.timestamp
+                let time = link.timestamp - t0!
+                print("time \(time) -> radius \(CGFloat(time) * Showreel.waveSpeed)")
+                wave.accept(CGFloat(time) * Showreel.waveSpeed)
             }
-            .disposed(by: bag)
 
     }
 
@@ -65,6 +88,10 @@ extension Reactive where Base: ShowreelViewModel {
 
     var spawn: Signal<Showreel.Position> {
         base.spawn.asSignal()
+    }
+
+    var wave: Signal<CGFloat> {
+        base.wave.asSignal()
     }
 
 }
