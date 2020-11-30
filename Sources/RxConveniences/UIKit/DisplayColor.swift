@@ -22,6 +22,8 @@
 //  THE SOFTWARE.
 //
 
+#if os(iOS) || os(tvOS)
+
 import CollectiveSwift
 import RxCocoa
 import RxSwift
@@ -90,3 +92,5 @@ extension Reactive where Base: CollectiveType, Base.Element: UIView {
     }
 
 }
+
+#endif

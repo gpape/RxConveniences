@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		20112EE5255E2FB6004992F3 /* CollectiveBindingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20112EE4255E2FB6004992F3 /* CollectiveBindingsViewController.swift */; };
 		20112EEA255E301D004992F3 /* CollectiveBindings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20112EE9255E301D004992F3 /* CollectiveBindings.storyboard */; };
+		20738CBA2574891A00124346 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20738CB92574891A00124346 /* DisplayLink.swift */; };
 		208EADFA25602CF9000A28D4 /* SimpleSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208EADF925602CF9000A28D4 /* SimpleSubscription.swift */; };
 		208EADFF25602D4C000A28D4 /* Collective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208EADFE25602D4C000A28D4 /* Collective.swift */; };
 		20A5730C2570000F00B047AC /* ShowreelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A5730B2570000F00B047AC /* ShowreelViewController.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		20112EE4255E2FB6004992F3 /* CollectiveBindingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectiveBindingsViewController.swift; sourceTree = "<group>"; };
 		20112EE9255E301D004992F3 /* CollectiveBindings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectiveBindings.storyboard; sourceTree = "<group>"; };
+		20738CB92574891A00124346 /* DisplayLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayLink.swift; sourceTree = "<group>"; };
 		208EADF925602CF9000A28D4 /* SimpleSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSubscription.swift; sourceTree = "<group>"; };
 		208EADFE25602D4C000A28D4 /* Collective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collective.swift; sourceTree = "<group>"; };
 		20A5730B2570000F00B047AC /* ShowreelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowreelViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				20EE67952567F36000D54468 /* DisplayColor.swift */,
+				20738CB92574891A00124346 /* DisplayLink.swift */,
 				20D0D120256767450001BE5E /* UIActivityIndicatorView+RxConveniences.swift */,
 				20D0D10D256761450001BE5E /* UIView+RxConveniences.swift */,
 			);
@@ -425,8 +428,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				20EE67962567F36000D54468 /* DisplayColor.swift in Sources */,
+				20738CBA2574891A00124346 /* DisplayLink.swift in Sources */,
 				20D0D121256767450001BE5E /* UIActivityIndicatorView+RxConveniences.swift in Sources */,
-				20A57343257161AF00B047AC /* ShowreelViewFactory.swift in Sources */,
 				20D0D10E256761450001BE5E /* UIView+RxConveniences.swift in Sources */,
 				20D0D12C256770270001BE5E /* BooleanOperators.swift in Sources */,
 				208EADFF25602D4C000A28D4 /* Collective.swift in Sources */,
@@ -441,6 +444,7 @@
 				20112EE5255E2FB6004992F3 /* CollectiveBindingsViewController.swift in Sources */,
 				20A573212570021700B047AC /* Showreel.swift in Sources */,
 				20A5730C2570000F00B047AC /* ShowreelViewController.swift in Sources */,
+				20A57343257161AF00B047AC /* ShowreelViewFactory.swift in Sources */,
 				20A5731C2570018800B047AC /* ShowreelViewModel.swift in Sources */,
 				20B2839B2558202000AA4E93 /* MainDataSource.swift in Sources */,
 				20B283A42558280D00AA4E93 /* MainDemoCell.swift in Sources */,
