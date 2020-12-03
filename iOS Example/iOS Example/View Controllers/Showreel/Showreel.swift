@@ -16,7 +16,7 @@ enum Showreel {
         static func random() -> Self {
             .init(x: .random(in: (-UIScreen.width_2...UIScreen.width_2)),
                   y: .random(in: (-UIScreen.height_2...UIScreen.height_2)),
-                  z: .random(in: (-250..<0)))
+                  z: .random(in: (-500..<0)))
         }
 
         func distance(to other: Position) -> CGFloat {
@@ -25,8 +25,8 @@ enum Showreel {
 
     }
 
-    static let origin = Position(x: 0, y: 0, z: -250)
+    static let origin = Position(x: 0, y: 0, z: -333)
 
-    static let waveSpeed: CGFloat = 100
+    static let waveSpeed: CGFloat = 667
 
 }

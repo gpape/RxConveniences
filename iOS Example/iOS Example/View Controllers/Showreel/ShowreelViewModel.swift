@@ -20,7 +20,7 @@ final class ShowreelViewModel {
 
     init() {
 
-        Driver<Int>.interval(.milliseconds(500))
+        Driver<Int>.interval(.milliseconds(100))
             .map(to: Showreel.Position.random())
             .drive { [spawn] position in
                 spawn.accept(position)
@@ -54,11 +54,13 @@ final class ShowreelViewModel {
 
         var t0: CFTimeInterval?
 
+        waveDisposable?.dispose()
+
         waveDisposable = Signal.displayLink()
             .emit { [wave] link in
                 t0 = t0 ?? link.timestamp
                 let time = link.timestamp - t0!
-                print("time \(time) -> radius \(CGFloat(time) * Showreel.waveSpeed)")
+//                print("time \(time) -> radius \(CGFloat(time) * Showreel.waveSpeed)")
                 wave.accept(CGFloat(time) * Showreel.waveSpeed)
             }
 

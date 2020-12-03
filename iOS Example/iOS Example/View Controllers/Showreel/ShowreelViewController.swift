@@ -23,8 +23,7 @@ private extension ShowreelViewController {
 
         vm.rx.wave
             .map { [weak self] radius -> [UIView]? in
-                print("radius", radius)
-                return self?.views(in: radius)
+                self?.views(in: radius)
             }
             .emit { [vm] views in
                 views?.all.displayColor = vm.color
