@@ -9,6 +9,10 @@ import UIKit
 
 enum Showreel {
 
+    enum FeatureFlags {
+        static let debug = true
+    }
+
     struct Position {
 
         let x, y, z: CGFloat

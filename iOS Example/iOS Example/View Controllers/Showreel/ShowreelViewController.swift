@@ -22,7 +22,7 @@ private extension ShowreelViewController {
             .disposed(by: bag)
 
         vm.rx.wave
-            .map { [weak self] radius -> [UIView]? in
+            .map { [weak self] radius in
                 self?.views(in: radius)
             }
             .emit { [vm] views in
@@ -34,7 +34,7 @@ private extension ShowreelViewController {
 
     private func create(at position: Showreel.Position) {
 
-        let newView = ShowreelViewFactory.makeView()
+        let newView = ShowreelViewFactory.make(at: position)
         newView.alpha = 0
         newView.displayColor = vm.color
         newView.translatesAutoresizingMaskIntoConstraints = false
