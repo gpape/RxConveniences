@@ -103,9 +103,16 @@ private extension ShowreelViewController {
             guard let position = view.position else {
                 return false
             }
-            print("distance", position.distance(to: Showreel.origin))
-            return position.distance(to: Showreel.origin) < radius
-                && view.displayColor != self.vm.color
+            if Showreel.FeatureFlags.debug, let label = view as? UILabel {
+                label.text = ShowreelViewFactory.numberFormatter.string(from: NSNumber(value: abs(Double(position.distance(to: Showreel.origin)))))
+            }
+            guard
+                position.distance(to: Showreel.origin) < radius,
+                view.displayColor != self.vm.color
+            else {
+                return false
+            }
+            return true
         }
     }
 

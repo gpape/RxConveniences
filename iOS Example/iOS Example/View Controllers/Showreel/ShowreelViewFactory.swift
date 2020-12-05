@@ -9,6 +9,12 @@ import UIKit
 
 enum ShowreelViewFactory {
 
+    static let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
+        return formatter
+    }()
+
     static func make(at position: Showreel.Position) -> UIView {
         (Showreel.FeatureFlags.debug ? ViewType.label : ViewType.allCases.randomElement()!).make(at: position)
     }
@@ -25,12 +31,6 @@ private enum ViewType: CaseIterable {
     case `switch`
     case symbol
 
-    private static let numberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 2
-        return formatter
-    }()
-
     func make(at position: Showreel.Position) -> UIView {
 
         switch self {
@@ -44,7 +44,7 @@ private enum ViewType: CaseIterable {
 
             let view = UILabel()
             view.font = .systemFont(ofSize: 60)
-            view.text = Self.numberFormatter.string(from: NSNumber(value: abs(Double(position.z))))
+            view.text = ShowreelViewFactory.numberFormatter.string(from: NSNumber(value: abs(Double(position.z))))
             return view
 
         case .slider:
