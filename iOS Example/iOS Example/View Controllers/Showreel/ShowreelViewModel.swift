@@ -38,12 +38,6 @@ final class ShowreelViewModel {
             })
             .disposed(by: bag)
 
-//        Driver.displayLink()
-//            .drive { link in
-//                print(link.timestamp)
-//            }
-//            .disposed(by: bag)
-
     }
 
     deinit {

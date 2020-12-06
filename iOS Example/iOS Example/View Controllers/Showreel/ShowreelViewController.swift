@@ -98,16 +98,18 @@ final class ShowreelViewController: UIViewController {
 
 private extension ShowreelViewController {
 
+    private static let viewOrigin = Showreel.Position(x: UIScreen.width, y: UIScreen.height, z: Showreel.origin.z)
+
     func views(in radius: CGFloat) -> [UIView] {
         canvas.subviews.filter { view in
             guard let position = view.position else {
                 return false
             }
             if Showreel.FeatureFlags.debug, let label = view as? UILabel {
-                label.text = ShowreelViewFactory.numberFormatter.string(from: NSNumber(value: abs(Double(position.distance(to: Showreel.origin)))))
+                label.text = ShowreelViewFactory.numberFormatter.string(from: NSNumber(value: abs(Double(position.distance(to: Self.viewOrigin)))))
             }
             guard
-                position.distance(to: Showreel.origin) < radius,
+                position.distance(to: Self.viewOrigin) < radius,
                 view.displayColor != self.vm.color
             else {
                 return false

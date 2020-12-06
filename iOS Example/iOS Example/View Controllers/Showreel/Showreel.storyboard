@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MdD-vT-URf">
-                                <rect key="frame" x="-207" y="-443" width="828" height="1792"/>
+                                <rect key="frame" x="-207" y="-448" width="828" height="1792"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vq2-OL-W8f" customClass="GradientView" customModule="iOS_Example" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="828" height="1792"/>
@@ -47,7 +47,7 @@
                             <constraint firstItem="MdD-vT-URf" firstAttribute="centerX" secondItem="MxC-d3-Isl" secondAttribute="centerX" id="3tP-Ot-fSq"/>
                             <constraint firstItem="MdD-vT-URf" firstAttribute="height" secondItem="MxC-d3-Isl" secondAttribute="height" multiplier="2" id="8un-HK-NKN"/>
                             <constraint firstItem="MdD-vT-URf" firstAttribute="width" secondItem="MxC-d3-Isl" secondAttribute="width" multiplier="2" id="VW9-kT-lK3"/>
-                            <constraint firstItem="MdD-vT-URf" firstAttribute="centerY" secondItem="MxC-d3-Isl" secondAttribute="centerY" constant="5" id="cEA-sv-8Jx"/>
+                            <constraint firstItem="MdD-vT-URf" firstAttribute="centerY" secondItem="MxC-d3-Isl" secondAttribute="centerY" id="cEA-sv-8Jx"/>
                         </constraints>
                     </view>
                     <connections>
