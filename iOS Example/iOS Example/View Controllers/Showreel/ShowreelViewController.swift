@@ -58,7 +58,7 @@ private extension ShowreelViewController {
             y.constant -= UIScreen.height
 
             UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
-                newView.alpha = 1 - (abs(position.z) / 500).clamped
+                newView.alpha = 1 - 0.8 * (abs(position.z) / 400).clamped
             }, completion: nil)
 
             UIView.animate(withDuration: 10, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: {

@@ -10,7 +10,7 @@ import UIKit
 enum Showreel {
 
     enum FeatureFlags {
-        static let debug = true
+        static let debug = false
     }
 
     struct Position {
@@ -29,8 +29,8 @@ enum Showreel {
 
     }
 
-    static let origin = Position(x: 0, y: 0, z: -333)
+    static let origin = Position(x: 0, y: 0, z: -500)
 
-    static let waveSpeed: CGFloat = 667
+    static let waveSpeed: CGFloat = 333
 
 }
