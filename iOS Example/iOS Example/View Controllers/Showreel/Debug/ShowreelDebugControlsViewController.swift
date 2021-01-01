@@ -9,20 +9,14 @@ import UIKit
 
 final class ShowreelDebugControlsViewController: UIViewController {
 
+// MARK: - Set before loading
+
+    var onDismiss: (() -> Void)?
+
+// MARK: - Interface
+
     @IBOutlet private weak var dismissButton: UIButton!
     @IBOutlet private weak var stackView: UIStackView!
-
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -30,12 +24,38 @@ final class ShowreelDebugControlsViewController: UIViewController {
 
 extension ShowreelDebugControlsViewController {
 
-    var collapsedHeight: CGFloat {
-        dismissButton.frame.maxY
+    enum Profile {
+
+        case collapsed, expanded
+
+        var toggled: Profile {
+            switch self {
+            case .collapsed:
+                return .expanded
+            case .expanded:
+                return .collapsed
+            }
+        }
+
     }
 
-    var expandedHeight: CGFloat {
-        stackView.frame.maxY
+    func height(for profile: Profile) -> CGFloat {
+        switch profile {
+        case .collapsed:
+            return dismissButton.frame.maxY
+        case .expanded:
+            return stackView.frame.maxY
+        }
+    }
+
+}
+
+// MARK: - Actions
+
+private extension ShowreelDebugControlsViewController {
+
+    @IBAction func dismiss(_: Any) {
+        onDismiss?()
     }
 
 }

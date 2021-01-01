@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,6 +31,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="42"/>
                                 <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="Mo7-89-ovm" eventType="touchUpInside" id="6x3-7y-iFo"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IiY-aB-cq9">
                                 <rect key="frame" x="0.0" y="44" width="375" height="50.5"/>
@@ -49,7 +51,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1yQ-9y-pF0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IiY-aB-cq9" firstAttribute="leading" secondItem="9Sw-VF-xk4" secondAttribute="leading" id="1Sj-Zk-vZG"/>
                             <constraint firstItem="Xnn-7p-BYo" firstAttribute="trailing" secondItem="9Sw-VF-xk4" secondAttribute="trailing" id="2Zj-xR-FiI"/>
@@ -74,8 +76,5 @@
     </scenes>
     <resources>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
