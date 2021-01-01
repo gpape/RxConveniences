@@ -77,13 +77,25 @@ private extension ShowreelDebugControlsViewController {
 private extension ShowreelDebugControlsViewController {
 
     func configure(for profile: Profile, animated: Bool) {
-        if animated {
-            UIView.transition(with: dismissButton, duration: 0.3, options: [.allowUserInteraction, .beginFromCurrentState], animations: { [unowned self] in
-                dismissButton.setImage(profile.dismissIcon, for: .normal)
-            }, completion: nil)
-        } else {
-            dismissButton.setImage(profile.dismissIcon, for: .normal)
+
+        let animations: () -> Void = { [weak self] in
+            self?.stackView.alpha = profile.controlsAlpha
         }
+
+        let dismissButtonTransitions: () -> Void = { [weak self] in
+            self?.dismissButton.setImage(profile.dismissIcon, for: .normal)
+        }
+
+        if animated {
+            let duration: TimeInterval = 0.3
+            let options: UIView.AnimationOptions = [.allowUserInteraction, .beginFromCurrentState]
+            UIView.animate(withDuration: duration, delay: 0, options: options, animations: animations, completion: nil)
+            UIView.transition(with: dismissButton, duration: duration, options: options, animations: dismissButtonTransitions, completion: nil)
+        } else {
+            animations()
+            dismissButtonTransitions()
+        }
+
     }
 
 }
@@ -106,6 +118,15 @@ private extension ShowreelDebugControlsViewController.Profile {
     private static let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 42, weight: .semibold, scale: .default)
     private static let dismissCollapsed = UIImage(systemName: "slider.horizontal.3", withConfiguration: symbolConfiguration)!
     private static let dismissExpanded = UIImage(systemName: "xmark", withConfiguration: symbolConfiguration)!
+
+    var controlsAlpha: CGFloat {
+        switch self {
+        case .collapsed:
+            return 0
+        case .expanded:
+            return 1
+        }
+    }
 
     var dismissIcon: UIImage {
         switch self {
