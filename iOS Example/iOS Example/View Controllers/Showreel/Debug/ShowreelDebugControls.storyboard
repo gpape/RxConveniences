@@ -36,16 +36,43 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IiY-aB-cq9">
-                                <rect key="frame" x="0.0" y="44" width="375" height="50.5"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="151.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nd-H2-GbN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents perspective denominator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nd-H2-GbN">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pYc-w4-cxZ">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="250" minValue="1" maxValue="2000" translatesAutoresizingMaskIntoConstraints="NO" id="pYc-w4-cxZ">
                                         <rect key="frame" x="-2" y="20.5" width="379" height="31"/>
+                                        <connections>
+                                            <action selector="valueChanged:forEvent:" destination="Mo7-89-ovm" eventType="valueChanged" id="Mlu-79-yRc"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents rotation (fraction of pi)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iah-Lf-inR">
+                                        <rect key="frame" x="0.0" y="50.5" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.03125" minValue="0.0" maxValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eWu-zu-DPC">
+                                        <rect key="frame" x="-2" y="71" width="379" height="31"/>
+                                        <connections>
+                                            <action selector="valueChanged:forEvent:" destination="Mo7-89-ovm" eventType="valueChanged" id="kTK-Gx-C8p"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plane distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yya-CO-w02">
+                                        <rect key="frame" x="0.0" y="101" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="1" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8AL-fe-PUH">
+                                        <rect key="frame" x="-2" y="121.5" width="379" height="31"/>
+                                        <connections>
+                                            <action selector="valueChanged:forEvent:" destination="Mo7-89-ovm" eventType="valueChanged" id="YyZ-tA-ehl"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                             </stackView>
@@ -65,7 +92,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contentsPerspectiveDenominatorSlider" destination="pYc-w4-cxZ" id="99X-Ji-RT1"/>
+                        <outlet property="contentsRotationSlider" destination="eWu-zu-DPC" id="Luv-7P-dMv"/>
                         <outlet property="dismissButton" destination="pzd-gL-D5u" id="cZn-zF-7x0"/>
+                        <outlet property="planeDistanceSlider" destination="8AL-fe-PUH" id="ExB-6w-h2o"/>
                         <outlet property="stackView" destination="IiY-aB-cq9" id="k6N-QO-SKN"/>
                     </connections>
                 </viewController>

@@ -13,7 +13,10 @@ final class ShowreelDebugControlsViewController: UIViewController {
 
 // MARK: - Interface
 
+    @IBOutlet private weak var contentsPerspectiveDenominatorSlider: UISlider!
+    @IBOutlet private weak var contentsRotationSlider: UISlider!
     @IBOutlet private weak var dismissButton: UIButton!
+    @IBOutlet private weak var planeDistanceSlider: UISlider!
     @IBOutlet private weak var stackView: UIStackView!
 
 // MARK: -
@@ -22,6 +25,9 @@ final class ShowreelDebugControlsViewController: UIViewController {
 
 // MARK: - API
 
+    @RxValue private(set) var contentsPerspectiveDenominator: Float = 250
+    @RxValue private(set) var contentsRotation: Float = 0.03125
+    @RxValue private(set) var planeDistance: Float = 100
     @RxValue private(set) var profile: Profile = .collapsed
 
 }
@@ -51,6 +57,40 @@ private extension ShowreelDebugControlsViewController {
 
     @IBAction func dismiss(_: Any) {
         profile = profile.toggled
+    }
+
+    @IBAction func valueChanged(_ sender: Any, forEvent event: UIEvent) {
+
+        guard let slider = sender as? UISlider else {
+            return
+        }
+
+        switch slider {
+        case contentsPerspectiveDenominatorSlider:
+            contentsPerspectiveDenominator = slider.value
+        case contentsRotationSlider:
+            contentsRotation = slider.value
+        case planeDistanceSlider:
+            planeDistance = slider.value
+        default:
+            break
+        }
+
+        if case .ended = event.allTouches?.first?.phase {
+            let debug: String?
+            switch slider {
+            case contentsPerspectiveDenominatorSlider:
+                debug = "contents perspective denominator"
+            case contentsRotationSlider:
+                debug = "contents rotation"
+            case planeDistanceSlider:
+                debug = "plane distance"
+            default:
+                debug = nil
+            }
+            debug.flatMap { print($0, slider.value) }
+        }
+
     }
 
 }
@@ -106,6 +146,9 @@ extension ShowreelDebugControlsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentsPerspectiveDenominatorSlider.value = contentsPerspectiveDenominator
+        contentsRotationSlider.value = contentsRotation
+        planeDistanceSlider.value = planeDistance
         configureRx()
     }
 

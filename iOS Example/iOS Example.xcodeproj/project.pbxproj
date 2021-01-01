@@ -43,6 +43,7 @@
 		20CCFCF4259E2C7F00D990C4 /* ShowreelDebugControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCFCF3259E2C7F00D990C4 /* ShowreelDebugControlsViewController.swift */; };
 		20CCFCF9259E2CD600D990C4 /* ShowreelDebugControls.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CCFCF8259E2CD600D990C4 /* ShowreelDebugControls.storyboard */; };
 		20CCFD04259F7E5000D990C4 /* MarkFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCFD03259F7E5000D990C4 /* MarkFirst.swift */; };
+		20CCFD0C259FA55500D990C4 /* ShowreelDebugObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCFD0B259FA55500D990C4 /* ShowreelDebugObject.swift */; };
 		20D0D105256746FF0001BE5E /* PropertyWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0D104256746FF0001BE5E /* PropertyWrappers.swift */; };
 		20D0D10E256761450001BE5E /* UIView+RxConveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0D10D256761450001BE5E /* UIView+RxConveniences.swift */; };
 		20D0D1162567651F0001BE5E /* VariadicSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0D1152567651F0001BE5E /* VariadicSubscription.swift */; };
@@ -107,6 +108,7 @@
 		20CCFCF3259E2C7F00D990C4 /* ShowreelDebugControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowreelDebugControlsViewController.swift; sourceTree = "<group>"; };
 		20CCFCF8259E2CD600D990C4 /* ShowreelDebugControls.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowreelDebugControls.storyboard; sourceTree = "<group>"; };
 		20CCFD03259F7E5000D990C4 /* MarkFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkFirst.swift; sourceTree = "<group>"; };
+		20CCFD0B259FA55500D990C4 /* ShowreelDebugObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowreelDebugObject.swift; sourceTree = "<group>"; };
 		20D0D104256746FF0001BE5E /* PropertyWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrappers.swift; sourceTree = "<group>"; };
 		20D0D10D256761450001BE5E /* UIView+RxConveniences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RxConveniences.swift"; sourceTree = "<group>"; };
 		20D0D1152567651F0001BE5E /* VariadicSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariadicSubscription.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				200CD5F5259ACC3C00025B2D /* ShowreelDebugViewController.swift */,
 				20CCFCF8259E2CD600D990C4 /* ShowreelDebugControls.storyboard */,
 				20CCFCF3259E2C7F00D990C4 /* ShowreelDebugControlsViewController.swift */,
+				20CCFD0B259FA55500D990C4 /* ShowreelDebugObject.swift */,
 			);
 			path = Debug;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				20112EE5255E2FB6004992F3 /* CollectiveBindingsViewController.swift in Sources */,
 				200CD5F6259ACC3C00025B2D /* ShowreelDebugViewController.swift in Sources */,
 				20CCFCF4259E2C7F00D990C4 /* ShowreelDebugControlsViewController.swift in Sources */,
+				20CCFD0C259FA55500D990C4 /* ShowreelDebugObject.swift in Sources */,
 				20A573212570021700B047AC /* Showreel.swift in Sources */,
 				20A5730C2570000F00B047AC /* ShowreelViewController.swift in Sources */,
 				20A57343257161AF00B047AC /* ShowreelViewFactory.swift in Sources */,
