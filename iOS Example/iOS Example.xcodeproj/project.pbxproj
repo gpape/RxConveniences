@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200CD5F6259ACC3C00025B2D /* ShowreelDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200CD5F5259ACC3C00025B2D /* ShowreelDebugViewController.swift */; };
+		200CD5FB259B802E00025B2D /* ShowreelDebug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 200CD5FA259B802E00025B2D /* ShowreelDebug.storyboard */; };
 		20112EE5255E2FB6004992F3 /* CollectiveBindingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20112EE4255E2FB6004992F3 /* CollectiveBindingsViewController.swift */; };
 		20112EEA255E301D004992F3 /* CollectiveBindings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20112EE9255E301D004992F3 /* CollectiveBindings.storyboard */; };
 		20738CBA2574891A00124346 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20738CB92574891A00124346 /* DisplayLink.swift */; };
@@ -38,6 +40,8 @@
 		20B2839B2558202000AA4E93 /* MainDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2839A2558202000AA4E93 /* MainDataSource.swift */; };
 		20B283A42558280D00AA4E93 /* MainDemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B283A22558280D00AA4E93 /* MainDemoCell.swift */; };
 		20B283A52558280D00AA4E93 /* MainDemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20B283A32558280D00AA4E93 /* MainDemoCell.xib */; };
+		20CCFCF4259E2C7F00D990C4 /* ShowreelDebugControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCFCF3259E2C7F00D990C4 /* ShowreelDebugControlsViewController.swift */; };
+		20CCFCF9259E2CD600D990C4 /* ShowreelDebugControls.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CCFCF8259E2CD600D990C4 /* ShowreelDebugControls.storyboard */; };
 		20D0D105256746FF0001BE5E /* PropertyWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0D104256746FF0001BE5E /* PropertyWrappers.swift */; };
 		20D0D10E256761450001BE5E /* UIView+RxConveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0D10D256761450001BE5E /* UIView+RxConveniences.swift */; };
 		20D0D1162567651F0001BE5E /* VariadicSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0D1152567651F0001BE5E /* VariadicSubscription.swift */; };
@@ -64,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		200CD5F5259ACC3C00025B2D /* ShowreelDebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowreelDebugViewController.swift; sourceTree = "<group>"; };
+		200CD5FA259B802E00025B2D /* ShowreelDebug.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowreelDebug.storyboard; sourceTree = "<group>"; };
 		20112EE4255E2FB6004992F3 /* CollectiveBindingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectiveBindingsViewController.swift; sourceTree = "<group>"; };
 		20112EE9255E301D004992F3 /* CollectiveBindings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectiveBindings.storyboard; sourceTree = "<group>"; };
 		20738CB92574891A00124346 /* DisplayLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayLink.swift; sourceTree = "<group>"; };
@@ -97,6 +103,8 @@
 		20B2839A2558202000AA4E93 /* MainDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataSource.swift; sourceTree = "<group>"; };
 		20B283A22558280D00AA4E93 /* MainDemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDemoCell.swift; sourceTree = "<group>"; };
 		20B283A32558280D00AA4E93 /* MainDemoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainDemoCell.xib; sourceTree = "<group>"; };
+		20CCFCF3259E2C7F00D990C4 /* ShowreelDebugControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowreelDebugControlsViewController.swift; sourceTree = "<group>"; };
+		20CCFCF8259E2CD600D990C4 /* ShowreelDebugControls.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowreelDebugControls.storyboard; sourceTree = "<group>"; };
 		20D0D104256746FF0001BE5E /* PropertyWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrappers.swift; sourceTree = "<group>"; };
 		20D0D10D256761450001BE5E /* UIView+RxConveniences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RxConveniences.swift"; sourceTree = "<group>"; };
 		20D0D1152567651F0001BE5E /* VariadicSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariadicSubscription.swift; sourceTree = "<group>"; };
@@ -134,6 +142,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		200CD5F4259ACB8A00025B2D /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				200CD5FA259B802E00025B2D /* ShowreelDebug.storyboard */,
+				200CD5F5259ACC3C00025B2D /* ShowreelDebugViewController.swift */,
+				20CCFCF8259E2CD600D990C4 /* ShowreelDebugControls.storyboard */,
+				20CCFCF3259E2C7F00D990C4 /* ShowreelDebugControlsViewController.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		20112EE3255E2F9C004992F3 /* Collective Bindings */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +165,7 @@
 		20A5730A256FFF9100B047AC /* Showreel */ = {
 			isa = PBXGroup;
 			children = (
+				200CD5F4259ACB8A00025B2D /* Debug */,
 				20A573202570021700B047AC /* Showreel.swift */,
 				20A573132570001800B047AC /* Showreel.storyboard */,
 				20A5730B2570000F00B047AC /* ShowreelViewController.swift */,
@@ -398,6 +418,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				20112EEA255E301D004992F3 /* CollectiveBindings.storyboard in Resources */,
+				200CD5FB259B802E00025B2D /* ShowreelDebug.storyboard in Resources */,
+				20CCFCF9259E2CD600D990C4 /* ShowreelDebugControls.storyboard in Resources */,
 				20A573142570001800B047AC /* Showreel.storyboard in Resources */,
 				20B283A52558280D00AA4E93 /* MainDemoCell.xib in Resources */,
 				20B28361255787AD00AA4E93 /* Main.storyboard in Resources */,
@@ -442,6 +464,8 @@
 				20A573532571E00800B047AC /* Math.swift in Sources */,
 				20A5733825713B5D00B047AC /* UIKit.swift in Sources */,
 				20112EE5255E2FB6004992F3 /* CollectiveBindingsViewController.swift in Sources */,
+				200CD5F6259ACC3C00025B2D /* ShowreelDebugViewController.swift in Sources */,
+				20CCFCF4259E2C7F00D990C4 /* ShowreelDebugControlsViewController.swift in Sources */,
 				20A573212570021700B047AC /* Showreel.swift in Sources */,
 				20A5730C2570000F00B047AC /* ShowreelViewController.swift in Sources */,
 				20A57343257161AF00B047AC /* ShowreelViewFactory.swift in Sources */,

@@ -63,7 +63,9 @@ private extension ShowreelViewController {
 
             UIView.animate(withDuration: 10, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
                 self.canvas.layoutIfNeeded()
-            }, completion: nil)
+            }, completion: { _ in
+                newView.removeFromSuperview()
+            })
 
 //            UIView.animate(withDuration: 0.3, delay: 9.7, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
 //                newView.alpha = 0
