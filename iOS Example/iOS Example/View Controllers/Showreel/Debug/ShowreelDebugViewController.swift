@@ -15,6 +15,7 @@ final class ShowreelDebugViewController: UIViewController {
 
     @IBOutlet private weak var canvas: UIView!
     @IBOutlet private weak var contents: UIView!
+    @IBOutlet private weak var controlsContainer: UIView!
     @IBOutlet private weak var controlsTop: NSLayoutConstraint!
     @IBOutlet private weak var gradientView: GradientView!
 
@@ -105,6 +106,7 @@ extension ShowreelDebugViewController {
         super.viewDidLoad()
         controls.view.setNeedsLayout()
         controls.view.layoutIfNeeded()
+        controlsContainer.layer.zPosition = .greatestFiniteMagnitude
         gradientView.gradientLayer.colors = [UIColor.lightGray.cgColor, UIColor.darkGray.cgColor]
         configureRx()
         makeTestObjects()

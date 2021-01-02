@@ -63,6 +63,7 @@
                     <connections>
                         <outlet property="canvas" destination="0yY-zC-UbZ" id="NVQ-sg-Er8"/>
                         <outlet property="contents" destination="P1D-1E-1li" id="Vyl-Ht-h3F"/>
+                        <outlet property="controlsContainer" destination="CXq-WO-996" id="pdc-BV-52n"/>
                         <outlet property="controlsTop" destination="tQ9-Dn-X4d" id="qZs-9V-8LP"/>
                         <outlet property="gradientView" destination="K1S-qg-fjX" id="4ew-gI-hKP"/>
                     </connections>
