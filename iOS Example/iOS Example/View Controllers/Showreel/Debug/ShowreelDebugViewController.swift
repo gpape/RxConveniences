@@ -32,6 +32,18 @@ private extension ShowreelDebugViewController {
 
     func configureRx() {
 
+        // TODO:
+//        @RxValue private(set) var objectPerspectiveDenominator: Float = 250
+//        @RxValue private(set) var planeDistance: Float = 100
+
+        Driver.combineLatest(controls.$contentsPerspectiveDenominator, controls.$contentsRotation)
+            .drive { [unowned self] denominator, rotation in
+                var transform = CATransform3D.withPerspective(-1.0 / CGFloat(denominator))
+                transform = CATransform3DRotate(transform, CGFloat(rotation), 0, -1, 0)
+                contents.layer.transform = transform
+            }
+            .disposed(by: bag)
+
         controls.$profile
             .markingFirst()
             .subscribe(onNext: { [unowned self] profile, isFirst in
@@ -60,14 +72,16 @@ private extension ShowreelDebugViewController {
 
     func makeTestObjects() {
 
-        objects.append(ShowreelDebugObjectFactory.make(
-            at: .init(x: 0, y: 0, z: 0),
-            in: 0,
-            withDisplayColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),
-            objectPerspectiveDenominator: controls.objectPerspectiveDenominator,
-            planeDistance: controls.planeDistance,
-            constrainedTo: canvas)
-        )
+        (0..<3).forEach {
+            objects.append(ShowreelDebugObjectFactory.make(
+                at: .init(x: 0, y: 0, z: 0),
+                in: $0,
+                withDisplayColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),
+                objectPerspectiveDenominator: controls.objectPerspectiveDenominator,
+                planeDistance: controls.planeDistance,
+                constrainedTo: canvas)
+            )
+        }
 
     }
 
