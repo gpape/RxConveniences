@@ -8,7 +8,7 @@
 import UIKit
 
 struct ShowreelDebugObject {
-    let view: UIView
-    let constraint: NSLayoutConstraint
+    let constraints: (x: NSLayoutConstraint, y: NSLayoutConstraint)
     let plane: Int
+    let view: UIView
 }

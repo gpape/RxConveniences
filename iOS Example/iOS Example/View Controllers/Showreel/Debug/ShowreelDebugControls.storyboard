@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IiY-aB-cq9">
-                                <rect key="frame" x="0.0" y="44" width="375" height="151.5"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="202"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents perspective denominator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nd-H2-GbN">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
@@ -62,14 +62,26 @@
                                             <action selector="valueChanged:forEvent:" destination="Mo7-89-ovm" eventType="valueChanged" id="kTK-Gx-C8p"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plane distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yya-CO-w02">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Object perspective denominator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pda-Wr-Twv">
                                         <rect key="frame" x="0.0" y="101" width="375" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="1" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8AL-fe-PUH">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="250" minValue="1" maxValue="2000" translatesAutoresizingMaskIntoConstraints="NO" id="fxy-mZ-hSr">
                                         <rect key="frame" x="-2" y="121.5" width="379" height="31"/>
+                                        <connections>
+                                            <action selector="valueChanged:forEvent:" destination="Mo7-89-ovm" eventType="valueChanged" id="nDa-43-bus"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plane distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yya-CO-w02">
+                                        <rect key="frame" x="0.0" y="151.5" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="1" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8AL-fe-PUH">
+                                        <rect key="frame" x="-2" y="172" width="379" height="31"/>
                                         <connections>
                                             <action selector="valueChanged:forEvent:" destination="Mo7-89-ovm" eventType="valueChanged" id="YyZ-tA-ehl"/>
                                         </connections>
@@ -95,6 +107,7 @@
                         <outlet property="contentsPerspectiveDenominatorSlider" destination="pYc-w4-cxZ" id="99X-Ji-RT1"/>
                         <outlet property="contentsRotationSlider" destination="eWu-zu-DPC" id="Luv-7P-dMv"/>
                         <outlet property="dismissButton" destination="pzd-gL-D5u" id="cZn-zF-7x0"/>
+                        <outlet property="objectPerspectiveDenominatorSlider" destination="fxy-mZ-hSr" id="SjZ-ef-aqw"/>
                         <outlet property="planeDistanceSlider" destination="8AL-fe-PUH" id="ExB-6w-h2o"/>
                         <outlet property="stackView" destination="IiY-aB-cq9" id="k6N-QO-SKN"/>
                     </connections>

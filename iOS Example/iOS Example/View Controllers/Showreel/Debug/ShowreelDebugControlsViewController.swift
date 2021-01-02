@@ -16,6 +16,7 @@ final class ShowreelDebugControlsViewController: UIViewController {
     @IBOutlet private weak var contentsPerspectiveDenominatorSlider: UISlider!
     @IBOutlet private weak var contentsRotationSlider: UISlider!
     @IBOutlet private weak var dismissButton: UIButton!
+    @IBOutlet private weak var objectPerspectiveDenominatorSlider: UISlider!
     @IBOutlet private weak var planeDistanceSlider: UISlider!
     @IBOutlet private weak var stackView: UIStackView!
 
@@ -27,6 +28,7 @@ final class ShowreelDebugControlsViewController: UIViewController {
 
     @RxValue private(set) var contentsPerspectiveDenominator: Float = 250
     @RxValue private(set) var contentsRotation: Float = 0.03125
+    @RxValue private(set) var objectPerspectiveDenominator: Float = 250
     @RxValue private(set) var planeDistance: Float = 100
     @RxValue private(set) var profile: Profile = .collapsed
 
@@ -70,6 +72,8 @@ private extension ShowreelDebugControlsViewController {
             contentsPerspectiveDenominator = slider.value
         case contentsRotationSlider:
             contentsRotation = slider.value
+        case objectPerspectiveDenominatorSlider:
+            objectPerspectiveDenominator = slider.value
         case planeDistanceSlider:
             planeDistance = slider.value
         default:
@@ -83,6 +87,8 @@ private extension ShowreelDebugControlsViewController {
                 debug = "contents perspective denominator"
             case contentsRotationSlider:
                 debug = "contents rotation"
+            case objectPerspectiveDenominatorSlider:
+                debug = "object perspective denominator"
             case planeDistanceSlider:
                 debug = "plane distance"
             default:
@@ -148,6 +154,7 @@ extension ShowreelDebugControlsViewController {
         super.viewDidLoad()
         contentsPerspectiveDenominatorSlider.value = contentsPerspectiveDenominator
         contentsRotationSlider.value = contentsRotation
+        objectPerspectiveDenominatorSlider.value = objectPerspectiveDenominator
         planeDistanceSlider.value = planeDistance
         configureRx()
     }

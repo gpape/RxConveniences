@@ -22,6 +22,7 @@ final class ShowreelDebugViewController: UIViewController {
 
     private let bag = DisposeBag()
     private var controls: ShowreelDebugControlsViewController!
+    private var objects: [ShowreelDebugObject] = []
 
 }
 
@@ -57,6 +58,19 @@ private extension ShowreelDebugViewController {
         }
     }
 
+    func makeTestObjects() {
+
+        objects.append(ShowreelDebugObjectFactory.make(
+            at: .init(x: 0, y: 0, z: 0),
+            in: 0,
+            withDisplayColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),
+            objectPerspectiveDenominator: controls.objectPerspectiveDenominator,
+            planeDistance: controls.planeDistance,
+            constrainedTo: canvas)
+        )
+
+    }
+
 }
 
 // MARK: - : UIViewController
@@ -79,6 +93,7 @@ extension ShowreelDebugViewController {
         controls.view.layoutIfNeeded()
         gradientView.gradientLayer.colors = [UIColor.lightGray.cgColor, UIColor.darkGray.cgColor]
         configureRx()
+        makeTestObjects()
     }
 
 }
