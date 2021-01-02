@@ -20,6 +20,7 @@ final class ShowreelDebugControlsViewController: UIViewController {
     @IBOutlet private weak var planeDistanceSlider: UISlider!
     @IBOutlet private weak var printButton: UIButton!
     @IBOutlet private weak var resetButton: UIButton!
+    @IBOutlet private      var sliders: [UISlider]!
     @IBOutlet private weak var stackView: UIStackView!
     @IBOutlet private weak var visualEffectView: UIVisualEffectView!
 
@@ -69,11 +70,9 @@ private extension ShowreelDebugControlsViewController {
     }
 
     @IBAction func tapPrint(_: Any) {
-        // TODO: abstract away redundancy
-        print("contents perspective denominator", contentsPerspectiveDenominatorSlider.value)
-        print("contents rotation", contentsRotationSlider.value)
-        print("object perspective denominator", objectPerspectiveDenominatorSlider.value)
-        print("plane distance", planeDistanceSlider.value)
+        sliders.forEach { slider in
+            debug(for: slider).flatMap { print($0, slider.value) }
+        }
     }
 
     @IBAction func valueChanged(_ sender: Any, forEvent event: UIEvent) {
@@ -95,23 +94,31 @@ private extension ShowreelDebugControlsViewController {
             break
         }
 
-        if case .ended = event.allTouches?.first?.phase {
-            let debug: String?
-            switch slider {
-            case contentsPerspectiveDenominatorSlider:
-                debug = "contents perspective denominator"
-            case contentsRotationSlider:
-                debug = "contents rotation"
-            case objectPerspectiveDenominatorSlider:
-                debug = "object perspective denominator"
-            case planeDistanceSlider:
-                debug = "plane distance"
-            default:
-                debug = nil
-            }
-            debug.flatMap { print($0, slider.value) }
+        if case .ended = event.allTouches?.first?.phase, let debug = debug(for: slider) {
+            print(debug, slider.value)
         }
 
+    }
+
+}
+
+// MARK: - Debug
+
+private extension ShowreelDebugControlsViewController {
+
+    func debug(for slider: UISlider) -> String? {
+        switch slider {
+        case contentsPerspectiveDenominatorSlider:
+            return "contents perspective denominator"
+        case contentsRotationSlider:
+            return "contents rotation"
+        case objectPerspectiveDenominatorSlider:
+            return "object perspective denominator"
+        case planeDistanceSlider:
+            return "plane distance"
+        default:
+            return nil
+        }
     }
 
 }

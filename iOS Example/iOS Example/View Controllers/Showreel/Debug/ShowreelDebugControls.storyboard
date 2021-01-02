@@ -140,6 +140,10 @@
                         <outlet property="resetButton" destination="s4r-yh-7vK" id="yw9-dN-9ph"/>
                         <outlet property="stackView" destination="IiY-aB-cq9" id="k6N-QO-SKN"/>
                         <outlet property="visualEffectView" destination="Xnn-7p-BYo" id="IbQ-Sh-fVZ"/>
+                        <outletCollection property="sliders" destination="pYc-w4-cxZ" collectionClass="NSMutableArray" id="QLP-9R-DTo"/>
+                        <outletCollection property="sliders" destination="eWu-zu-DPC" collectionClass="NSMutableArray" id="NfU-5Y-e3f"/>
+                        <outletCollection property="sliders" destination="fxy-mZ-hSr" collectionClass="NSMutableArray" id="imJ-JI-kT8"/>
+                        <outletCollection property="sliders" destination="8AL-fe-PUH" collectionClass="NSMutableArray" id="OEq-5l-Coe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMy-16-6Fz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
