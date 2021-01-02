@@ -18,7 +18,10 @@ final class ShowreelDebugControlsViewController: UIViewController {
     @IBOutlet private weak var dismissButton: UIButton!
     @IBOutlet private weak var objectPerspectiveDenominatorSlider: UISlider!
     @IBOutlet private weak var planeDistanceSlider: UISlider!
+    @IBOutlet private weak var printButton: UIButton!
+    @IBOutlet private weak var resetButton: UIButton!
     @IBOutlet private weak var stackView: UIStackView!
+    @IBOutlet private weak var visualEffectView: UIVisualEffectView!
 
 // MARK: -
 
@@ -59,6 +62,18 @@ private extension ShowreelDebugControlsViewController {
 
     @IBAction func dismiss(_: Any) {
         profile = profile.toggled
+    }
+
+    @IBAction func reset(_: Any) {
+        print("TODO:", #function)
+    }
+
+    @IBAction func tapPrint(_: Any) {
+        // TODO: abstract away redundancy
+        print("contents perspective denominator", contentsPerspectiveDenominatorSlider.value)
+        print("contents rotation", contentsRotationSlider.value)
+        print("object perspective denominator", objectPerspectiveDenominatorSlider.value)
+        print("plane distance", planeDistanceSlider.value)
     }
 
     @IBAction func valueChanged(_ sender: Any, forEvent event: UIEvent) {
@@ -125,7 +140,10 @@ private extension ShowreelDebugControlsViewController {
     func configure(for profile: Profile, animated: Bool) {
 
         let animations: () -> Void = { [weak self] in
+            self?.printButton.alpha = profile.controlsAlpha
+            self?.resetButton.alpha = profile.controlsAlpha
             self?.stackView.alpha = profile.controlsAlpha
+            self?.visualEffectView.alpha = profile.controlsAlpha
         }
 
         let dismissButtonTransitions: () -> Void = { [weak self] in
@@ -156,6 +174,7 @@ extension ShowreelDebugControlsViewController {
         contentsRotationSlider.value = contentsRotation
         objectPerspectiveDenominatorSlider.value = objectPerspectiveDenominator
         planeDistanceSlider.value = planeDistance
+        printButton.setImage(UIImage(systemName: "printer", withConfiguration: symbolConfiguration), for: .normal)
         configureRx()
     }
 
@@ -163,9 +182,10 @@ extension ShowreelDebugControlsViewController {
 
 // MARK: -
 
+private let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 20, weight: .semibold, scale: .default)
+
 private extension ShowreelDebugControlsViewController.Profile {
 
-    private static let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 42, weight: .semibold, scale: .default)
     private static let dismissCollapsed = UIImage(systemName: "slider.horizontal.3", withConfiguration: symbolConfiguration)!
     private static let dismissExpanded = UIImage(systemName: "xmark", withConfiguration: symbolConfiguration)!
 

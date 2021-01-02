@@ -23,18 +23,6 @@
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzd-gL-D5u">
-                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="D2q-SV-Ksi"/>
-                                    <constraint firstAttribute="width" secondItem="pzd-gL-D5u" secondAttribute="height" id="umg-Zy-BfC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="42"/>
-                                <state key="normal" image="xmark" catalog="system"/>
-                                <connections>
-                                    <action selector="dismiss:" destination="Mo7-89-ovm" eventType="touchUpInside" id="6x3-7y-iFo"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IiY-aB-cq9">
                                 <rect key="frame" x="0.0" y="44" width="375" height="202"/>
                                 <subviews>
@@ -88,17 +76,56 @@
                                     </slider>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4r-yh-7vK">
+                                <rect key="frame" x="287" y="0.0" width="44" height="44"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.uturn.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="reset:" destination="Mo7-89-ovm" eventType="touchUpInside" id="LVd-qJ-tIu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1H-k5-7ac">
+                                <rect key="frame" x="331" y="0.0" width="44" height="44"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="printer" catalog="system"/>
+                                <connections>
+                                    <action selector="tapPrint:" destination="Mo7-89-ovm" eventType="touchUpInside" id="guv-QW-5ta"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzd-gL-D5u">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="D2q-SV-Ksi"/>
+                                    <constraint firstAttribute="width" secondItem="pzd-gL-D5u" secondAttribute="height" id="umg-Zy-BfC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="Mo7-89-ovm" eventType="touchUpInside" id="6x3-7y-iFo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1yQ-9y-pF0"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="D1H-k5-7ac" firstAttribute="height" secondItem="pzd-gL-D5u" secondAttribute="height" id="10j-dU-Kod"/>
                             <constraint firstItem="IiY-aB-cq9" firstAttribute="leading" secondItem="9Sw-VF-xk4" secondAttribute="leading" id="1Sj-Zk-vZG"/>
                             <constraint firstItem="Xnn-7p-BYo" firstAttribute="trailing" secondItem="9Sw-VF-xk4" secondAttribute="trailing" id="2Zj-xR-FiI"/>
                             <constraint firstItem="pzd-gL-D5u" firstAttribute="top" secondItem="1yQ-9y-pF0" secondAttribute="top" id="BSu-Ro-Jb7"/>
+                            <constraint firstItem="D1H-k5-7ac" firstAttribute="trailing" secondItem="1yQ-9y-pF0" secondAttribute="trailing" id="CSO-k2-j54"/>
+                            <constraint firstItem="s4r-yh-7vK" firstAttribute="trailing" secondItem="D1H-k5-7ac" secondAttribute="leading" id="E6D-Mf-aKC"/>
+                            <constraint firstItem="s4r-yh-7vK" firstAttribute="width" secondItem="pzd-gL-D5u" secondAttribute="width" id="Egp-uq-dno"/>
                             <constraint firstItem="Xnn-7p-BYo" firstAttribute="bottom" secondItem="9Sw-VF-xk4" secondAttribute="bottom" id="GGE-qq-cp4"/>
+                            <constraint firstItem="D1H-k5-7ac" firstAttribute="width" secondItem="pzd-gL-D5u" secondAttribute="width" id="OBS-Or-CnK"/>
+                            <constraint firstItem="s4r-yh-7vK" firstAttribute="height" secondItem="pzd-gL-D5u" secondAttribute="height" id="RTA-rr-e4U"/>
                             <constraint firstItem="IiY-aB-cq9" firstAttribute="trailing" secondItem="9Sw-VF-xk4" secondAttribute="trailing" id="S8r-jJ-XIT"/>
                             <constraint firstItem="Xnn-7p-BYo" firstAttribute="top" secondItem="9Sw-VF-xk4" secondAttribute="top" id="Ybk-UE-JSp"/>
+                            <constraint firstItem="s4r-yh-7vK" firstAttribute="top" secondItem="1yQ-9y-pF0" secondAttribute="top" id="esX-n3-geo"/>
                             <constraint firstItem="pzd-gL-D5u" firstAttribute="leading" secondItem="1yQ-9y-pF0" secondAttribute="leading" id="mfk-Ab-pgF"/>
+                            <constraint firstItem="D1H-k5-7ac" firstAttribute="top" secondItem="1yQ-9y-pF0" secondAttribute="top" id="nbJ-Sm-9vB"/>
                             <constraint firstItem="IiY-aB-cq9" firstAttribute="top" secondItem="pzd-gL-D5u" secondAttribute="bottom" id="pyy-Jn-jqu"/>
                             <constraint firstItem="Xnn-7p-BYo" firstAttribute="leading" secondItem="9Sw-VF-xk4" secondAttribute="leading" id="qZ7-Tk-8ti"/>
                         </constraints>
@@ -109,7 +136,10 @@
                         <outlet property="dismissButton" destination="pzd-gL-D5u" id="cZn-zF-7x0"/>
                         <outlet property="objectPerspectiveDenominatorSlider" destination="fxy-mZ-hSr" id="SjZ-ef-aqw"/>
                         <outlet property="planeDistanceSlider" destination="8AL-fe-PUH" id="ExB-6w-h2o"/>
+                        <outlet property="printButton" destination="D1H-k5-7ac" id="UM7-Ej-C0f"/>
+                        <outlet property="resetButton" destination="s4r-yh-7vK" id="yw9-dN-9ph"/>
                         <outlet property="stackView" destination="IiY-aB-cq9" id="k6N-QO-SKN"/>
+                        <outlet property="visualEffectView" destination="Xnn-7p-BYo" id="IbQ-Sh-fVZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMy-16-6Fz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -118,6 +148,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.uturn.backward" catalog="system" width="128" height="112"/>
+        <image name="printer" catalog="system" width="128" height="111"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>
 </document>
