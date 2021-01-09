@@ -30,10 +30,12 @@ final class ShowreelDebugControlsViewController: UIViewController {
 
 // MARK: - API
 
-    @RxValue private(set) var contentsPerspectiveDenominator: Float = 250
-    @RxValue private(set) var contentsRotation: Float = 0.03125
-    @RxValue private(set) var objectPerspectiveDenominator: Float = 250
-    @RxValue private(set) var planeDistance: Float = 100
+    private typealias Defaults = ShowreelDebug.Defaults
+
+    @RxValue private(set) var contentsPerspectiveDenominator = Defaults.contentsPerspectiveDenominator
+    @RxValue private(set) var contentsRotation = Defaults.contentsRotation
+    @RxValue private(set) var objectPerspectiveDenominator = Defaults.objectPerspectiveDenominator
+    @RxValue private(set) var planeDistance = Defaults.planeDistance
     @RxValue private(set) var profile: Profile = .collapsed
 
 }
@@ -83,13 +85,13 @@ private extension ShowreelDebugControlsViewController {
 
         switch slider {
         case contentsPerspectiveDenominatorSlider:
-            contentsPerspectiveDenominator = slider.value
+            contentsPerspectiveDenominator = CGFloat(slider.value)
         case contentsRotationSlider:
-            contentsRotation = slider.value
+            contentsRotation = CGFloat(slider.value)
         case objectPerspectiveDenominatorSlider:
-            objectPerspectiveDenominator = slider.value
+            objectPerspectiveDenominator = CGFloat(slider.value)
         case planeDistanceSlider:
-            planeDistance = slider.value
+            planeDistance = CGFloat(slider.value)
         default:
             break
         }
@@ -177,10 +179,10 @@ extension ShowreelDebugControlsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentsPerspectiveDenominatorSlider.value = contentsPerspectiveDenominator
-        contentsRotationSlider.value = contentsRotation
-        objectPerspectiveDenominatorSlider.value = objectPerspectiveDenominator
-        planeDistanceSlider.value = planeDistance
+        contentsPerspectiveDenominatorSlider.value = Float(Defaults.contentsPerspectiveDenominator)
+        contentsRotationSlider.value = Float(Defaults.contentsRotation)
+        objectPerspectiveDenominatorSlider.value = Float(Defaults.objectPerspectiveDenominator)
+        planeDistanceSlider.value = Float(Defaults.planeDistance)
         printButton.setImage(UIImage(systemName: "printer", withConfiguration: symbolConfiguration), for: .normal)
         configureRx()
     }

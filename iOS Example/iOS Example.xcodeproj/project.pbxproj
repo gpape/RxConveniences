@@ -11,6 +11,7 @@
 		200CD5FB259B802E00025B2D /* ShowreelDebug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 200CD5FA259B802E00025B2D /* ShowreelDebug.storyboard */; };
 		20112EE5255E2FB6004992F3 /* CollectiveBindingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20112EE4255E2FB6004992F3 /* CollectiveBindingsViewController.swift */; };
 		20112EEA255E301D004992F3 /* CollectiveBindings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20112EE9255E301D004992F3 /* CollectiveBindings.storyboard */; };
+		204A0D5D25AA19FF00B1CEA8 /* ShowreelDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A0D5C25AA19FF00B1CEA8 /* ShowreelDebug.swift */; };
 		20738CBA2574891A00124346 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20738CB92574891A00124346 /* DisplayLink.swift */; };
 		208EADFA25602CF9000A28D4 /* SimpleSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208EADF925602CF9000A28D4 /* SimpleSubscription.swift */; };
 		208EADFF25602D4C000A28D4 /* Collective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208EADFE25602D4C000A28D4 /* Collective.swift */; };
@@ -76,6 +77,7 @@
 		200CD5FA259B802E00025B2D /* ShowreelDebug.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowreelDebug.storyboard; sourceTree = "<group>"; };
 		20112EE4255E2FB6004992F3 /* CollectiveBindingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectiveBindingsViewController.swift; sourceTree = "<group>"; };
 		20112EE9255E301D004992F3 /* CollectiveBindings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectiveBindings.storyboard; sourceTree = "<group>"; };
+		204A0D5C25AA19FF00B1CEA8 /* ShowreelDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowreelDebug.swift; sourceTree = "<group>"; };
 		20738CB92574891A00124346 /* DisplayLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayLink.swift; sourceTree = "<group>"; };
 		208EADF925602CF9000A28D4 /* SimpleSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSubscription.swift; sourceTree = "<group>"; };
 		208EADFE25602D4C000A28D4 /* Collective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collective.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		200CD5F4259ACB8A00025B2D /* Debug */ = {
 			isa = PBXGroup;
 			children = (
+				204A0D5C25AA19FF00B1CEA8 /* ShowreelDebug.swift */,
 				200CD5FA259B802E00025B2D /* ShowreelDebug.storyboard */,
 				200CD5F5259ACC3C00025B2D /* ShowreelDebugViewController.swift */,
 				20CCFCF8259E2CD600D990C4 /* ShowreelDebugControls.storyboard */,
@@ -478,6 +481,7 @@
 				20A573532571E00800B047AC /* Math.swift in Sources */,
 				20A5733825713B5D00B047AC /* UIKit.swift in Sources */,
 				20112EE5255E2FB6004992F3 /* CollectiveBindingsViewController.swift in Sources */,
+				204A0D5D25AA19FF00B1CEA8 /* ShowreelDebug.swift in Sources */,
 				200CD5F6259ACC3C00025B2D /* ShowreelDebugViewController.swift in Sources */,
 				20CCFCF4259E2C7F00D990C4 /* ShowreelDebugControlsViewController.swift in Sources */,
 				20CCFD0C259FA55500D990C4 /* ShowreelDebugObject.swift in Sources */,

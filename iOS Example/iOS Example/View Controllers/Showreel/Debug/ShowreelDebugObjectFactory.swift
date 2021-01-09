@@ -12,11 +12,11 @@ enum ShowreelDebugObjectFactory {
     static func make(at position: Showreel.Position,
                      in plane: Int,
                      withDisplayColor displayColor: UIColor,
-                     objectPerspectiveDenominator: Float,
-                     planeDistance: Float,
+                     objectPerspectiveDenominator: CGFloat,
+                     planeDistance: CGFloat,
                      constrainedTo parent: UIView) -> ShowreelDebugObject {
 
-        let z = CGFloat(plane) * CGFloat(planeDistance)
+        let z = CGFloat(plane) * planeDistance
 
         let view = UILabel()
         view.displayColor = displayColor
@@ -25,7 +25,7 @@ enum ShowreelDebugObjectFactory {
         view.translatesAutoresizingMaskIntoConstraints = false
         parent.addSubview(view)
 
-        var transform = CATransform3D.withPerspective(-1.0 / CGFloat(objectPerspectiveDenominator))
+        var transform = CATransform3D.withPerspective(-1.0 / objectPerspectiveDenominator)
         transform = CATransform3DTranslate(transform, 0, 0, z)
         view.layer.transform = transform
         view.layer.zPosition = z
