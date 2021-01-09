@@ -68,7 +68,7 @@ private extension ShowreelDebugControlsViewController {
     }
 
     @IBAction func reset(_: Any) {
-        print("TODO:", #function)
+        setDefaults()
     }
 
     @IBAction func tapPrint(_: Any) {
@@ -120,6 +120,16 @@ private extension ShowreelDebugControlsViewController {
             return "plane distance"
         default:
             return nil
+        }
+    }
+
+    func setDefaults() {
+        contentsPerspectiveDenominatorSlider.value = Float(Defaults.contentsPerspectiveDenominator)
+        contentsRotationSlider.value = Float(Defaults.contentsRotation)
+        objectPerspectiveDenominatorSlider.value = Float(Defaults.objectPerspectiveDenominator)
+        planeDistanceSlider.value = Float(Defaults.planeDistance)
+        sliders.forEach {
+            $0.sendActions(for: .valueChanged)
         }
     }
 
@@ -179,11 +189,9 @@ extension ShowreelDebugControlsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentsPerspectiveDenominatorSlider.value = Float(Defaults.contentsPerspectiveDenominator)
-        contentsRotationSlider.value = Float(Defaults.contentsRotation)
-        objectPerspectiveDenominatorSlider.value = Float(Defaults.objectPerspectiveDenominator)
-        planeDistanceSlider.value = Float(Defaults.planeDistance)
+        setDefaults()
         printButton.setImage(UIImage(systemName: "printer", withConfiguration: symbolConfiguration), for: .normal)
+        resetButton.setImage(UIImage(systemName: "arrow.uturn.backward", withConfiguration: symbolConfiguration), for: .normal)
         configureRx()
     }
 

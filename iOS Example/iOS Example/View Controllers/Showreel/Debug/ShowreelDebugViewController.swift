@@ -33,10 +33,6 @@ private extension ShowreelDebugViewController {
 
     func configureRx() {
 
-        // TODO:
-//        @RxValue private(set) var objectPerspectiveDenominator: Float = 250
-//        @RxValue private(set) var planeDistance: Float = 100
-
         Driver.combineLatest(controls.$contentsPerspectiveDenominator, controls.$contentsRotation)
             .drive { [unowned self] denominator, rotation in
                 var transform = CATransform3D.withPerspective(-1.0 / denominator)
