@@ -42,14 +42,8 @@ private extension ShowreelDebugViewController {
             .disposed(by: bag)
 
         Driver.combineLatest(controls.$objectPerspectiveDenominator, controls.$planeDistance)
-            .drive { [unowned self] denominator, planeDistance in
-                objects.forEach {
-                    let z = CGFloat($0.plane) * planeDistance
-                    var transform = CATransform3D.withPerspective(-1.0 / denominator)
-                    transform = CATransform3DTranslate(transform, 0, 0, z)
-                    $0.view.layer.transform = transform
-                    $0.view.layer.zPosition = z
-                }
+            .drive { [unowned self] perspectiveDenominator, planeDistance in
+                objects.all.apply(perspectiveDenominator: perspectiveDenominator, planeDistance: planeDistance)
             }
             .disposed(by: bag)
 
